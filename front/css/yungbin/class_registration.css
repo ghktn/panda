@@ -1,0 +1,107 @@
+#container {
+  height: 800px;
+}
+
+#header {
+  height: 20%;
+}
+#content {
+  height: 650px;
+  width: 50%;
+
+  margin-left: 10%;
+}
+#cardcard {
+  height: 320px;
+  width: 1100px;
+}
+.card-body {
+  padding: 1px;
+}
+.nav-tab {
+  height: 320px;
+  width: 1500px;
+}
+#mytabs {
+  width: 1130px;
+}
+.cardmb-3 {
+  width: 690px;
+  height: 310px;
+}
+#img-tc {
+  height: 270px;
+  width: 300px;
+}
+#img-notice {
+  width: 20px;
+  height: 20px;
+}
+#star {
+  float: right;
+}
+#medal {
+  width: 25px;
+  height: 25px;
+}
+.lh-2 {
+  color: #9dd5ff;
+  font-size: 11pt;
+}
+.lh-1 {
+  font-size: 11pt;
+}
+
+#card-tc {
+  width: 1130px;
+  height: 160px;
+  border-radius: 30px;
+  background-color: #fafafa;
+}
+
+#card-ps {
+  width: 1130px;
+  height: 80px;
+  border-radius: 30px;
+  background-color: #fafafa;
+}
+
+.cardtext-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+#ask-card {
+  width: 18rem;
+  margin-left: 37%;
+  background-color: white;
+}
+.btn {
+  color: black;
+}
+.form-control mt-4 mb-2 {
+  width: 1130px;
+  margin-left: 9%;
+}
+#card-review {
+  width: 1130px;
+  height: 430px;
+  background-color: #fafafa;
+}
+#review {
+  margin-left: 920px;
+}
+#review-text {
+  width: 1000px;
+  margin-left: 65px;
+}
+
+#aside {
+  height: 400px;
+  width: 500px;
+  float: right;
+  margin-left: auto;
+}
+.footer {
+}
+body {
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리뷰 작성</title>
+
+    <!-- jQuery CDN-->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <!-- my js -->
+    <script
+      defer="defer"
+      type="text/javascript"
+      src="js/review_board.js"
+    ></script>
+    <!-- Toast UI editor  -->
+
+    <!-- css -->
+    <link type="text/css" rel="stylesheet" href="css/review_board.css" />
+
+    <!-- panda css -->
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- bootstrap 3 시작 -->
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- bootstrap 3 끝 -->
+
+    <!-- 조장님 추가 시작 -->
+
+    <link rel="shortcut icon" href="panda/images/ico/favicon.ico" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="panda/images/ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="panda/images/ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="panda/images/ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="panda/images/ico/apple-touch-icon-57-precomposed.png"
+    />
+
+    <!-- 조장님 추가 끝 -->
+
+    <!-- Toast UI editor 시작 -->
+    <!-- css -->
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
+    />
+    <!-- javascript -->
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+
+    <!-- Toast UI editor 끝 -->
+  </head>
+  <body>
+    <div id="container">
+      <!-- header 시작 -->
+      <header id="header">
+        <!--header-->
+        <div class="header_top"></div>
+
+        <div class="header-middle">
+          <!--header-middle-->
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="logo pull-left">
+                  <a href="index.html"
+                    ><img src="images/home/logo2.png" alt=""
+                  /></a>
+                </div>
+                <div class="btn-group pull-right">
+                  <button type="button" class="btn btn-default change">
+                    선생님으로 전환하기
+                  </button>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="shop-menu pull-right">
+                  <ul class="nav navbar-nav">
+                    <li>
+                      <a href="#"><i class="fa fa-user"></i> 내 정보</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-star"></i> 관심 목록</a>
+                    </li>
+                    <li>
+                      <a href="login.html"
+                        ><i class="fa fa-lock"></i> 로그아웃</a
+                      >
+                    </li>
+                    <li><a href="#" class="register"> 회원가입</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/header-middle-->
+
+        <div class="header-bottom">
+          <!--header-bottom-->
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-9">
+                <div class="navbar-header">
+                  <button
+                    type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse"
+                  >
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="mainmenu pull-left">
+                  <ul class="nav navbar-nav collapse navbar-collapse">
+                    <li><a href="index.html" class="active">선생님 찾기</a></li>
+                    <li class="dropdown">
+                      <a href="#">학생 찾기<i class="fa fa-angle-down"></i></a>
+                      <ul role="menu" class="sub-menu">
+                        <li><a href="shop.html">Products</a></li>
+                        <li>
+                          <a href="product-details.html">Product Details</a>
+                        </li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="login.html">Login</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#">일정 관리<i class="fa fa-angle-down"></i></a>
+                      <ul role="menu" class="sub-menu">
+                        <li><a href="blog.html">Blog List</a></li>
+                        <li><a href="blog-single.html">Blog Single</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="404.html">공지사항</a></li>
+                    <li><a href="contact-us.html">문의하기</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="search_box pull-right">
+                  <input type="text" placeholder="검색어를 입력해주세요." />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/header-bottom-->
+      </header>
+      <!-- header 끝 -->
+
+      <main id="main">
+        <!--main header-->
+        <div id="mainTitle">
+          <h3>리뷰 등록</h3>
+        </div>
+
+        <div id="mainHeader">
+          <!-- teacher photo - 회원 프로필 사진 대체 필요 -->
+          <div class="imageBox">
+            <img alt="선생님이미지" src="images/review/review_teacher.png" />
+          </div>
+          <!-- class info -->
+          <div class="infoBox">
+            <div class="row">
+              <!-- 선생님 닉네임 -->
+              <div class="col-sm-3 classInfo">선생님닉네임</div>
+              <div class="col-sm-3 classInfo" id="nickname"></div>
+              <!-- 수업 제목 -->
+              <div class="col-sm-3 classInfo">수업제목</div>
+              <div class="col-sm-3 classInfo" id="classTitle"></div>
+            </div>
+
+            <div class="row">
+              <!-- 수업 카테고리   -->
+              <div class="col-sm-3 classInfo">수업분야</div>
+              <div class="col-sm-3 classInfo">
+                <div class="row">
+                  <!-- 대분류 -->
+                  <div class="col-sm-6 bigClassifation"></div>
+                  <!-- 소분류 -->
+                  <div class="col-sm-6 smallClassifation"></div>
+                </div>
+              </div>
+              <!-- 수강비 -->
+              <div class="col-sm-3 classInfo">수강비</div>
+              <div class="col-sm-3 classInfo">
+                <span class="classPrice">120000</span>
+                <span class="classUnit">만원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--main body-->
+        <div id="mainBody">
+          <!-- 별점 제목 -->
+          <div class="starTitleBox">
+            <h3>수업은 어떠셨나요?</h3>
+          </div>
+          <!-- 별점 box -->
+          <div class="starBox">
+            <input type="radio" id="5-stars" name="rating" value="5" />
+            <label for="5-stars" class="star">&#9733;</label>
+
+            <input type="radio" id="4-stars" name="rating" value="4" />
+            <label for="4-stars" class="star">&#9733;</label>
+
+            <input type="radio" id="3-stars" name="rating" value="3" />
+            <label for="3-stars" class="star">&#9733;</label>
+
+            <input type="radio" id="2-stars" name="rating" value="2" />
+            <label for="2-stars" class="star">&#9733;</label>
+
+            <input type="radio" id="1-star" name="rating" value="1" />
+            <label for="1-star" class="star">&#9733;</label>
+          </div>
+
+          <!-- 댓글 내용 box + 사진 추가 -->
+          <div id="toastUiBoard"></div>
+        </div>
+
+        <!-- main footer -->
+        <div id="mainFooter">
+          <div class="buttonBox">
+            <button type="button" class="btn btn-primary btn-lg">등록</button>
+            <button type="button" class="btn btn-primary btn-lg">취소</button>
+          </div>
+        </div>
+      </main>
+
+      <footer id="footer"></footer>
+    </div>
+  </body>
+</html>

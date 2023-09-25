@@ -1,0 +1,24 @@
+.notice {
+  width: 1000px;
+  margin-top: 60px;
+  margin-left: 5%;
+}
+.notice-sort {
+  float: right;
+}
+
+.container button {
+  border-color: black;
+  margin-bottom: 10%;
+  margin-top: 5%;
+  margin-left: 40%;
+}
+.nav li ul {
+  position: absolute;
+  top: 52px;
+  left: -27px;
+  padding: 20px;
+}
+body {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
