@@ -83,7 +83,33 @@
   float: right;
   margin-left: auto;
 }
+
 .footer {
 }
+
 body {
+}
+
+/* TODO modal - 발표 위해 추가 */
+#myModal {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+  font-family: "Noto Sans KR", sans-serif;
+  text-align: center;
+}
+
+.modal-body .buttonBox {
+  padding-top: 5px;
+  /* div 중앙 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body .buttonBox button {
+  font-size: 15px;
+  background-color: #0d2237;
+  border-radius: 10px;
+  color: white;
 }

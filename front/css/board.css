@@ -22,3 +22,8 @@
 body {
   font-family: "Noto Sans KR", sans-serif !important;
 }
+
+/* 발표 때문에 작성 */
+.caption:hover {
+  cursor: pointer;
+}
