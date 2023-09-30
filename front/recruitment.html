@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script defer="defer" src="js/name.js"></script>
+
+    <link rel="stylesheet" href="css/recruitment.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/prettyPhoto.css" rel="stylesheet" />
+    <link href="css/price-range.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js">
+        </>
+              <script src="js/respond.min.js">
+      </script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="images/ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="images/ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="images/ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="images/ico/apple-touch-icon-57-precomposed.png"
+    />
+    <!--조장님 링크-->
+  </head>
+  <body>
+    <div id="container">
+      <header id="header">
+        <!--header-->
+        <div class="header_top"></div>
+
+        <div class="header-middle">
+          <!--header-middle-->
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="logo pull-left">
+                  <a href="index.html"
+                    ><img src="images/home/logo2.png" alt=""
+                  /></a>
+                </div>
+                <div class="btn-group pull-right">
+                  <button type="button" class="btn btn-default change">
+                    선생님으로 전환하기
+                  </button>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="shop-menu pull-right">
+                  <ul class="nav navbar-nav">
+                    <li>
+                      <a href="my-page.html"
+                        ><i class="fa fa-user"></i> 내 정보</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-star"></i> 관심 목록</a>
+                    </li>
+                    <li>
+                      <a href="login2.html"
+                        ><i class="fa fa-lock"></i> 로그인</a
+                      >
+                    </li>
+                    <li>
+                      <a href="register.html" class="register"> 회원가입</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/header-middle-->
+
+        <div class="header-bottom">
+          <!--header-bottom-->
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-9">
+                <div class="navbar-header">
+                  <button
+                    type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse"
+                  >
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="mainmenu pull-left">
+                  <ul class="nav navbar-nav collapse navbar-collapse">
+                    <li><a href="board.html" class="active">수업 홍보</a></li>
+                    <li class="dropdown">
+                      <a href="#">커뮤니티<i class="fa fa-angle-down"></i></a>
+                      <ul role="menu" class="sub-menu">
+                        <li><a href="shop.html">자유 게시판</a></li>
+                        <li><a href="product-details.html"></a></li>
+                        <!-- <li><a href="checkout.html">Checkout</a></li>
+                      <li><a href="cart.html">Cart</a></li>
+                      <li><a href="login.html">Login</a></li> -->
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#">공지사항<i class="fa fa-angle-down"></i></a>
+                      <ul role="menu" class="sub-menu">
+                        <li><a href="blog.html">선생님</a></li>
+                        <li><a href="blog-single.html">학생</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="404.html">문의하기</a></li>
+                    <li><a href="contact-us.html">포인트상점</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="search_box pull-right">
+                  <input type="text" placeholder="검색어를 입력해주세요." />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/header-bottom-->
+      </header>
+      <!--/header-->
+      <br />
+      <br />
+      <br />
+      <br />
+      <div id="content">
+        <div class="card mb-3" id="cardcard">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="images/recruitment/math.jpeg"
+                class="img-fluid rounded-start"
+                id="img-tc"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <button class="mentor-card__rating e-show-reviews" id="star">
+                  <span class="has-icon rating-star"
+                    >
+                    <!-- TODO 발표 위해 i태크 주석 처리 -->
+                    <!-- <i class="fas fa-star"></i
+                  ></span> -->
+                  <span class="rating-number">⭐5.0</span>
+                  <!-- <i class="fal fa-chevron-right"></i> -->
+                </button>
+                <h4 class="fw-bold">믿고맡기는수학</h4>
+                <p class="lh-1">수학,고등수학,수학 I,수학 II</p>
+                <p class="lh-1">지역: 경기 시흥시,서울 금천 서울 구로구</p>
+                <div class="card-body">
+                  <h5 class="card-title">프롤로그</h5>
+                  <p class="lh-1">
+                    <img
+                      src="images/recruitment/badge.jpeg"
+                      alt="Retail Admin"
+                      id="medal"
+                    />
+                    이 선생님은 판다 특별추천 선생님입니다.
+                  </p>
+                  <hr />
+                  <p class="lh-1">
+                    이 선생님은 판다에서 신분증을 확실하게 확인해서
+                  </p>
+
+                  <p class="lh-2">대학교,경력인증서,자격증</p>
+                  <p class="lh-1">까지 완벽히 인증된 선생님입니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br />
+          <br />
+          <div id="mytabs">
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab"
+                  ><p>참여가능인원</p></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab"><p>모집성별</p></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab"><p>모집연령대</p></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab"><p>수강비</p></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab"><p>수업형태</p></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab"><p>수업희망요일</p></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab"><p>지역</p></a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade">
+                <br />
+                <p>✨ 2명</p>
+              </div>
+              <div class="tab-pane fade">
+                <br />
+                <p>✨ 남자</p>
+              </div>
+              <div class="tab-pane fade">
+                <br />
+                <p>✨ 30세미만</p>
+              </div>
+              <div class="tab-pane fade">
+                <br />
+                <h5>✨ 60만원</h5>
+              </div>
+              <div class="tab-pane fade">
+                <br />
+                <p>✨ 온라인</p>
+              </div>
+              <div class="tab-pane fade">
+                <br />
+                <p>✨ 화,수</p>
+              </div>
+              <div class="tab-pane fade">
+                <br />
+                <p>✨ 서울 전지역</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="card-tc">
+        <div class="card-body">
+          <h4 class="fw-bold">&nbsp; 소개</h4>
+          <br />
+          <p class="card-text">
+            &nbsp; 📢 선생님 소개<br />
+
+            <br />
+            &nbsp; 1️⃣ 저는 2023년을 기준으로 과외 경력 5년 차며 40명 이상의
+            학생을 꾸준히 지도했고 성적 향상 사례도 무수히 많습니다.
+            <br />
+            <br />
+            &nbsp; 2️⃣ 2022년 12월에 대학교를 수료한 전문 과외 선생님이며 좋은
+            퀄리티의 수업을 제공하기 위해서 끊임없이 연구하고 고민하며 수업
+            준비를 하고 있습니다.
+            <br />
+            <br />
+            &nbsp; 3️⃣ 수업의 전문성을 위해 내신 및 수능 대비 수학 과외만
+            진행하고 있으며 내신 및 수능 수학 필수 개념만 확실하게 수업하고
+            있습니다.
+            <br />
+            <br />
+            &nbsp; 4️⃣ 과외의 기본인 숙제 검사 및 오답 체크는 매 수업 시간
+            철저하게 진행하고 수업 시간 엄수도 정확합니다.
+            <br />
+            <br />
+            &nbsp; 5️⃣ 최소한의 수업 시간으로 빠르고 정확하게 100% 성적 향상
+            보장하며 수많은 지도 경력으로 어떤 개념이 중요하고 학생들이
+            어려워하는지 완벽하게 알고 있습니다.
+            <br />
+            <br />
+            <br />
+            &nbsp; 📢 시작 전 드리는 당부의 말씀
+            <br />
+            <br />
+            &nbsp; 1️⃣ 과외에 있어서 기본적인 예의를 갖추지 않고 공부에 대한
+            의지가 없는 학생은 어떠한 경우에도 수업 진행하지 않습니다.
+            <br />
+            <br />
+            &nbsp; 2️⃣ 첫 수업 이전 필수적으로 상담 및 시범수업을 진행하고
+            있습니다. 상담 및 시범수업 이후에 선생님과 학생 모두 정규 수업을
+            원하는 경우에만 과외가 성사됩니다.
+            <br />
+            <br />
+            &nbsp; 3️⃣ 정규 수업 진행 여부 기준은 현재의 성적이 아닌 학생의 공부
+            의지와 수업에 임하는 태도입니다.
+            <br />
+            <br />
+            &nbsp; 4️⃣ 정규 수업에서 활용하는 각종 수업 자료와 커리큘럼은
+            시범수업 때 제공하는 점 참고 부탁드립니다.
+            <br />
+            <br />
+            &nbsp; 5️⃣ 학생이 뚜렷한 목표와 공부 의지를 갖고 수업에 임한다면 성적
+            향상은 확실하게 보장합니다. 현재 어떠한 상황이라도 최상의 결과로
+            보답하겠습니다.
+            <br />
+            <br />
+            <br />
+            &nbsp; 📢 시범수업 관련 안내
+            <br />
+            <br />
+            &nbsp; 1️⃣ 정규 수업 성사 여부와 관계없이 유료로 진행 중이며 수업료
+            입금이 확인되는 순서대로 수업 확정됩니다.
+            <br />
+            <br />
+            &nbsp; 2️⃣ 학생이 자유롭게 선생님을 선택할 수 있는 것처럼 저도 제
+            수업을 잘 따라올 수 있다고 판단하는 학생을 선택해서 수업 진행할 수
+            있는 점 양해해 주시기 바랍니다.
+            <br />
+            <br />
+            &nbsp; 3️⃣ 학생과의 간단한 상담 이후에 제가 준비한 수업 자료로 수업을
+            진행하고 그 수업을 바탕으로 수업 교재와 커리큘럼을 협의할 것입니다.
+            <br />
+            <br />
+            &nbsp; 4️⃣ 2시간 이내의 수업으로 어떤 부분에서 막히고 보완할 점이
+            무엇인지 파악하여 지금까지의 문제점을 빠르게 개선할 수 있도록
+            학생에게 알맞은 성적 향상 전략을 제시하겠습니다.
+            <br />
+            <br />
+            &nbsp; 5️⃣ 정규 수업 성사가 되지 않더라도 서로에게 헛된 시간이 되지
+            않도록 수학 외 다른 과목의 공부 방법과 입시에 대한 상담도 진행하고
+            있습니다.
+            <br />
+            <br />
+            <br />
+            &nbsp; 📢 과외 상담 시 규정
+            <br />
+            <br />
+            &nbsp; 1️⃣ 기본적인 예의를 갖추지 않고 문의하거나 상담 태도가
+            무례하다고 판단되면 더 이상 답장하지 않겠습니다.
+            <br />
+            <br />
+            &nbsp; 2️⃣ 연락처 교환은 정규 수업 확정 이후에만 가능합니다. 과외
+            상담 과정에서 연락처 알려주셔도 어떠한 경우에도 연락하지 않을 것이며
+            즉시 상담 종료합니다.
+            <br />
+            <br />
+            &nbsp; 3️⃣ 정규 수업 확정 이후에 학부모와 학생에 대한 상담을 하더라도
+            과외를 받을 학생이 직접 문의하는 것을 선호합니다.
+            <br />
+            <br />
+            &nbsp; 4️⃣ 정규 수업 진행 여부와 수업료에 대한 사항은 학부모와 충분한
+            상의 후 최종적으로 결정해서 저에게 말씀해 주시기 바랍니다.
+            <br />
+            <br />
+            &nbsp; 5️⃣ 제 프로필에 적어둔 과외 상담 시 규정만 잘 지켜서
+            문의주시면 학생 및 학부모에게 빠르고 친절한 상담으로 보답하겠습니다.
+            <br />
+            <br />
+            <br />
+            &nbsp; 📢 과외 진행 시 규정
+            <br />
+            <br />
+            &nbsp; 1️⃣ 학생의 개인적인 사정으로 수업을 당일에 취소하는 경우 이유
+            불문하고 수업 횟수에서 차감됩니다.
+            <br />
+            <br />
+            &nbsp; 2️⃣ 모든 수업료는 횟수 기준 선불로 받고 있습니다. 원활한 수업
+            진행을 위해 첫 수업 하루 전까지 입금해 주셔야 하고 새로운 1회차
+            수업이 시작되는 경우에도 마찬가지입니다.
+            <br />
+            <br />
+            &nbsp; 3️⃣ 선생님과 학생 모두 갑작스러운 수업 중단은 서로에 대한
+            예의가 아니라고 생각하기에 학생이 수업 중단을 요청하는 경우 사전에
+            최소한 1주일 정도의 기간을 두고 통지해 주시기 바랍니다.
+            <br />
+            <br />
+            &nbsp; 4️⃣ 선생님이 판단했을 때 학생의 태도가 성실하지 않고 수업 시간
+            변경이 잦은 경우와 학습과 관련된 지도를 따르지 않아 수업 진행이
+            어렵다고 판단되는 경우 즉시 수업 종료합니다.
+            <br />
+            <br />
+            &nbsp; 5️⃣ 학생이 수업 중단을 요청해서 수업료 환불이 진행되어야 하는
+            경우 판다 내 수업료 환불 규정을 따르며 수업 횟수의 절반이 지나면
+            수업료 환불은 진행하지 않는 점 참고 부탁드립니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="card text-center mb-3" id="register-card">
+        <div class="card-body">
+          <p
+            class="d-inline-flex focus-ring focus-ring-primary py-1 px-2 text-decoration-none border rounded-2"
+            id="register"
+          >
+            모집마감일
+          </p>
+          <p>2023.08.29 17:00</p>
+
+          <p class="card-text">믿고맡기는수학 선생님의 과외를 신청해보세요!</p>
+          <!-- <button> -->
+            <!-- TODO 기존 button -->
+            <!-- <button type="button" class="btn">강의 신청하기!</button> -->
+          <!-- </button>  -->
+
+          <!-- TODO 발표 위해 수정 버튼 -->
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">강의 신청하기!</button>
+        </div>
+      </div>
+
+      <div id="aside"></div>
+
+      <div class="footer"></div>
+    </div>
+
+    <!-- 수업 신청 Modal 시작 -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">수업 신청</h4>
+            <button type="button" class="close" data-dismiss="modal"></button>
+          </div>
+
+          <!-- Modal body - 수업 목록 -->
+          <div class="modal-body">
+            <form action="">
+              <div class="messageBox">
+                <textarea name="message" rows="5" placeholder="신청 인사말을 작성하면 수락 확률 증가!"></textarea>
+              </div>
+              <div class="buttonBox"">
+                <button type="submit">신청</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Modal footer - 페이지 -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 수업 신청 Modal 끝-->
+  </body>
+</html>
