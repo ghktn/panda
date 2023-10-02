@@ -1,0 +1,89 @@
+#container {
+  height: 800px;
+}
+
+#header {
+  height: 20%;
+}
+#content {
+  height: 650px;
+  width: 50%;
+
+  margin-left: 10%;
+}
+#cardcard {
+  height: 320px;
+  width: 1100px;
+}
+.card-body {
+  padding: 1px;
+}
+.nav-tab {
+  height: 320px;
+  width: 1500px;
+}
+#mytabs {
+  width: 1130px;
+}
+.cardmb-3 {
+  width: 690px;
+  height: 310px;
+}
+#img-tc {
+  height: 200px;
+  width: 200px;
+}
+#star {
+  float: right;
+}
+#medal {
+  width: 25px;
+  height: 25px;
+}
+.lh-2 {
+  color: #9dd5ff;
+  font-size: 11pt;
+}
+.lh-1 {
+  font-size: 11pt;
+}
+#register {
+  background-color: #9dd5ff;
+  color: #fafafa;
+}
+#card-tc {
+  width: 1130px;
+  height: 1500px;
+  margin-left: 9%;
+  background-color: #fafafa;
+}
+#register-card {
+  width: 1130px;
+  margin-left: 9%;
+
+  background-color: #9dd5ff;
+  color: #fafafa;
+}
+.cardtext-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+#ask-card {
+  width: 18rem;
+  margin-left: 37%;
+  background-color: white;
+}
+.btn {
+  color: black;
+}
+
+#aside {
+  height: 400px;
+  width: 500px;
+  float: right;
+  margin-left: auto;
+}
+.footer {
+}
+body {
+}
