@@ -11,16 +11,25 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script defer="defer" src="js/name.js"></script>
+    <script defer="defer" src="js/recruitment.js"></script>
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+     />
 
-    <link rel="stylesheet" href="css/recruitment.css" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="css/recruitment.css"
+      href="css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/prettyPhoto.css" rel="stylesheet" />
     <link href="css/price-range.css" rel="stylesheet" />
     <link href="css/animate.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
     <link href="css/responsive.css" rel="stylesheet" />
+
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js">
         </>
@@ -75,21 +84,17 @@
                 <div class="shop-menu pull-right">
                   <ul class="nav navbar-nav">
                     <li>
-                      <a href="my-page.html"
-                        ><i class="fa fa-user"></i> 내 정보</a
-                      >
+                      <a href="#"><i class="fa fa-user"></i> 내 정보</a>
                     </li>
                     <li>
                       <a href="#"><i class="fa fa-star"></i> 관심 목록</a>
                     </li>
                     <li>
-                      <a href="login2.html"
-                        ><i class="fa fa-lock"></i> 로그인</a
+                      <a href="login.html"
+                        ><i class="fa fa-lock"></i> 로그아웃</a
                       >
                     </li>
-                    <li>
-                      <a href="register.html" class="register"> 회원가입</a>
-                    </li>
+                    <li><a href="#" class="register"> 회원가입</a></li>
                   </ul>
                 </div>
               </div>
@@ -118,26 +123,28 @@
                 </div>
                 <div class="mainmenu pull-left">
                   <ul class="nav navbar-nav collapse navbar-collapse">
-                    <li><a href="board.html" class="active">수업 홍보</a></li>
+                    <li><a href="index.html" class="active">선생님 찾기</a></li>
                     <li class="dropdown">
-                      <a href="#">커뮤니티<i class="fa fa-angle-down"></i></a>
+                      <a href="#">학생 찾기<i class="fa fa-angle-down"></i></a>
                       <ul role="menu" class="sub-menu">
-                        <li><a href="shop.html">자유 게시판</a></li>
-                        <li><a href="product-details.html"></a></li>
-                        <!-- <li><a href="checkout.html">Checkout</a></li>
-                      <li><a href="cart.html">Cart</a></li>
-                      <li><a href="login.html">Login</a></li> -->
+                        <li><a href="shop.html">Products</a></li>
+                        <li>
+                          <a href="product-details.html">Product Details</a>
+                        </li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="login.html">Login</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
-                      <a href="#">공지사항<i class="fa fa-angle-down"></i></a>
+                      <a href="#">일정 관리<i class="fa fa-angle-down"></i></a>
                       <ul role="menu" class="sub-menu">
-                        <li><a href="blog.html">선생님</a></li>
-                        <li><a href="blog-single.html">학생</a></li>
+                        <li><a href="blog.html">Blog List</a></li>
+                        <li><a href="blog-single.html">Blog Single</a></li>
                       </ul>
                     </li>
-                    <li><a href="404.html">문의하기</a></li>
-                    <li><a href="contact-us.html">포인트상점</a></li>
+                    <li><a href="404.html">공지사항</a></li>
+                    <li><a href="contact-us.html">문의하기</a></li>
                   </ul>
                 </div>
               </div>
@@ -160,6 +167,7 @@
         <div class="card mb-3" id="cardcard">
           <div class="row g-0">
             <div class="col-md-4">
+              <br />
               <img
                 src="images/recruitment/math.jpeg"
                 class="img-fluid rounded-start"
@@ -169,16 +177,12 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <button class="mentor-card__rating e-show-reviews" id="star">
-                  <span class="has-icon rating-star"
-                    >
-                    <!-- TODO 발표 위해 i태크 주석 처리 -->
-                    <!-- <i class="fas fa-star"></i
-                  ></span> -->
-                  <span class="rating-number">⭐5.0</span>
-                  <!-- <i class="fal fa-chevron-right"></i> -->
-                </button>
-                <h4 class="fw-bold">믿고맡기는수학</h4>
+              <!-- 찜하기 버튼 -->
+              <button id="likeButton" class="btn btn-danger">
+                <i class="fas fa-heart"></i> 관심수업등록
+              </button>
+                <h3 class="fw-bold">믿고맡기는수학</h3>
+                <h4 class="fw-bold">수학고수</h4>
                 <p class="lh-1">수학,고등수학,수학 I,수학 II</p>
                 <p class="lh-1">지역: 경기 시흥시,서울 금천 서울 구로구</p>
                 <div class="card-body">
@@ -194,10 +198,9 @@
                   <hr />
                   <p class="lh-1">
                     이 선생님은 판다에서 신분증을 확실하게 확인해서
+                    <span class="lh-2">대학교,경력인증서,자격증</span>
+                    까지 완벽히 인증된 선생님입니다.
                   </p>
-
-                  <p class="lh-2">대학교,경력인증서,자격증</p>
-                  <p class="lh-1">까지 완벽히 인증된 선생님입니다.</p>
                 </div>
               </div>
             </div>
@@ -205,65 +208,140 @@
 
           <br />
           <br />
-          <div id="mytabs">
-            <ul class="nav nav-tabs">
-              <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab"
-                  ><p>참여가능인원</p></a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab"><p>모집성별</p></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab"><p>모집연령대</p></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab"><p>수강비</p></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab"><p>수업형태</p></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab"><p>수업희망요일</p></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab"><p>지역</p></a>
-              </li>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane fade">
-                <br />
-                <p>✨ 2명</p>
+
+          <div class="row">
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitment/human.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 참여가능인원
+                </h4>
+                <p class="card-text">
+                  &nbsp; 4명
+                  <br />
+                </p>
               </div>
-              <div class="tab-pane fade">
-                <br />
-                <p>✨ 남자</p>
+            </div>
+
+            <!--참여가능인원-->
+
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitment/gender.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 모집성별
+                </h4>
+                <p class="card-text">
+                  &nbsp; 남자
+                  <br />
+                </p>
               </div>
-              <div class="tab-pane fade">
-                <br />
-                <p>✨ 30세미만</p>
+            </div>
+
+            <!--모집성별-->
+
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitment/age.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 모집연령대
+                </h4>
+                <p class="card-text">
+                  &nbsp; 30대미만
+                  <br />
+                </p>
               </div>
-              <div class="tab-pane fade">
-                <br />
-                <h5>✨ 60만원</h5>
+            </div>
+          </div>
+
+          <!--모집연령대-->
+
+          <div class="row">
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/parecruitmentnda/momey.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 수강비
+                </h4>
+                <p class="card-text">
+                  &nbsp; 60만원
+                  <br />
+                </p>
               </div>
-              <div class="tab-pane fade">
-                <br />
-                <p>✨ 온라인</p>
+            </div>
+
+            <!--수강비-->
+
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitment/study.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 수업형태
+                </h4>
+                <p class="card-text">
+                  &nbsp; 온라인
+                  <br />
+                </p>
               </div>
-              <div class="tab-pane fade">
-                <br />
-                <p>✨ 화,수</p>
-              </div>
-              <div class="tab-pane fade">
-                <br />
-                <p>✨ 서울 전지역</p>
+            </div>
+
+            <!--수업형태-->
+
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitment/planning.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 수업희망요일
+                </h4>
+                <p class="card-text">
+                  &nbsp; 화,목
+                  <br />
+                </p>
               </div>
             </div>
           </div>
         </div>
+
+          <!--수업희망요일-->
+        </div>
       </div>
+
       <div id="card-tc">
         <div class="card-body">
           <h4 class="fw-bold">&nbsp; 소개</h4>
@@ -414,52 +492,18 @@
           <p>2023.08.29 17:00</p>
 
           <p class="card-text">믿고맡기는수학 선생님의 과외를 신청해보세요!</p>
-          <!-- <button> -->
-            <!-- TODO 기존 button -->
-            <!-- <button type="button" class="btn">강의 신청하기!</button> -->
-          <!-- </button>  -->
 
-          <!-- TODO 발표 위해 수정 버튼 -->
-          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">강의 신청하기!</button>
+          <button type="button" class="btn">강의 신청하기!</button>
         </div>
       </div>
+      <br />
+      <button type="button" class="btn-List">목록가기</button>
+      <button type="button" class="btn-modify">수정</button>
+      <button type="button" class="btn-delete">삭제</button>
 
       <div id="aside"></div>
 
       <div class="footer"></div>
     </div>
-
-    <!-- 수업 신청 Modal 시작 -->
-    <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">수업 신청</h4>
-            <button type="button" class="close" data-dismiss="modal"></button>
-          </div>
-
-          <!-- Modal body - 수업 목록 -->
-          <div class="modal-body">
-            <form action="">
-              <div class="messageBox">
-                <textarea name="message" rows="5" placeholder="신청 인사말을 작성하면 수락 확률 증가!"></textarea>
-              </div>
-              <div class="buttonBox"">
-                <button type="submit">신청</button>
-              </div>
-            </form>
-          </div>
-
-          <!-- Modal footer - 페이지 -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 수업 신청 Modal 끝-->
   </body>
 </html>
