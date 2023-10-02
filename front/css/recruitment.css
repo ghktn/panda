@@ -6,7 +6,7 @@
   height: 20%;
 }
 #content {
-  height: 650px;
+  height: 600px;
   width: 50%;
 
   margin-left: 10%;
@@ -30,15 +30,34 @@
   height: 310px;
 }
 #img-tc {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
 }
-#star {
+#likeButton {
   float: right;
 }
 #medal {
   width: 25px;
   height: 25px;
+}
+.row {
+  display: flex;
+  width: 100%;
+}
+.col {
+  flex: 1;
+}
+#card-ps {
+  width: 300px;
+  height: 90px;
+  border-radius: 30px;
+  margin-left: 10%;
+  background-color: #fafafa;
+}
+
+#img-notice {
+  width: 20px;
+  height: 20px;
 }
 .lh-2 {
   color: #9dd5ff;
@@ -76,6 +95,24 @@
 .btn {
   color: black;
 }
+.btn-List {
+  margin-left: 34%;
+  width: 10%;
+  height: 4%;
+  font-size: 1pc;
+}
+.btn-modify {
+  margin-left: 1%;
+  width: 10%;
+  height: 4%;
+  font-size: 1pc;
+}
+.btn-delete {
+  margin-left: 1%;
+  width: 10%;
+  height: 4%;
+  font-size: 1pc;
+}
 
 #aside {
   height: 400px;
@@ -83,33 +120,7 @@
   float: right;
   margin-left: auto;
 }
-
 .footer {
 }
-
 body {
-}
-
-/* TODO modal - 발표 위해 추가 */
-#myModal {
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 15px;
-  font-family: "Noto Sans KR", sans-serif;
-  text-align: center;
-}
-
-.modal-body .buttonBox {
-  padding-top: 5px;
-  /* div 중앙 정렬 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-body .buttonBox button {
-  font-size: 15px;
-  background-color: #0d2237;
-  border-radius: 10px;
-  color: white;
 }

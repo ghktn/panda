@@ -6,7 +6,7 @@
   height: 20%;
 }
 #content {
-  height: 650px;
+  height: 2500px;
   width: 50%;
 
   margin-left: 10%;
@@ -17,6 +17,13 @@
 }
 .card-body {
   padding: 1px;
+}
+.row {
+  display: flex;
+  width: 100%;
+}
+.col {
+  flex: 1;
 }
 .nav-tab {
   height: 320px;
@@ -30,15 +37,12 @@
   height: 310px;
 }
 #img-tc {
-  height: 270px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
 }
 #img-notice {
   width: 20px;
   height: 20px;
-}
-#star {
-  float: right;
 }
 #medal {
   width: 25px;
@@ -51,21 +55,13 @@
 .lh-1 {
   font-size: 11pt;
 }
-
-#card-tc {
-  width: 1130px;
-  height: 160px;
-  border-radius: 30px;
-  background-color: #fafafa;
-}
-
 #card-ps {
-  width: 1130px;
-  height: 80px;
+  width: 300px;
+  height: 100px;
   border-radius: 30px;
+  margin-left: 10%;
   background-color: #fafafa;
 }
-
 .cardtext-center {
   margin-left: auto;
   margin-right: auto;
@@ -82,9 +78,14 @@
   width: 1130px;
   margin-left: 9%;
 }
+.card-text {
+  height: 80px;
+}
 #card-review {
-  width: 1130px;
-  height: 430px;
+  width: 300px;
+  height: 200px;
+  margin-left: 10%;
+  border-radius: 30px;
   background-color: #fafafa;
 }
 #review {
@@ -93,6 +94,12 @@
 #review-text {
   width: 1000px;
   margin-left: 65px;
+}
+.review-name {
+  margin-left: 120px;
+}
+.rating {
+  margin-left: 10px;
 }
 
 #aside {
