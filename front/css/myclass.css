@@ -7,95 +7,48 @@
   justify-content: center;
   height: 45px;
 }
-.geniusJob .jobList {
-  background: #fff;
-  border: 1px solid #ced2d7;
-  margin: 0;
-  padding: 0;
-  font-size: 1em;
-  line-height: 1.2;
-  font-family: "Malgun Gothic", -apple-system, BlinkMagSystemFont,
-    "AppleGothicNeoSD", "Microsoft NeoGothic", "Droid sans", Sans-serif;
-  letter-spacing: -1px;
-  color: #333;
+.jobList {
+  border: 1px solid black;
+  margin-bottom: 50px;
 }
-
 .my-calender {
   margin-top: 15px;
-  margin-left: 50px;
+  margin-left: 40px;
+  width: 880px;
+  padding-left: 45px;
+  margin-bottom: 15px;
 }
 
-.register {
+table {
+  text-align: center;
+}
+
+table th {
+  text-align: center;
+}
+
+.class-register {
   width: 80px;
   height: 35px;
-  float: right;
-  border: 1px solid black;
-  background-color: black;
+  margin-left: 98%;
+  color: white;
+  background-color: #0d2237;
   border-radius: 10px;
+  font-size: 11pt;
 }
 
 .thumb {
   width: 100%;
-  /* margin-left: 1%; */
-  display: table;
   font-size: 11pt;
 }
 .thumbtitle {
   font-weight: bolder;
   font-size: 15pt;
-  margin-left: 9px;
-  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-left: 150px;
   text-align: center;
 }
-.name {
-  display: table-cell;
-  float: left;
-  text-decoration-line: underline;
-  text-decoration-color: skyblue;
-  margin-top: 11px;
-}
-.user-type {
-  margin-top: 6%;
-  margin-left: 10%;
-  text-decoration-line: underline;
-  text-decoration-color: skyblue;
-}
-.email {
-  margin-top: 3px;
-  text-decoration-line: underline;
-  text-decoration-color: skyblue;
-}
-.gender {
-  margin-top: 7px;
-  text-decoration-line: underline;
-  text-decoration-color: skyblue;
-}
 
-.accset {
-  display: table-cell;
-  float: right;
-  margin-left: 365px;
-  border-radius: 10px;
-  background-color: black;
-  color: white;
-}
-.profill {
-  width: 120px;
-  height: 130px;
-  float: left;
-  border-radius: 20%;
-  margin-right: 20px;
-  margin-bottom: 15px;
-}
-.badge {
-  background-color: white;
-  float: right;
-  margin-right: 10px;
-}
-.medal {
-  width: 18px;
-  height: 18px;
-}
 .leftMenuTitle {
   padding-bottom: 7%;
   border-bottom: 3px solid #2074d9;
@@ -119,20 +72,42 @@
   width: 850px;
   margin-left: 150px;
 }
-.middle {
-  float: left;
-  width: 85%;
-}
-.use {
-  padding-bottom: 2%;
-  border-bottom: 1px solid gray;
-  font-size: 15pt;
-}
-.notion-table-view {
-  margin-top: 4%;
-  margin-right: 100%;
+
+.pagenum {
+  margin-left: 280px;
 }
 
+thead {
+  background-color: #f4f4f4;
+}
+
+.reviewimg {
+  width: 18px;
+  height: 18px;
+}
+.addreview {
+  border-radius: 10px;
+  background-color: #ffff;
+}
+tbody tr:hover {
+  background-color: #c1c1e2;
+}
+.schduletitle {
+  font-weight: bolder;
+  font-size: 15pt;
+  padding-left: 150px;
+  text-align: center;
+}
+.addschdule {
+  width: 30px;
+  height: 30px;
+  color: #ffff;
+  margin-left: 100%;
+  background-color: #0d2237;
+
+  border-radius: 10px;
+  border-style: hidden;
+}
 body {
   font-family: "Noto Sans KR", sans-serif !important;
 }
