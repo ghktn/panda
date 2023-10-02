@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -505,5 +506,67 @@
 
       <div class="footer"></div>
     </div>
+
+
+
+      <div class="card text-center mb-3" id="register-card">
+        <div class="card-body">
+          <p
+            class="d-inline-flex focus-ring focus-ring-primary py-1 px-2 text-decoration-none border rounded-2"
+            id="register"
+          >
+            모집마감일
+          </p>
+          <p>2023.08.29 17:00</p>
+
+          <p class="card-text">믿고맡기는수학 선생님의 과외를 신청해보세요!</p>
+          <!-- <button> -->
+            <!-- TODO 기존 button -->
+            <!-- <button type="button" class="btn">강의 신청하기!</button> -->
+          <!-- </button>  -->
+
+          <!-- TODO 발표 위해 수정 버튼 -->
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">강의 신청하기!</button>
+        </div>
+      </div>
+
+      <div id="aside"></div>
+
+      <div class="footer"></div>
+    </div>
+
+    <!-- 수업 신청 Modal 시작 -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">수업 신청</h4>
+            <button type="button" class="close" data-dismiss="modal"></button>
+          </div>
+
+          <!-- Modal body - 수업 목록 -->
+          <div class="modal-body">
+            <form action="">
+              <div class="messageBox">
+                <textarea name="message" rows="5" placeholder="신청 인사말을 작성하면 수락 확률 증가!"></textarea>
+              </div>
+              <div class="buttonBox"">
+                <button type="submit">신청</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Modal footer - 페이지 -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 수업 신청 Modal 끝-->
   </body>
 </html>
+

@@ -36,6 +36,16 @@
             -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
             box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
         }
+
+        .id-check{
+            font-size: small;
+            margin: 0 auto;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        
     </style>
 </head>
 
@@ -62,6 +72,26 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="id">아이디</label>
+                            <input type="text" class="form-control" id="id" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                아이디를 확인해주세요.
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="form-control id-check" id="id-check">중복확인</button>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="password">패스워드</label>
+                            <input type="password" class="form-control" id="password" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                비밀번호를 확인바랍니다.
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="mb-3">
                         <label for="email">이메일</label>
                         <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
@@ -83,7 +113,7 @@
                             <label for="classPlace" class="form-label">주소</label>
                             <!-- 시도 코드 -->
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="sdNameBox">
                                         <span>시도</span>
                                         <select class="form-select form-control" id="sdName" name="sdName">
@@ -100,10 +130,28 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="sggNameBox">
                                         <!-- 시군구 코드 -->
                                         <span>시군구</span>
+                                        <select class="form-select form-control" id="sggName" name="sggName">
+                                            <option value="">선택</option>
+                                            <option value="">종로구</option>
+                                            <option value="">용산구</option>
+                                            <option value="">성동구</option>
+                                            <option value="">동대문구</option>
+                                            <option value="">은평구</option>
+                                            <option value="">강서구</option>
+                                            <option value="">북구</option>
+                                            <option value="">.........</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="emdNameBox">
+                                        <!-- 읍면동 코드 -->
+                                        <span>읍면동</span>
                                         <select class="form-select form-control" id="sggName" name="sggName">
                                             <option value="">선택</option>
                                             <option value="">종로구</option>
