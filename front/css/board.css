@@ -3,7 +3,7 @@ body {
 }
 .notice {
   width: 1000px;
-  margin-top: 15%;
+  margin-top: 12%;
   margin-left: 7%;
 }
 .notice-sort {
@@ -87,5 +87,5 @@ body {
 }
 .caption #star {
   position: absolute;
-  right: 75px;
+  right: 72px;
 }
