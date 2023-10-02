@@ -1,0 +1,10 @@
+body {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
+.email-guied {
+  color: red;
+}
+.term-agreement {
+  background-color: rgba(241, 241, 241, 0.786);
+  padding: 30px 55px;
+}
