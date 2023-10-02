@@ -8,3 +8,21 @@ body {
   background-color: rgba(241, 241, 241, 0.786);
   padding: 30px 55px;
 }
+.confirm-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+}
+.button-cancel {
+  margin: 5px;
+}
+.button-send {
+  margin: 5px;
+}
+.term-agreement-ckeck {
+  margin-top: 5px;
+}
+.ask-bottom {
+  margin-bottom: 10%;
+}

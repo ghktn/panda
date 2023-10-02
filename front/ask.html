@@ -184,20 +184,18 @@
                 id=""
                 class="screen-out"
                 tabindex="-1"
-                data-text="대분류 선택"
+                data-text="문의유형 선택"
                 data-selected-index="0"
               >
-                <option value="">대분류 선택</option>
+                <option value="">문의유형 선택</option>
                 <option value="1">회원정보</option>
                 <option value="2">이력서관리</option>
                 <option value="3">구직활동관리</option>
                 <option value="4">공고등록관리</option>
-                <option value="5">유료서비스</option>
+                <option value="5">포인트서비스</option>
                 <option value="6">오류/의견</option>
-                <option value="9">신고</option>
-                <option value="7">기타</option>
-                <option value="10">긱몬 서비스</option>
-                <option value="11">초단기 서비스</option>
+                <option value="7">신고</option>
+                <option value="8">기타</option>
               </select>
             </div>
             <!-- ask-type-list -->
@@ -221,10 +219,6 @@
           </div>
           <!-- col-sm-2 -->
           <div class="col-sm-10">
-            <span class="ask-message"
-              >급한 문의는 고객센터(1588-9351)로 문의 하시는 것이
-              빠릅니다.</span
-            >
             <div class="ask-content-text" style="width: 100%">
               <textarea
                 height="136px"
@@ -233,7 +227,7 @@
                 name="contents"
                 id="contents"
                 class="Textarea_textarea"
-                placeholder=""
+                placeholder="급한 문의는 고객센터(1588-9351)로 문의 하시는 것이 빠릅니다."
                 style="height: 136px; min-height: 136px"
               ></textarea>
               <div class="textarea-controls">
@@ -399,14 +393,14 @@
           <!-- term-agreement-check -->
         </div>
         <!-- term-agreement -->
-        <div class="QnAForm_inquiry-suggestion-report">
+        <div class="confirm-button">
           <button type="button" class="button-cancel">
             <span class="button-cancel-text">취소</span></button
-          ><button type="button" class="button-send">
+          ><button type="submit" class="button-send">
             <span class="button-send-text">보내기</span>
           </button>
         </div>
-        <!-- QnAForm_inquiry-suggestion-report -->
+        <!-- confirm-button -->
       </div>
       <!-- agreement -->
       <br />
