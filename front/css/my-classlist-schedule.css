@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+/* container side */
+.calendarSchedule {
+  width: 100%;
+  height: 1000px;
+  margin-left: 100px;
+}
+/* header side */
+.title span.lastMonthBtn,
+.title span.nextMonthBtn {
+  cursor: pointer;
+}
+
+.title {
+  text-align: center;
+}
+
+/* content side */
+.content {
+  height: 80%;
+}
+
+.article {
+  height: 80%;
+}
+/* talbe side */
+
+.calendarRow {
+  /* min-width: 1700px; */
+}
+
+.calendarDate {
+  border: 1px solid black;
+  max-width: 120px;
+  height: 130px;
+  padding-left: 3px !important;
+  padding-right: 0 !important;
+}
+
+td {
+}
+
+.calendarWeekDay {
+  background-color: dodgerblue;
+  text-align: center;
+  border: 1px solid black;
+  max-width: 120px;
+  height: 20px;
+}
+
+.calendarDate.todayDate {
+  background-color: rgba(255, 204, 204, 1);
+}
+
+/* 
+	express
+	- drop 후 모양이 바뀐다.
+*/
+.calendarDate .express {
+  width: 110px;
+  font-size: 13px;
+  background-color: #4285f4;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-align: center;
+  /* text-align: center; */
+  margin: 0;
+}
