@@ -18,8 +18,20 @@
       rel="stylesheet"
     />
     <link href="css/myclass.css" rel="stylesheet" />
-    <link href="css/bootstrap2.min.css" rel="stylesheet" />
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- 일정표 생성 css 시작 -->
+    <link href="css/my-classlist-schedule.css" rel="stylesheet" />
+    <!-- 일정표 생성 css 끝 -->
+    <!-- bootstrap 3 시작 -->
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- bootstrap 3 끝 -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
@@ -212,32 +224,54 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr onclick="location.href='#'" style="cursor: pointer">
-                          <td>스프링 한 달 마스터</td>
+                        <tr
+                          class="className"
+                          draggable="true"
+                          onclick="location.href='#'"
+                          style="cursor: pointer"
+                        >
+                          <td id="1" name="2" class="classTitle">
+                            스프링 한 달 마스터
+                          </td>
                           <td>등록 완료</td>
                           <td>컴퓨터</td>
                           <td>3</td>
                           <td>150,000</td>
                           <td></td>
                         </tr>
-                        <tr onclick="location.href='#'" style="cursor: pointer">
-                          <td>골프베이직</td>
+                        <tr
+                          class="className"
+                          draggable="true"
+                          onclick="location.href='#'"
+                          style="cursor: pointer"
+                        >
+                          <td id="2" name="3" class="classTitle">골프베이직</td>
                           <td>수강중</td>
                           <td>스포츠</td>
                           <td>4</td>
                           <td>100,000</td>
                           <td></td>
                         </tr>
-                        <tr onclick="location.href='#'" style="cursor: pointer">
-                          <td>독산에스파</td>
+                        <tr
+                          class="className"
+                          draggable="true"
+                          onclick="location.href='#'"
+                          style="cursor: pointer"
+                        >
+                          <td id="3" name="5" class="classTitle">독산에스파</td>
                           <td>모집중</td>
                           <td>댄스</td>
                           <td>4</td>
                           <td>80,000</td>
                           <td></td>
                         </tr>
-                        <tr onclick="location.href='#'" style="cursor: pointer">
-                          <td>수수박</td>
+                        <tr
+                          class="className"
+                          draggable="true"
+                          onclick="location.href='#'"
+                          style="cursor: pointer"
+                        >
+                          <td id="4" name="7" class="classTitle">수수박</td>
                           <td>수강완료</td>
                           <td>학업</td>
                           <td>3</td>
@@ -252,16 +286,30 @@
                             </button>
                           </td>
                         </tr>
-                        <tr onclick="location.href='#'" style="cursor: pointer">
-                          <td>잉글리시스토리</td>
+                        <tr
+                          class="className"
+                          draggable="true"
+                          onclick="location.href='#'"
+                          style="cursor: pointer"
+                        >
+                          <td id="5" name="10" class="classTitle">
+                            잉글리시스토리
+                          </td>
                           <td>등록 완료</td>
                           <td>외국어</td>
                           <td>4</td>
                           <td>110,000</td>
                           <td></td>
                         </tr>
-                        <tr onclick="location.href='#'" style="cursor: pointer">
-                          <td>용감한남매들</td>
+                        <tr
+                          class="className"
+                          draggable="true"
+                          onclick="location.href='#'"
+                          style="cursor: pointer"
+                        >
+                          <td id="6" name="12" class="classTitle">
+                            용감한남매들
+                          </td>
                           <td>모집중</td>
                           <td>음악</td>
                           <td>3</td>
@@ -288,11 +336,27 @@
                       </nav>
                     </div>
                   </div>
-                  <div class="schdule">
+                  <div class="schedule">
                     <div class="schduletitle">
                       일정표
                       <button type="button" class="addschdule">+</button>
                     </div>
+
+                    <!-- 일정표 시작 -->
+                    <div class="calendarSchedule">
+                      <div class="header">
+                        <div class="title">
+                          <!-- 년/월 -->
+                        </div>
+                      </div>
+
+                      <div class="content">
+                        <!-- 달력 출력 -->
+                        <div class="article"></div>
+                      </div>
+                    </div>
+
+                    <!-- 일정표 끝 -->
                   </div>
                 </div>
               </div>
@@ -301,5 +365,9 @@
         </div>
       </div>
     </section>
+
+    <!-- 일정표 생성 시작 -->
+    <script src="./js/my-classlist-schedule"></script>
+    <!-- 일정표 생성 끝 -->
   </body>
 </html>
