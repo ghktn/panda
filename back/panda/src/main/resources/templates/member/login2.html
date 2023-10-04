@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="images/tabicon.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>판다 : 로그인</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/prettyPhoto.css" rel="stylesheet" />
+    <link href="css/price-range.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="images/ico/favicon.ico" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="images/ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="images/ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="images/ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="images/ico/apple-touch-icon-57-precomposed.png"
+    />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="text-center">
+    <header id="header">
+      <!--header-->
+      <div class="header_top"></div>
+
+      <div class="header-middle">
+        <!--header-middle-->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="logo pull-left">
+                <a href="../index.html"
+                  ><img src="images/home/logo2.png" alt=""
+                /></a>
+              </div>
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default change">
+                  선생님으로 전환하기
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="shop-menu pull-right">
+                <ul class="nav navbar-nav">
+                  <li>
+                    <a href="my-page.html"
+                      ><i class="fa fa-user"></i> 내 정보</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-star"></i> 관심 목록</a>
+                  </li>
+                  <li>
+                    <a href="login2.html"><i class="fa fa-lock"></i> 로그인</a>
+                  </li>
+                  <li>
+                    <a href="register.html" class="register"> 회원가입</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/header-middle-->
+
+      <div class="header-bottom">
+        <!--header-bottom-->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-9">
+              <div class="navbar-header">
+                <button
+                  type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse"
+                >
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="mainmenu pull-left">
+                <ul class="nav navbar-nav collapse navbar-collapse">
+                  <li><a href="../index.html" class="active">선생님 찾기</a></li>
+                  <li class="dropdown">
+                    <a href="#">학생 찾기<i class="fa fa-angle-down"></i></a>
+                    <ul role="menu" class="sub-menu">
+                      <li><a href="../shop.html">Products</a></li>
+                      <li>
+                        <a href="../product-details.html">Product Details</a>
+                      </li>
+                      <li><a href="checkout.html">Checkout</a></li>
+                      <li><a href="cart.html">Cart</a></li>
+                      <li><a href="member/login.html">Login</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">일정 관리<i class="fa fa-angle-down"></i></a>
+                    <ul role="menu" class="sub-menu">
+                      <li><a href="blog.html">Blog List</a></li>
+                      <li><a href="blog-single.html">Blog Single</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="../404.html">공지사항</a></li>
+                  <li><a href="contact-us.html">문의하기</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="search_box pull-right">
+                <input type="text" placeholder="검색어를 입력해주세요." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/header-bottom-->
+    </header>
+    <!--/header-->
+
+    <main class="form-signin">
+      <!-- TODO 발표 끝나면 action 변경하기 -->
+      <form action="../index.html">
+        <!-- <img class="mb-4" src="images/home/logo2.png" alt="" width="72" height="57"> -->
+        <h1 class="h4 mb-3 fw-normal">아이디로 로그인</h1>
+
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control login-input"
+            id="floatingInput"
+            placeholder="아이디 입력"
+          />
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control login-input"
+            id="floatingPassword"
+            placeholder="비밀번호 입력"
+          />
+        </div>
+
+        <div class="checkbox mb-3">
+          <label class="id-remember">
+            <input type="checkbox" value="remember-me" /> 아이디 기억하기
+          </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary loginbtn" type="submit">
+          로그인
+        </button>
+        <p class="mt-5 mb-3 text-muted">계정이 없으신가요?</p>
+        <a href="아이디_찾기_페이지_URL" class="btn btn-link">아이디 찾기</a>
+        <a href="비밀번호_찾기_페이지_URL" class="btn btn-link"
+          >비밀번호 찾기</a
+        >
+        <a href="register.html" class="btn btn-link">회원가입</a>
+      </form>
+    </main>
+  </body>
+</html>

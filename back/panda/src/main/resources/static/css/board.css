@@ -1,0 +1,91 @@
+body {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
+.notice {
+  width: 1000px;
+  margin-top: 12%;
+  margin-left: 7%;
+}
+.notice-sort {
+  float: right;
+  margin-top: 2%;
+  margin-right: 2%;
+}
+.nav li ul {
+  position: absolute;
+  top: 52px;
+  left: -27px;
+  padding: 20px;
+}
+.caption {
+  width: 200px;
+  height: 220px;
+  /* border: solid 1px gray; */
+  padding: 5%;
+  padding-left: 10%;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px 2px gray;
+  margin-bottom: 15%;
+}
+.badge {
+  margin-bottom: 3%;
+}
+.page-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#write-post {
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 0 10px;
+  overflow: auto;
+
+  position: fixed;
+  right: 12%;
+  top: 40%;
+}
+#write-post a {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+
+  text-align: center;
+  line-height: 40px;
+  font-size: 17px;
+  color: white;
+
+  background: #79baf2;
+
+  margin: 0 4px;
+
+  border: 4px solid #79baf2;
+  transition: all 0.3s ease;
+}
+#write-post a:hover {
+  color: #79baf2;
+  background-color: white;
+}
+#write-post img {
+  width: 20px;
+  height: 20px;
+}
+.filter-button {
+  width: 500;
+  background-color: white;
+  padding: 5px 15px 5px 15px;
+  border-radius: 10px;
+  margin-top: 5px;
+  font-weight: 500;
+  color: black;
+}
+.caption #star {
+  position: absolute;
+  right: 72px;
+}

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script defer="defer" src="class-registration.js"></script>
+
+    <!--별점-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="css/class-registration.css"
+      href="css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/prettyPhoto.css" rel="stylesheet" />
+    <link href="css/price-range.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js">
+        </>
+              <script src="js/respond.min.js">
+      </script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="images/ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="images/ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="images/ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="images/ico/apple-touch-icon-57-precomposed.png"
+    />
+    <!--조장님 링크-->
+  </head>
+  <body>
+    <div id="container">
+      <header id="header">
+        <!--header-->
+        <div class="header_top"></div>
+
+        <div class="header-middle">
+          <!--header-middle-->
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="logo pull-left">
+                  <a href="../index.html"
+                    ><img src="images/home/logo2.png" alt=""
+                  /></a>
+                </div>
+                <div class="btn-group pull-right">
+                  <button type="button" class="btn btn-default change">
+                    선생님으로 전환하기
+                  </button>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="shop-menu pull-right">
+                  <ul class="nav navbar-nav">
+                    <li>
+                      <a href="#"><i class="fa fa-user"></i> 내 정보</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-star"></i> 관심 목록</a>
+                    </li>
+                    <li>
+                      <a href="login.html"
+                        ><i class="fa fa-lock"></i> 로그아웃</a
+                      >
+                    </li>
+                    <li><a href="#" class="register"> 회원가입</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/header-middle-->
+
+        <div class="header-bottom">
+          <!--header-bottom-->
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-9">
+                <div class="navbar-header">
+                  <button
+                    type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse"
+                  >
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="mainmenu pull-left">
+                  <ul class="nav navbar-nav collapse navbar-collapse">
+                    <li><a href="../index.html" class="active">선생님 찾기</a></li>
+                    <li class="dropdown">
+                      <a href="#">학생 찾기<i class="fa fa-angle-down"></i></a>
+                      <ul role="menu" class="sub-menu">
+                        <li><a href="../shop.html">Products</a></li>
+                        <li>
+                          <a href="../product-details.html">Product Details</a>
+                        </li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="login.html">Login</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#">일정 관리<i class="fa fa-angle-down"></i></a>
+                      <ul role="menu" class="sub-menu">
+                        <li><a href="blog.html">Blog List</a></li>
+                        <li><a href="blog-single.html">Blog Single</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="../404.html">공지사항</a></li>
+                    <li><a href="../contact-us.html">문의하기</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="search_box pull-right">
+                  <input type="text" placeholder="검색어를 입력해주세요." />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/header-bottom-->
+      </header>
+      <!--/header-->
+      <br />
+      <br />
+      <br />
+      <br />
+      <div id="content">
+        <div class="card mb-3" id="cardcard">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <br />
+              <img
+                src="images/recruitment/math.jpeg"
+                class="img-fluid rounded-start"
+                id="img-tc"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3 class="fw-bold">믿고맡기는수학</h3>
+                <h4 class="fw-bold">수학고수</h4>
+                <p class="lh-1">수학,고등수학,수학 I,수학 II</p>
+                <p class="lh-1">지역: 경기 시흥시,서울 금천 서울 구로구</p>
+                <div class="card-body">
+                  <h5 class="card-title">프롤로그</h5>
+                  <p class="lh-1">
+                    <img
+                      src="images/recruitment/badge.jpeg"
+                      alt="Retail Admin"
+                      id="medal"
+                    />
+                    이 선생님은 판다 특별추천 선생님입니다.
+                  </p>
+                  <hr />
+                  <p class="lh-1">
+                    이 선생님은 판다에서 신분증을 확실하게 확인해서
+                    <span class="lh-2">대학교,경력인증서,자격증</span>
+                    까지 완벽히 인증된 선생님입니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br />
+          <br />
+
+          <div class="row">
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitment/pencil.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 수업종류(📕대분류)
+                </h4>
+                <p class="card-text">
+                  &nbsp; 학업
+                  <br />
+                </p>
+              </div>
+            </div>
+
+            <!--수업종류(📕대분류)-->
+
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitment/pencil.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 수업종류(📘소분류)
+                </h4>
+                <p class="card-text">
+                  &nbsp; 수학
+                  <br />
+                </p>
+              </div>
+            </div>
+
+            <!--수업종류(📘소분류)-->
+
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitment/human.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 참여가능인원
+                </h4>
+                <p class="card-text">
+                  &nbsp; 4명
+                  <br />
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!--참여가능인원-->
+
+          <div class="row">
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitment/gender.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 모집성별
+                </h4>
+                <p class="card-text">
+                  &nbsp; 여자
+                  <br />
+                </p>
+              </div>
+            </div>
+
+            <!--모집성별-->
+
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitment/age.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 모집연령대
+                </h4>
+                <p class="card-text">
+                  &nbsp; 30세미만
+                  <br />
+                </p>
+              </div>
+            </div>
+
+            <!--모집연령대-->
+
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitmentmomey.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 수강비
+                </h4>
+                <p class="card-text">
+                  &nbsp; 60만원
+                  <br />
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!--수강비-->
+
+          <div class="row">
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitment/count.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 수업희망횟수
+                </h4>
+                <p class="card-text">
+                  &nbsp; 6번
+                  <br />
+                </p>
+              </div>
+            </div>
+
+            <!--수업희망횟수-->
+
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitment/study.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 수업형태
+                </h4>
+                <p class="card-text">
+                  &nbsp; 온라인수업
+                  <br />
+                </p>
+              </div>
+            </div>
+
+            <!--수업형태-->
+
+            <div class="col">
+              <div id="card-ps">
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp;
+                  <img
+                    src="images/recruitment/location.png"
+                    id="img-notice"
+                    alt=""
+                  />&nbsp; 수업장소
+                </h4>
+                <p class="card-text">
+                  &nbsp; 경기도 시흥시
+                  <br />
+                </p>
+              </div>
+            </div>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+
+
+          <!--수업장소-->
+          <br/>
+          <br/>
+          <h2 class="title text-center">수업 리뷰</h2>
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
+          <div class="row">
+            <div class="col">
+              <div id="card-review">
+
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp; 좋은 선생님
+                </h4>
+                &nbsp;
+                <p class="card-text">
+                  &nbsp; 선생님이 친절하고 잘 알려주십니다.
+                  <br />
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9734;</span>
+                    <span class="review-name">영빈전</span>
+                  </div>
+                </p>
+                </div>
+
+            </div>
+
+
+
+            <div class="col">
+              <div id="card-review">
+
+                <h4 class="fw-bold">
+                  &nbsp;
+                  <br />
+                  &nbsp; 좋은 강의
+                </h4>
+                &nbsp;
+                <p class="card-text">
+                  &nbsp; 강의가 쉽고 재밌어요!
+                  <br />
+                  <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9734;</span>
+                    <span class="review-name">젊은콩</span>
+                  </div>
+                </p>
+                </div>
+
+            </div>
+
+              <div class="col">
+                <div id="card-review">
+
+                    <!-- 리뷰 내용 -->
+                    <h4 class="fw-bold">
+                      &nbsp;
+                      <br />
+                      &nbsp; 좋은 강의
+                    </h4>
+                    &nbsp;
+                        <p class="card-text">
+                          &nbsp; 이 수업은 초보자분들도 쉽게 배울수 있습니다.
+                        </p>
+                        <!-- 별점 표시 -->
+                        <div class="rating">
+                          <span class="star">&#9733;</span>
+                          <span class="star">&#9733;</span>
+                          <span class="star">&#9733;</span>
+                          <span class="star">&#9733;</span>
+                          <span class="star">&#9733;</span>
+                          <span class="review-name">천안전</span>
+                        </div>
+                </div>
+              </div>
+          </div>
+       </div> 
+      <div id="aside"></div>
+
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>

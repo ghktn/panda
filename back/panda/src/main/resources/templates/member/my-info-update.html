@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Home | E-Shopper</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/prettyPhoto.css" rel="stylesheet">
+  <link href="css/price-range.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link href="css/infoupdate.css" rel="stylesheet">
+  <link href="css/bootstrap2.min.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  <link rel="shortcut icon" href="images/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+  <script type="text/javascript">
+    function isSame() {
+      var pw = document.getElementById("password").value;
+      var confirmPW = document.getElementById("passwordcheck").value;
+      if (document.getElementById("password").value != '' && document.getElementById("passwordcheck").value != '') {
+        if (document.getElementById("password").value == document.getElementById("passwordcheck").value) {
+          document.getElementById("same").innerHTML = '비밀번호가 일치합니다.';
+          document.getElementById("same").style.color = 'blue';
+        }
+        else {
+          document.getElementById("same").innerHTML = '비밀번호가 일치하지 않습니다.';
+          document.getElementById("same").style.color = 'red';
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <header id="header"><!--header-->
+    <div class="header_top">
+
+    </div>
+
+    <div class="header-middle"><!--header-middle-->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="logo pull-left">
+              <a href="../index.html"><img src="images/home/logo2.png" alt="" /></a>
+            </div>
+            <div class="btn-group pull-right">
+              <button type="button" class="btn btn-default change">
+                선생님으로 전환하기
+              </button>
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <div class="shop-menu pull-right">
+              <ul class="nav navbar-nav">
+                <li><a href="my-page.html"><i class="fa fa-user"></i> 내 정보</a></li>
+                <li><a href="#"><i class="fa fa-star"></i> 관심 목록</a></li>
+                <li><a href="login2.html"><i class="fa fa-lock"></i> 로그인</a></li>
+                <li><a href="register.html" class="register"> 회원가입</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--/header-middle-->
+
+    <div class="header-bottom"><!--header-bottom-->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="mainmenu pull-left">
+              <ul class="nav navbar-nav collapse navbar-collapse">
+                <li><a href="../recruiment/recruiment-board.html" class="active">수업 홍보</a></li>
+                <li class="dropdown"><a href="#">커뮤니티<i class="fa fa-angle-down"></i></a>
+                  <ul role="menu" class="sub-menu">
+                    <li><a href="../shop.html">자유 게시판</a></li>
+                    <li><a href="../product-details.html"></a></li>
+                    <!-- <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="login.html">Login</a></li> -->
+                  </ul>
+                </li>
+                <li class="dropdown"><a href="#">공지사항<i class="fa fa-angle-down"></i></a>
+                  <ul role="menu" class="sub-menu">
+                    <li><a href="blog.html">선생님</a></li>
+                    <li><a href="blog-single.html">학생</a></li>
+                  </ul>
+                </li>
+                <li><a href="../404.html">문의하기</a></li>
+                <li><a href="contact-us.html">포인트상점</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="search_box pull-right">
+              <input type="text" placeholder="검색어를 입력해주세요." />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--/header-bottom-->
+  </header><!--/header-->
+
+  <section>
+    <div class="container">
+      <div class="contentsInner">
+        <div class="siteWidthLayer">
+          <div class="leftMenu">
+            <div class="leftMenuWrap">
+              <h3 class="leftMenuTitle">
+                나의정보
+              </h3>
+              <ul class="menuList">
+                <li>
+                  <a href="my-page.html"><span class="menuName">나의 정보</span><span class="liIcon">&gt;</span></a>
+                </li>
+                <li class="first">
+                  <a href="#"><span class="menuName">나의 관심목록</span><span class="liIcon">&gt;</span></a>
+                </li>
+                <li>
+                  <a href="my-class.html"><span class="menuName">나의 수업목록</span><span class="liIcon">&gt;</span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="menuName">나의 신청목록</span><span class="liIcon">&gt;</span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="menuName">증빙서류제출</span><span class="liIcon">&gt;</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="sub">
+            <div class="titleWrap">
+
+              <div class="thumb">
+                <div class="thumbtitle">회원정보 수정</div>
+                <img class="profile" src="images/myinfo/empty_photo.jpeg">
+                </img>
+                <br />
+                <div class="photoupdate">
+                  <label for="imageInput">프로필사진 변경하기</label>
+                  <input type="file" name="profileImage" id="imageInput" style="display:none" accept="image/*">
+                  <div>
+                    <button type="button" class="chooseimg" onclick="onclick=document.all.profileImage.click()">
+                      이미지선택
+                    </button>
+                  </div>
+                </div>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <div class="myinfo">
+                  <div class="row">
+                    <div class="col-md-6 ">
+                      <label for="name">이름</label>
+                      <input type="text" class="form-control" id="name" placeholder="" value="판다짱" disabled>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="name">성별</label>
+                      <br />
+                      <fieldset id="gender">
+                        <input type="radio" name="selectgender" id="male" checked disabled>
+                        <label for="selectgender">
+                          남자
+                        </label>
+                        <input type="radio" name="selectgender" id="female" disabled>
+                        <label for="selectgender">
+                          여자
+                        </label>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class=" col-md-12 ">
+                      <label for="nickname">생년월일</label>
+                      <div class="birthday" id="info__birth">
+                        <input type="text" class="box col-md-3 " id="year" value="2000년" disabled>
+                        <input type="text" class="box col-md-2 " id="month" value="10월" disabled>
+                        <input type="text" class="box col-md-2 " id="day" value="10일" disabled>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 ">
+                      <label for="nickname">닉네임</label>
+                      <input type="text" class="form-control" id="nickname" placeholder="" value="판다짱" required>
+                      <div class="invalid-feedback">
+                        닉네임이 중복됩니다.
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <button type="button" class="form-control id-check" id="id-check">중복확인</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id">아이디</label>
+                      <input type="text" class="form-control" id="id" placeholder="" value="panda1234" required>
+                      <div class="invalid-feedback">
+                        아이디가 중복됩니다.
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <button type="button" class="form-control id-check" id="id-check">중복확인</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8 ">
+                      <label for="password">패스워드</label>
+                      <input type="password" class="form-control" id="password" placeholder="" value="panda12"
+                        onchange="isSame()" required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8 ">
+                      <label for="password">패스워드 확인</label>
+                      <input type="password" class="form-control" id="passwordcheck" placeholder="" value="panda12"
+                        onchange="isSame()" required>
+                      <div id="same">
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <label for="email">이메일</label>
+                      <input type="email" class="form-control" id="email" placeholder="" value="panda@naver.com"
+                        disabled>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <label for="introduction">소개글</label>
+                      <textarea class="form-control" id="introduction" placeholder="짧은 자기소개"></textarea>
+                    </div>
+                  </div>
+                  <hr class="col-md-7">
+                  <div class="row">
+                    <div class="col-md-12"></div>
+                    <button class="btn btn-primary update" type="submit">수정 하기</button>
+                    <button class="btn btn-primary cancel" type="submit">취소 하기</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+</body>
+
+</html>

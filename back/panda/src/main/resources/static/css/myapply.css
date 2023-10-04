@@ -1,0 +1,109 @@
+.location {
+  float: right;
+  margin-left: 620px;
+  margin-bottom: 5%;
+}
+.input-group {
+  justify-content: center;
+  height: 45px;
+}
+.jobList {
+  border: 1px solid black;
+  margin-bottom: 50px;
+}
+.my-calender {
+  margin-top: 10px;
+  margin-left: 40px;
+  width: 880px;
+  padding-left: 45px;
+}
+
+table th {
+  text-align: center;
+}
+
+.class-register {
+  width: 80px;
+  height: 35px;
+  margin-left: 98%;
+  color: white;
+  background-color: #0d2237;
+  border-radius: 10px;
+  font-size: 11pt;
+}
+
+.thumb {
+  width: 100%;
+  font-size: 11pt;
+}
+.thumbtitle {
+  font-weight: bolder;
+  font-size: 15pt;
+  padding-top: 20px;
+  padding-left: 150px;
+  text-align: center;
+}
+
+.leftMenuTitle {
+  padding-bottom: 7%;
+  border-bottom: 3px solid #2074d9;
+}
+
+.container {
+  visibility: visible;
+}
+.leftMenu {
+  float: left;
+  list-style-position: inside;
+}
+
+.menuList li {
+  margin: 30px 0px;
+  font-size: 15px;
+  padding-bottom: 3%;
+  border-bottom: 1px solid skyblue;
+}
+.sub {
+  width: 850px;
+  margin-left: 150px;
+}
+
+.pagenum {
+  margin-left: 280px;
+}
+
+thead {
+  background-color: #f4f4f4;
+}
+
+.reviewimg {
+  width: 18px;
+  height: 18px;
+}
+.cancel {
+  border-radius: 10px;
+  background-color: #0d2237;
+  color: #ffff;
+}
+#update {
+  padding: auto;
+  border-radius: 10px;
+  background-color: #ffff;
+  margin-left: 100%;
+  border-color: #ffff;
+  border-style: hidden;
+}
+.setting {
+  width: 40px;
+  height: 40px;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
+#delete {
+  display: none;
+}
+table {
+  text-align: center;
+}

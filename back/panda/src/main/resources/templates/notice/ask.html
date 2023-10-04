@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/prettyPhoto.css" rel="stylesheet" />
+    <link href="css/price-range.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/ask.css" />
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="images/ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="images/ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="images/ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="images/ico/apple-touch-icon-57-precomposed.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <!--header-->
+      <div class="header_top"></div>
+
+      <div class="header-middle">
+        <!--header-middle-->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="logo pull-left">
+                <a href="../index.html"
+                  ><img src="images/home/logo2.png" alt=""
+                /></a>
+              </div>
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default change">
+                  선생님으로 전환하기
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="shop-menu pull-right">
+                <ul class="nav navbar-nav">
+                  <li>
+                    <a href="#"><i class="fa fa-user"></i> 내 정보</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-star"></i> 관심 목록</a>
+                  </li>
+                  <li>
+                    <a href="../member/login.html"><i class="fa fa-lock"></i> 로그아웃</a>
+                  </li>
+                  <li><a href="#" class="register"> 회원가입</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/header-middle-->
+
+      <div class="header-bottom">
+        <!--header-bottom-->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-9">
+              <div class="navbar-header">
+                <button
+                  type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse"
+                >
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="mainmenu pull-left">
+                <ul class="nav navbar-nav collapse navbar-collapse">
+                  <li><a href="../index.html" class="active">선생님 찾기</a></li>
+                  <li class="dropdown">
+                    <a href="#">학생 찾기<i class="fa fa-angle-down"></i></a>
+                    <ul role="menu" class="sub-menu">
+                      <li><a href="../shop.html">Products</a></li>
+                      <li>
+                        <a href="../product-details.html">Product Details</a>
+                      </li>
+                      <li><a href="../checkout.html">Checkout</a></li>
+                      <li><a href="../cart.html">Cart</a></li>
+                      <li><a href="../member/login.html">Login</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">일정 관리<i class="fa fa-angle-down"></i></a>
+                    <ul role="menu" class="sub-menu">
+                      <li><a href="../blog.html">Blog List</a></li>
+                      <li><a href="../blog-single.html">Blog Single</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="../404.html">공지사항</a></li>
+                  <li><a href="../contact-us.html">문의하기</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="search_box pull-right">
+                <input type="text" placeholder="검색어를 입력해주세요." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/header-bottom-->
+    </header>
+
+    <div class="container">
+      <div class="ask-header">
+        <h3>문의/제안/신고</h3>
+        <br />
+        <div class="ask-button">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#">문의/제안/신고</a></li>
+            <li><a href="#">나의 문의내역</a></li>
+          </ul>
+        </div>
+        <!-- ask-button -->
+      </div>
+      <!-- ask-header -->
+      <br />
+      <div class="ask-notice">
+        <ul>
+          <li>
+            • 부적합한 내용의 채용공고 신고는 각 채용정보 상세보기 페이지에서
+            하실 수 있습니다.
+          </li>
+          <li>
+            • 이벤트 관련 문의는 event@panda.com으로 보내주시면 보다 자세한
+            답변을 받으실 수 있습니다.
+          </li>
+        </ul>
+      </div>
+      <!-- ask-notice -->
+      <hr />
+
+      <div class="ask-type">
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="ask-title">
+              <h4>문의유형</h4>
+            </div>
+          </div>
+          <!-- col-sm-2 -->
+          <div class="col-sm-10">
+            <div class="ask-type-list" style="width: 100%">
+              <select
+                name="qnaGroupCode"
+                id=""
+                class="screen-out"
+                tabindex="-1"
+                data-text="문의유형 선택"
+                data-selected-index="0"
+              >
+                <option value="">문의유형 선택</option>
+                <option value="1">회원정보</option>
+                <option value="2">이력서관리</option>
+                <option value="3">구직활동관리</option>
+                <option value="4">공고등록관리</option>
+                <option value="5">포인트서비스</option>
+                <option value="6">오류/의견</option>
+                <option value="7">신고</option>
+                <option value="8">기타</option>
+              </select>
+            </div>
+            <!-- ask-type-list -->
+          </div>
+          <!-- col-sm-10 -->
+        </div>
+        <!-- row -->
+      </div>
+      <!-- ask-type -->
+
+      <br />
+      <hr />
+
+      <div class="ask-content">
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="ask-title">
+              <h4>문의내용</h4>
+            </div>
+            <!-- ask-title -->
+          </div>
+          <!-- col-sm-2 -->
+          <div class="col-sm-10">
+            <div class="ask-content-text" style="width: 100%">
+              <textarea
+                height="136px"
+                maxlength="3000"
+                currentlength="0"
+                name="contents"
+                id="contents"
+                class="Textarea_textarea"
+                placeholder="급한 문의는 고객센터(1588-9351)로 문의 하시는 것이 빠릅니다."
+                style="height: 136px; min-height: 136px"
+              ></textarea>
+              <div class="textarea-controls">
+                <span class="maxlength textarea-controls-item"
+                  ><em>0</em>/3000</span
+                >
+              </div>
+              <!-- textarea-controls -->
+            </div>
+            <!-- ask-content-text -->
+          </div>
+          <!-- col-sm-9 -->
+        </div>
+        <!-- row -->
+      </div>
+      <!-- ask-content -->
+
+      <br />
+      <hr />
+
+      <div class="email">
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="ask-title">
+              <h4>이메일</h4>
+            </div>
+            <!-- ask-title -->
+          </div>
+          <!-- col-sm-2 -->
+          <div class="col-sm-9">
+            <div class="Textfield" style="width: 100%">
+              <input
+                name="email"
+                maxlength="50"
+                type="text"
+                autocomplete="email"
+              />
+            </div>
+            <span class="email-guied"
+              >※ 답변을 받을 이메일 주소를 입력해 주세요.</span
+            >
+          </div>
+          <!-- col-sm-9 -->
+        </div>
+        <!-- row -->
+      </div>
+      <!-- email -->
+
+      <br />
+      <hr />
+
+      <div class="phone-number">
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="ask-title">
+              <h4>전화번호</h4>
+              <h5>(선택)</h5>
+            </div>
+            <!-- ask-title -->
+          </div>
+          <!-- col-sm-2 -->
+          <div class="col-sm-9">
+            <div class="Textfield" style="width: 100%">
+              <input
+                name="cellPhone"
+                maxlength="11"
+                type="text"
+                autocomplete="cellPhone"
+                value=""
+              />
+            </div>
+          </div>
+          <!-- col-sm-9 -->
+        </div>
+        <!-- row -->
+      </div>
+      <!-- phone-number -->
+
+      <br />
+      <hr />
+
+      <div class="">
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="ask-title">
+              <h4>첨부파일</h4>
+              <h5>(선택)</h5>
+            </div>
+            <!-- ask-title -->
+          </div>
+          <!-- col-sm-2 -->
+          <div class="col-sm-9">
+            <div class="file-upload">
+              <div class="file-upload">
+                <div class="FileUpload_file-upload__btn-group__ofQ7h">
+                  <input
+                    type="file"
+                    hidden=""
+                    accept="image/png, image/jpeg, image/bmp, image/gif"
+                  /><button
+                    type="button"
+                    class="Button_button__S9rjD Button_contained__DJSrI Button_small__0uP0Y Button_secondary__TsNNa file-upload__btn-group__btn"
+                  >
+                    <span
+                      class="Typography_typography__53V55 Typography_typography--C1__LW8bB Typography_typography--regular__qCojp"
+                      >파일 첨부</span
+                    ></button
+                  ><span
+                    class="Typography_typography__53V55 Typography_typography--C2__V8HIc Typography_typography--regular__qCojp FileUpload_count__oITlX"
+                    ><span
+                      class="Typography_typography__53V55 Typography_typography--C2__V8HIc Typography_typography--regular__qCojp FileUpload_current__bEtrR"
+                      >0</span
+                    >/3</span
+                  >
+                </div>
+              </div>
+            </div>
+            <p class="FileUpload_file-upload__guide-text">
+              최대 5MB까지 등록 가능합니다. (png, jpg, jpeg, gif, bmp)
+            </p>
+          </div>
+          <!-- col-sm-9 -->
+        </div>
+        <!-- row -->
+      </div>
+      <!-- plus-file -->
+
+      <br />
+      <hr />
+
+      <div class="agreement">
+        <div class="term-agreement">
+          <h4>개인정보 수집 및 이용안내</h4>
+          <div class="term-agreement__text">
+            <span class="agreement-text">문의에 대한 처리 및 답변</span>을 위해
+            <span class="agreement-text"
+              >이메일, 계정정보, 전화번호(선택), 첨부파일(선택), IP주소,
+              브라우저 및 OS 정보</span
+            >가 수집되며, 수집된 정보는
+            <span class="agreement-text">3년간 보관</span>합니다. 이에 동의하지
+            않을 경우 문의/제안/신고 등록이 불가하며, 선택항목은 입력하지
+            않더라도 서비스이용에 제한을 두지 않습니다.
+          </div>
+          <!-- term-agreeent-text -->
+
+          <div class="term-agreement-ckeck">
+            <label
+              class="agreement-ckeckbox"
+              data-label-placement="right"
+              data-group-item="false"
+              ><span class="agreement-checkbox-text"
+                ><em>개인정보수집 및 이용안내</em>에 동의합니다.</span
+              ><input
+                type="checkbox"
+                name="termAgreement"
+                value="checked" /><span class="Checkbox_checkmark-box"
+                ><i
+                  aria-hidden="true"
+                  class="Icon_icon__BlZpj icon-line_check"
+                ></i></span
+            ></label>
+          </div>
+          <!-- term-agreement-check -->
+        </div>
+        <!-- term-agreement -->
+        <div class="confirm-button">
+          <button type="button" class="button-cancel">
+            <span class="button-cancel-text">취소</span></button
+          ><button type="submit" class="button-send">
+            <span class="button-send-text">보내기</span>
+          </button>
+        </div>
+        <!-- confirm-button -->
+      </div>
+      <!-- agreement -->
+      <br />
+      <hr />
+
+      <div class="ask-bottom">
+        <h4>문의/제안/신고 안내</h4>
+        <h5>
+          평일 : 다음날 답변 완료 토·일·공휴일 : 휴일 이후 답변 완료 (답변은
+          이메일로 드리며, 문의가 급증할 경우 지연될 수 있습니다.)
+        </h5>
+      </div>
+      <!-- ask-bottom -->
+    </div>
+    <!-- container -->
+  </body>
+</html>
