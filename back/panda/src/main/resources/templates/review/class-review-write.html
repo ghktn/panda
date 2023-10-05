@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main-layout}">>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -176,7 +178,7 @@
       <!--/header-->
       <!-- header 끝 -->
 
-      <main id="main">
+      <main id="main" layout:fragment="content">
         <!--main header-->
         <div id="mainTitle">
           <h3>리뷰 등록</h3>
