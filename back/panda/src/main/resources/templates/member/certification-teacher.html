@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/mypage-layout}">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -59,10 +61,12 @@
             rel="apple-touch-icon-precomposed"
             href="panda/images/ico/apple-touch-icon-57-precomposed.png"
     />
+    <link href="css/mypage.css" rel="stylesheet">
 
     <!-- 조장님 만든 거 끝-->
 </head>
 <body>
+
 <div id="container">
     <!-- header 시작-->
     <header id="header">
@@ -166,7 +170,7 @@
         <!--/header-bottom-->
     </header>
     <!-- header 끝 -->
-
+    <section layout:fragment="content">
     <!-- main 시작 -->
     <div id="main">
         <!-- mainHeader 시작-->
@@ -261,6 +265,7 @@
     <!-- footer 시작 -->
     <div id="footer"></div>
     <!-- footer 끝 -->
+    </section>
 </div>
 </body>
 </html>

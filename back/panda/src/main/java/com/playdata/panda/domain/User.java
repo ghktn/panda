@@ -1,8 +1,9 @@
 package com.playdata.panda.domain;
 
+import com.playdata.panda.dto.SignUpRegisterDTO;
 import lombok.*;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Getter
 @Builder
@@ -20,7 +21,7 @@ public class User {
     private String name;
     private String nickname;
     private String email;
-    private String birthday;
+    private Date birthday;
     private String gender;
     private Integer review_score;
     private String profile_photo;
@@ -28,5 +29,23 @@ public class User {
     private Date reg_date;
     private Date update_date;
     private Date last_con_date;
+
+    public static User create(SignUpRegisterDTO signUpRegisterDTO) {
+        String birthdayStr = signUpRegisterDTO.getYear() + "-" + signUpRegisterDTO.getMonth() + "-" + signUpRegisterDTO.getDate();
+        Date birthday = Date.valueOf(birthdayStr);
+        return User.builder()
+                .name(signUpRegisterDTO.getName())
+                .gender(signUpRegisterDTO.getGender())
+                .birthday(birthday)
+                .nickname(signUpRegisterDTO.getNickname())
+                .user_id(signUpRegisterDTO.getUser_id())
+                .password(signUpRegisterDTO.getPassword())
+                .email(signUpRegisterDTO.getEmail())
+                .sd_code(signUpRegisterDTO.getSd_code())
+                .sgg_code(signUpRegisterDTO.getSgg_code())
+                .emd_code(signUpRegisterDTO.getEmd_code())
+                .build();
+
+    }
 
 }

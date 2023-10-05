@@ -19,8 +19,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void signUp(SignUpRegisterDTO dto) {
         //todo : 아이디 중복 체크, 닉네임 중복체크 필요
-        User user = dto.createUser();
-
+        User user = User.create(dto);
         userRepository.signUpUser(user);
     }
 }

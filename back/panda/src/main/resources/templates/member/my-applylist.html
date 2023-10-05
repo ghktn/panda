@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/mypage-layout}">
 
 <head>
   <meta charset="utf-8" />
@@ -133,32 +135,10 @@
   </header>
   <!--/header-->
 
-  <section>
+  <section layout:fragment="content">
     <div class="container">
       <div class="contentsInner">
         <div class="siteWidthLayer">
-          <div class="leftMenu">
-            <div class="leftMenuWrap">
-              <h3 class="leftMenuTitle">나의 신청목록</h3>
-              <ul class="menuList">
-                <li>
-                  <a href="my-page.html"><span class="menuName">나의 정보</span><span class="liIcon">&gt;</span></a>
-                </li>
-                <li class="first">
-                  <a href="#"><span class="menuName">나의 관심목록</span><span class="liIcon">&gt;</span></a>
-                </li>
-                <li>
-                  <a href="my-class.html"><span class="menuName">나의 수업목록</span><span class="liIcon">&gt;</span></a>
-                </li>
-                <li>
-                  <a href="my-class.html"><span class="menuName">나의 신청목록</span><span class="liIcon">&gt;</span></a>
-                </li>
-                <li>
-                  <a href="#"><span class="menuName">증빙서류제출</span><span class="liIcon">&gt;</span></a>
-                </li>
-              </ul>
-            </div>
-          </div>
           <div class="sub">
             <div class="titleWrap">
               <div class="thumb">
