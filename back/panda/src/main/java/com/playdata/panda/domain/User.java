@@ -5,6 +5,9 @@ import lombok.*;
 
 import java.sql.Date;
 
+import com.playdata.panda.dto.SignUpRegisterDTO;
+
+
 @Getter
 @Builder
 @Setter
@@ -21,7 +24,7 @@ public class User {
     private String name;
     private String nickname;
     private String email;
-    private Date birthday;
+    private String birthday;
     private String gender;
     private Integer review_score;
     private String profile_photo;
@@ -29,10 +32,14 @@ public class User {
     private Date reg_date;
     private Date update_date;
     private Date last_con_date;
-
+    private Integer badge_id;
+    
+    
     public static User create(SignUpRegisterDTO signUpRegisterDTO) {
-        String birthdayStr = signUpRegisterDTO.getYear() + "-" + signUpRegisterDTO.getMonth() + "-" + signUpRegisterDTO.getDate();
-        Date birthday = Date.valueOf(birthdayStr);
+
+        String birthday = signUpRegisterDTO.getYear() + "-" + signUpRegisterDTO.getMonth() + "-" + signUpRegisterDTO.getDate();
+//        Date birthday = Date.valueOf(birthdayStr);
+
         return User.builder()
                 .name(signUpRegisterDTO.getName())
                 .gender(signUpRegisterDTO.getGender())
@@ -45,7 +52,8 @@ public class User {
                 .sgg_code(signUpRegisterDTO.getSgg_code())
                 .emd_code(signUpRegisterDTO.getEmd_code())
                 .build();
-
     }
+
+
 
 }

@@ -1,11 +1,23 @@
 package com.playdata.panda.controller;
 
+<<<<<<< HEAD:back/panda/src/main/java/com/playdata/panda/controller/UserApiController.java
+=======
+import com.playdata.panda.domain.User;
+import com.playdata.panda.dto.LoginDTO;
+import com.playdata.panda.dto.LoginSuccessDTO;
+>>>>>>> master-back-first:back/panda/src/main/java/com/playdata/panda/controller/UserController.java
 import com.playdata.panda.dto.SignUpRegisterDTO;
 import com.playdata.panda.service.UserService;
 import lombok.RequiredArgsConstructor;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
 
 @RequiredArgsConstructor
 @Controller
@@ -23,6 +35,33 @@ public class UserApiController {
         userService.signUp(signUpRegisterDTO);
 
         return "redirect:/";
+    }
+    
+    /**
+     * 기능 : 로그인 페이지로 이동한다. 
+     */
+    @GetMapping("/login")
+    public String login() {
+    	
+    	return "member/login2";
+    }
+    
+    /**
+     * 기능 : 회원가입을 요청한다.
+     */
+    @PostMapping("/login")
+    public String signIn(LoginDTO userDto, HttpServletRequest request ) {
+    	// 회원존재 여부를 확인한다.
+    	LoginSuccessDTO loginMember = userService.login(userDto);
+    	// 로그인 실패했을 때
+    	if(loginMember == null) {
+    		return "redirect:/login";
+    	}
+    	// 성공하면 session에 userId, id 넘겨주기
+    	HttpSession session = request.getSession(true);
+    	session.setAttribute("LoginMember", loginMember);
+    	
+    	return "redirect:/";
     }
 
 }
