@@ -159,7 +159,7 @@
 
     <main class="form-signin">
       <!-- TODO 발표 끝나면 action 변경하기 -->
-      <form action="../index.html">
+      <form action="/login" method="post">
         <!-- <img class="mb-4" src="images/home/logo2.png" alt="" width="72" height="57"> -->
         <h1 class="h4 mb-3 fw-normal">아이디로 로그인</h1>
 
@@ -168,6 +168,7 @@
             type="text"
             class="form-control login-input"
             id="floatingInput"
+            name="userId"
             placeholder="아이디 입력"
           />
         </div>
@@ -176,6 +177,7 @@
             type="password"
             class="form-control login-input"
             id="floatingPassword"
+            name="password"
             placeholder="비밀번호 입력"
           />
         </div>

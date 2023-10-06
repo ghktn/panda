@@ -2,7 +2,10 @@ package com.playdata.panda.domain;
 
 import lombok.*;
 
-import java.util.Date;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
+import com.playdata.panda.dto.SignUpRegisterDTO;
 
 @Getter
 @Builder
@@ -28,5 +31,39 @@ public class User {
     private Date reg_date;
     private Date update_date;
     private Date last_con_date;
+    private Integer badge_id;
+    
+    
+    public static User create(SignUpRegisterDTO signUpRegisterDTO) {
+
+        String birthday = signUpRegisterDTO.getYear() + "-" + signUpRegisterDTO.getMonth() + "-" + signUpRegisterDTO.getDate();
+//        Date birthday = Date.valueOf(birthdayStr);
+
+        return User.builder()
+                .name(signUpRegisterDTO.getName())
+                .gender(signUpRegisterDTO.getGender())
+                .birthday(birthday)
+                .nickname(signUpRegisterDTO.getNickname())
+                .user_id(signUpRegisterDTO.getUser_id())
+                .password(signUpRegisterDTO.getPassword())
+                .email(signUpRegisterDTO.getEmail())
+                .sd_code(signUpRegisterDTO.getSd_code())
+                .sgg_code(signUpRegisterDTO.getSgg_code())
+                .emd_code(signUpRegisterDTO.getEmd_code())
+                .build();
+
+//        return User.builder()
+//                .name("a")
+//                .gender("a")
+//                .birthday("a")
+//                .nickname("a")
+//                .user_id("a")
+//                .password("a")
+//                .email("a")
+//                .sd_code("a")
+//                .sgg_code("a")
+//                .emd_code("a")
+//                .build();
+    }
 
 }

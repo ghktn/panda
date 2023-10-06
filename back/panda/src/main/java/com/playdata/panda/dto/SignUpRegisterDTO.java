@@ -25,34 +25,5 @@ public class SignUpRegisterDTO {
     private String sgg_code;
     private String emd_code;
 
-    public User createUser() {
-
-        String birthday = year + "-" + month + "-" + date;
-
-//        return User.builder()
-//                .name(name)
-//                .gender(gender)
-//                .birthday(birthday)
-//                .nickname(nickname)
-//                .user_id(user_id)
-//                .password(password)
-//                .email(email)
-//                .sd_code(sd_code)
-//                .sgg_code(sgg_code)
-//                .emd_code(emd_code)
-//                .build();
-
-        return User.builder()
-                .name("a")
-                .gender("a")
-                .birthday("a")
-                .nickname("a")
-                .user_id("a")
-                .password("a")
-                .email("a")
-                .sd_code("a")
-                .sgg_code("a")
-                .emd_code("a")
-                .build();
-    }
+    
 }
