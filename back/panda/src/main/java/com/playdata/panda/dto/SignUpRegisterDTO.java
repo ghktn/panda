@@ -21,5 +21,4 @@ public class SignUpRegisterDTO {
     private String sd_code;
     private String sgg_code;
     private String emd_code;
-
 }

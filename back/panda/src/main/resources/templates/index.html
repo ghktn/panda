@@ -36,9 +36,115 @@
 <!--    <th:block th:replace="include/header :: header"></th:block>-->
 <!--</div>-->
 
+
 <!--/header-->
 <!-- 슬라이드 -->
 <div layout:fragment="content">
+
+      <div class="header-middle">
+        <!--header-middle-->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="logo pull-left">
+                <a href="/"
+                  ><img src="images/home/logo2.png" alt=""
+                /></a>
+              </div>
+              <div class="btn-group pull-right">
+                <a href="#pop_info">
+                  <button
+                    type="button"
+                    class="btn btn-default change teacher_info_open"
+                  >
+                    선생님으로 전환하기
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="basic-menu pull-right">
+                <ul class="nav navbar-nav">
+                  <li>
+                    <a href="member/my-page.html"
+                      ><i class="fa fa-user"></i> 내 정보</a
+                    >
+                  </li>
+                  <li>
+                    <a href="member/concern-list.html"
+                      ><i class="fa fa-star"></i> 관심 목록</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/login"><i class="fa fa-lock"></i> 로그인</a>
+                  </li>
+                  <li>
+                    <a href="/signup" class="register"> 회원가입</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/header-middle-->
+
+      <div class="header-bottom">
+        <!--header-bottom-->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-9">
+              <div class="navbar-header">
+                <button
+                  type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse"
+                >
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="mainmenu pull-left">
+                <ul class="nav navbar-nav collapse navbar-collapse">
+                  <li><a href="recruiment/recruiment-board.html" class="active">수업 홍보</a></li>
+                  <li class="dropdown">
+                    <a href="#">커뮤니티<i class="fa fa-angle-down"></i></a>
+                    <ul role="menu" class="sub-menu">
+                      <li><a href="shop.html">자유 게시판</a></li>
+                      <li><a href="product-details.html"></a></li>
+                      <!-- <li><a href="checkout.html">Checkout</a></li>
+									<li><a href="cart.html">Cart</a></li>
+									<li><a href="login.html">Login</a></li> -->
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">공지사항<i class="fa fa-angle-down"></i></a>
+                    <ul role="menu" class="sub-menu">
+                      <li><a href="blog.html">선생님</a></li>
+                      <li><a href="blog-single.html">학생</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="404.html">문의하기</a></li>
+                  <li><a href="contact-us.html">포인트상점</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="search_box pull-right">
+                <input type="text" placeholder="검색어를 입력해주세요." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/header-bottom-->
+    </header>
+    <!--/header-->
+    <!-- 슬라이드 -->
+
     <div class="slideshow-container">
         <div class="mySlides">
             <img src="images/home/woojin2.png" alt="이미지 1"/>
