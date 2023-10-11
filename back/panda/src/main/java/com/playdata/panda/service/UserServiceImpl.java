@@ -4,7 +4,6 @@ import com.playdata.panda.domain.User;
 import com.playdata.panda.dto.LoginDTO;
 import com.playdata.panda.dto.LoginSuccessDTO;
 import com.playdata.panda.dto.SignUpRegisterDTO;
-import com.playdata.panda.exception.UserNotExistException;
 import com.playdata.panda.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
