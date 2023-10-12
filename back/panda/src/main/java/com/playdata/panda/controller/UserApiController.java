@@ -1,11 +1,8 @@
 package com.playdata.panda.controller;
 
-<<<<<<< HEAD:back/panda/src/main/java/com/playdata/panda/controller/UserApiController.java
-=======
 import com.playdata.panda.domain.User;
 import com.playdata.panda.dto.LoginDTO;
 import com.playdata.panda.dto.LoginSuccessDTO;
->>>>>>> master-back-first:back/panda/src/main/java/com/playdata/panda/controller/UserController.java
 import com.playdata.panda.dto.SignUpRegisterDTO;
 import com.playdata.panda.service.UserService;
 import lombok.RequiredArgsConstructor;
