@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Recruitment_board {
+public class RecruitmentBoard {
 	
 	 private int recuruitment_id;// 게시글 아이디           		NUMBER(19)
 	 private int id;// 유저 고유 아이디                          	NUMBER(19)

@@ -7,6 +7,6 @@ import lombok.Setter;
 @Setter
 public class RegionEmd {
 	
-	private int emd_code;// 읍면동 코드
-	private String emd_name;// 읍면동명
+	private int emd_code;// 읍면동 코드				NUMBER(5)
+	private String emd_name;// 읍면동명			VARCHAR2(30)
 }
