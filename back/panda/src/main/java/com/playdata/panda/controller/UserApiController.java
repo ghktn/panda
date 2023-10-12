@@ -33,15 +33,7 @@ public class UserApiController {
 
         return "redirect:/";
     }
-    
-    /**
-     * 기능 : 로그인 페이지로 이동한다. 
-     */
-    @GetMapping("/login")
-    public String login() {
-    	
-    	return "member/login2";
-    }
+
     
     /**
      * 기능 : 회원가입을 요청한다.
