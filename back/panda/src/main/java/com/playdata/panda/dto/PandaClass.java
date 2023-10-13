@@ -1,4 +1,4 @@
-package com.playdata.panda.domain;
+package com.playdata.panda.dto;
 
 import lombok.Getter;
 import lombok.Setter;

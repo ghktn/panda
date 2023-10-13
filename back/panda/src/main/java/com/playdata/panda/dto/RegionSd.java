@@ -1,4 +1,4 @@
-package com.playdata.panda.domain;
+package com.playdata.panda.dto;
 
 import java.sql.Date;
 

@@ -1,11 +1,8 @@
-package com.playdata.panda.domain;
+package com.playdata.panda.dto;
 
-import com.playdata.panda.dto.SignUpRegisterDTO;
 import lombok.*;
 
 import java.sql.Date;
-
-import com.playdata.panda.dto.SignUpRegisterDTO;
 
 
 @Getter

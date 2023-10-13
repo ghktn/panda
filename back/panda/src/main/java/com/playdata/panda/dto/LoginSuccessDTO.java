@@ -5,8 +5,6 @@ public class LoginSuccessDTO {
 	private long id;
 	private String userId;
 
-	
-	
 	public LoginSuccessDTO(long id, String userId) {
 		super();
 		this.id = id;

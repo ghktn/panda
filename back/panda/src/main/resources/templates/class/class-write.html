@@ -35,22 +35,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <!-- bootstrap 3 끝 -->
-
-    <!-- 조장님 추가 시작 -->
-
-    <!-- <link href="panda/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="panda/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="panda/css/prettyPhoto.css" rel="stylesheet" />
-    <link href="panda/css/price-range.css" rel="stylesheet" />
-    <link href="panda/css/animate.css" rel="stylesheet" />
-    <link href="panda/css/main.css" rel="stylesheet" />
-    <link href="panda/css/responsive.css" rel="stylesheet" /> -->
-    <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->
+    <script defer="defer" src="js/class-write.js"></script>
     <link rel="shortcut icon" href="panda/images/ico/favicon.ico"/>
     <link
             rel="apple-touch-icon-precomposed"
@@ -157,9 +144,6 @@
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="../shop.html">자유 게시판</a></li>
                                     <li><a href="../product-details.html"></a></li>
-                                    <!-- <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="login.html">Login</a></li> -->
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -228,15 +212,14 @@
                                         id="categoryMainId"
                                         name="categoryMainId"
                                 >
+
                                     <option value="">선택</option>
-                                    <option value="">학업</option>
-                                    <option value="">댄스</option>
-                                    <option value="">스포츠</option>
-                                    <option value="">외국어</option>
-                                    <option value="">음악</option>
-                                    <option value="">컴퓨터</option>
-                                    <option value="">취미생활</option>
-                                    <option value="">......</option>
+                                    <th:block th:each="category : ${categoryMainList}">
+                                        <option th:value="${category.Category_main_id}"
+                                                th:text="${category.Category_main_name}">학업
+                                        </option>
+                                    </th:block>
+
                                 </select>
                             </div>
                         </div>
@@ -251,14 +234,6 @@
                                         name="categorySubId"
                                 >
                                     <option value="">선택</option>
-                                    <option value="">영어 과외</option>
-                                    <option value="">수학 과외</option>
-                                    <option value="">국어 과외</option>
-                                    <option value="">과학 과외</option>
-                                    <option value="">사회 과외</option>
-                                    <option value="">토론 과외</option>
-                                    <option value="">편입 과외</option>
-                                    <option value="">.........</option>
                                 </select>
                             </div>
                         </div>
