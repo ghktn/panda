@@ -2,21 +2,15 @@ package com.playdata.panda.controller;
 
 import com.playdata.panda.dto.LoginDTO;
 import com.playdata.panda.dto.LoginSuccessDTO;
-import com.playdata.panda.dto.RegionEmd;
-import com.playdata.panda.dto.RegionSgg;
 import com.playdata.panda.dto.SignUpRegisterDTO;
 import com.playdata.panda.service.UserService;
 import lombok.RequiredArgsConstructor;
-
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @RequiredArgsConstructor
@@ -55,6 +49,5 @@ public class UserApiController {
     	
     	return "redirect:/";
     }
-    
 
 }
