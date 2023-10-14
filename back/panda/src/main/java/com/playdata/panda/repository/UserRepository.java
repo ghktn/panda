@@ -2,11 +2,6 @@ package com.playdata.panda.repository;
 
 import com.playdata.panda.dto.User;
 import com.playdata.panda.dto.LoginDTO;
-import com.playdata.panda.dto.RegionEmd;
-import com.playdata.panda.dto.RegionSd;
-import com.playdata.panda.dto.RegionSgg;
-
-import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
