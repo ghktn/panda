@@ -19,5 +19,6 @@ public interface UserRepository {
      * 기능 : 회원을 불러올 수 있습니다
      */
     public User findByUserIdAndPassword(LoginDTO userDto);
-
+    
+    
 }
