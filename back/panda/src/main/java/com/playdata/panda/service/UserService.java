@@ -1,8 +1,14 @@
 package com.playdata.panda.service;
 
 import com.playdata.panda.dto.User;
+
+import java.util.List;
+
 import com.playdata.panda.dto.LoginDTO;
 import com.playdata.panda.dto.LoginSuccessDTO;
+import com.playdata.panda.dto.RegionEmd;
+import com.playdata.panda.dto.RegionSd;
+import com.playdata.panda.dto.RegionSgg;
 import com.playdata.panda.dto.SignUpRegisterDTO;
 
 public interface UserService {
@@ -16,4 +22,7 @@ public interface UserService {
      * @param userDto
      */
     LoginSuccessDTO login(LoginDTO userDto);
+
+
+    
 }

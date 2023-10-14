@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mybatis board reply 매퍼 파일 만들기 -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.playdata.panda.repository.RegionRepository">
+	<!-- 시도 리스트 불러오기 -->
+	<select id="findRegionSdList">
+		select
+		*
+		from
+		region_sd
+		order by sd_name
+	</select>
+
+	<!-- 시군구 리스트 불러오기 -->
+	<select id="findRegionSggList" parameterType="int">
+		select
+		*
+		from
+		region_sgg
+		where sd_code = #{sd_code}
+		order by sgg_name
+	</select>
+
+	<!-- 읍면동 리스트 불러오기 -->
+	<select id="findRegionEmdList" parameterType="int">
+		select
+		*
+		from
+		region_emd
+		where sgg_code = #{sgg_code}
+		order by emd_name
+	</select>
+</mapper>

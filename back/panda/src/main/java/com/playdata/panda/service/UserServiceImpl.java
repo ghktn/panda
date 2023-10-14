@@ -3,9 +3,15 @@ package com.playdata.panda.service;
 import com.playdata.panda.dto.User;
 import com.playdata.panda.dto.LoginDTO;
 import com.playdata.panda.dto.LoginSuccessDTO;
+import com.playdata.panda.dto.RegionEmd;
+import com.playdata.panda.dto.RegionSd;
+import com.playdata.panda.dto.RegionSgg;
 import com.playdata.panda.dto.SignUpRegisterDTO;
 import com.playdata.panda.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
@@ -44,4 +50,7 @@ public class UserServiceImpl implements UserService {
     	// 회원이 있으면 성공한다.
      	return LoginSuccessDTO.create(user.getId(), user.getUser_id());
     }
+    
+    
+    
 }
