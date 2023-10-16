@@ -61,6 +61,4 @@
     		and
     		password = #{password}
     </select>
-    
-    
 </mapper>
