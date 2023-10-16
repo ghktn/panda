@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main-layout}"
+      lang="ko"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +15,7 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script defer="defer" src="js/recruitment.js"></script>
+    <script defer="defer" src="/js/recruitment.js"></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
       rel="stylesheet"
@@ -19,18 +23,18 @@
 
     <link
       rel="stylesheet"
-      href="css/recruitment.css"
+      href="/css/recruitment.css"
     />
     <link
-      href="css/bootstrap.min.css"
+      href="/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/prettyPhoto.css" rel="stylesheet" />
-    <link href="css/price-range.css" rel="stylesheet" />
-    <link href="css/animate.css" rel="stylesheet" />
-    <link href="css/main.css" rel="stylesheet" />
-    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/css/prettyPhoto.css" rel="stylesheet" />
+    <link href="/css/price-range.css" rel="stylesheet" />
+    <link href="/css/animate.css" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet" />
+    <link href="/css/responsive.css" rel="stylesheet" />
 
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js">
@@ -38,140 +42,25 @@
               <script src="js/respond.min.js">
       </script>
     <![endif]-->
-    <link rel="shortcut icon" href="images/ico/favicon.ico" />
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="144x144"
-      href="images/ico/apple-touch-icon-144-precomposed.png"
-    />
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="114x114"
-      href="images/ico/apple-touch-icon-114-precomposed.png"
-    />
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="72x72"
-      href="images/ico/apple-touch-icon-72-precomposed.png"
-    />
-    <link
-      rel="apple-touch-icon-precomposed"
-      href="images/ico/apple-touch-icon-57-precomposed.png"
-    />
+    <link rel="shortcut icon" href="/images/ico/favicon.ico" />
+
     <!--조장님 링크-->
   </head>
   <body>
-    <div id="container">
-      <header id="header">
-        <!--header-->
-        <div class="header_top"></div>
-
-        <div class="header-middle">
-          <!--header-middle-->
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="logo pull-left">
-                  <a href="../index.html"
-                    ><img src="images/home/logo2.png" alt=""
-                  /></a>
-                </div>
-                <div class="btn-group pull-right">
-                  <button type="button" class="btn btn-default change">
-                    선생님으로 전환하기
-                  </button>
-                </div>
-              </div>
-              <div class="col-sm-8">
-                <div class="shop-menu pull-right">
-                  <ul class="nav navbar-nav">
-                    <li>
-                      <a href="#"><i class="fa fa-user"></i> 내 정보</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-star"></i> 관심 목록</a>
-                    </li>
-                    <li>
-                      <a href="member/login.html"
-                        ><i class="fa fa-lock"></i> 로그아웃</a
-                      >
-                    </li>
-                    <li><a href="#" class="register"> 회원가입</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--/header-middle-->
-
-        <div class="header-bottom">
-          <!--header-bottom-->
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-9">
-                <div class="navbar-header">
-                  <button
-                    type="button"
-                    class="navbar-toggle"
-                    data-toggle="collapse"
-                    data-target=".navbar-collapse"
-                  >
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                </div>
-                <div class="mainmenu pull-left">
-                  <ul class="nav navbar-nav collapse navbar-collapse">
-                    <li><a href="../index.html" class="active">선생님 찾기</a></li>
-                    <li class="dropdown">
-                      <a href="#">학생 찾기<i class="fa fa-angle-down"></i></a>
-                      <ul role="menu" class="sub-menu">
-                        <li><a href="../shop.html">Products</a></li>
-                        <li>
-                          <a href="product-details.html">Product Details</a>
-                        </li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="member/login.html">Login</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#">일정 관리<i class="fa fa-angle-down"></i></a>
-                      <ul role="menu" class="sub-menu">
-                        <li><a href="blog.html">Blog List</a></li>
-                        <li><a href="blog-single.html">Blog Single</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="../404.html">공지사항</a></li>
-                    <li><a href="contact-us.html">문의하기</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="search_box pull-right">
-                  <input type="text" placeholder="검색어를 입력해주세요." />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--/header-bottom-->
-      </header>
-      <!--/header-->
-      <br />
-      <br />
-      <br />
-      <br />
+    <div id="container" layout:fragment="content">
       <div id="content">
         <div class="card mb-3" id="cardcard">
           <div class="row g-0">
             <div class="col-md-4">
               <br />
+              <!-- 
+              	TODO : 이미지 추가하기 
+              	DO : 대체이미지 추가했다.
+              -->
               <img
-                src="images/recruitment/math.jpeg"
+              	th:src="@{/}"
+              	th:onerror="this.src='/images/recruitment/math.jpeg'"
+                src="/images/recruitment/math.jpeg"
                 class="img-fluid rounded-start"
                 id="img-tc"
                 alt="..."
@@ -183,20 +72,35 @@
                 <button id="likeButton" class="btn btn-danger">
                   <i class="fas fa-heart"></i> 관심수업등록
                 </button>
-                <h3 class="fw-bold">믿고맡기는수학</h3>
-                <h4 class="fw-bold">수학고수</h4>
-                <p class="lh-1">수학,고등수학,수학 I,수학 II</p>
-                <p class="lh-1">지역: 경기 시흥시,서울 금천 서울 구로구</p>
+                <h3 class="fw-bold" th:text="${board.title}">
+                	믿고맡기는수학
+               	</h3>
+                <h4 class="fw-bold">
+                	<span th:text="${board.nickname}">수학고수</span>
+               	</h4>
+                <p class="lh-1">
+                	<span th:text="${board.category_main_name}">수학,고등수학,수학 I,수학 II</span>
+                	<span th:text="${board.category_sub_name}">수학,고등수학,수학 I,수학 II</span>
+                </p>
+                <p class="lh-1">
+                	<span>지역: </span>
+                	<span th:text="${board.sd_name}">서울 독산동</span>
+                   	<span th:text="${board.sgg_name}">서울 독산동</span>
+                   	<span th:text="${board.emd_name}">서울 독산동</span>
+               	</p>
                 <div class="card-body">
                   <h5 class="card-title">프롤로그</h5>
+                  
+                  <!-- TODO : 인증 체크부분 있는지 확인하기 -->
                   <p class="lh-1">
                     <img
-                      src="images/recruitment/badge.jpeg"
+                      src="/images/recruitment/badge.jpeg"
                       alt="Retail Admin"
                       id="medal"
                     />
                     이 선생님은 판다 특별추천 선생님입니다.
                   </p>
+                  
                   <hr />
                   <p class="lh-1">
                     이 선생님은 판다에서 신분증을 확실하게 확인해서
@@ -219,14 +123,14 @@
                   <br />
                   &nbsp;
                   <img
-                    src="images/recruitment/human.png"
+                    src="/images/recruitment/human.png"
                     id="img-notice"
                     alt=""
-                  />&nbsp; 참여가능인원
+                  />
+                  <span>참여가능인원</span>
                 </h4>
                 <p class="card-text">
-                  &nbsp; 4명
-                  <br />
+                  <span th:text="${board.max_std_count}">&nbsp; 4명</span><span>명</span>
                 </p>
               </div>
             </div>
@@ -240,14 +144,18 @@
                   <br />
                   &nbsp;
                   <img
-                    src="images/recruitment/gender.png"
+                    src="/images/recruitment/gender.png"
                     id="img-notice"
                     alt=""
-                  />&nbsp; 모집성별
+                  />
+                  <span>모집성별</span>
                 </h4>
                 <p class="card-text">
-                  &nbsp; 남자
-                  <br />
+                  <th:block th:switch=${board.std_gender}>
+	                  <span th:case="N" th:text="무관">&nbsp; 남자</span>
+	                  <span th:case="M" th:text="남자">&nbsp; 남자</span>
+	                  <span th:case="F" th:text="여자">&nbsp; 여자</span>                  
+                  </th:switch>
                 </p>
               </div>
             </div>
@@ -261,14 +169,14 @@
                   <br />
                   &nbsp;
                   <img
-                    src="images/recruitment/age.png"
+                    src="/images/recruitment/age.png"
                     id="img-notice"
                     alt=""
-                  />&nbsp; 모집연령대
+                  />
+                  <span>모집연령대</span>
                 </h4>
                 <p class="card-text">
-                  &nbsp; 30대미만
-                  <br />
+                  <span th:text="${board.std_age_group}">&nbsp; 30대미만</span>
                 </p>
               </div>
             </div>
@@ -287,11 +195,11 @@
                     src="images/parecruitmentnda/momey.png"
                     id="img-notice"
                     alt=""
-                  />&nbsp; 수강비
+                  />
+                  <span>수강비</span>
                 </h4>
                 <p class="card-text">
-                  &nbsp; 60만원
-                  <br />
+                  <span th:text="${board.wish_pay}">&nbsp; 60만원</span>
                 </p>
               </div>
             </div>
@@ -305,14 +213,18 @@
                   <br />
                   &nbsp;
                   <img
-                    src="images/recruitment/study.png"
+                    src="/images/recruitment/study.png"
                     id="img-notice"
                     alt=""
                   />&nbsp; 수업형태
                 </h4>
                 <p class="card-text">
-                  &nbsp; 온라인
-                  <br />
+                  <th:block th:switch=${board.lecture_type}>
+               		<span th:case="N" th:text="무관">온라인</span>
+               		<span th:case="0" th:text="온라인">온라인</span>
+               		<span th:case="1" th:text="오프라인">온라인</span>
+               		<span th:case="*" th:text="그 외">온라인</span>
+               	  </th:switch>
                 </p>
               </div>
             </div>
@@ -322,18 +234,16 @@
             <div class="col">
               <div id="card-ps">
                 <h4 class="fw-bold">
-                  &nbsp;
-                  <br />
-                  &nbsp;
                   <img
-                    src="images/recruitment/planning.png"
+                    src="/images/recruitment/planning.png"
                     id="img-notice"
                     alt=""
-                  />&nbsp; 수업희망요일
+                  /> 
+                  <span>수업희망요일</span>
                 </h4>
                 <p class="card-text">
-                  &nbsp; 화,목
-                  <br />
+                  <!-- TODO : 한글 요일로 바꿔야 한다. -->
+                  <span th:text="${board.wish_days}">&nbsp; 화,목</span>
                 </p>
               </div>
             </div>
@@ -342,9 +252,8 @@
 
         <!--수업희망요일-->
       </div>
-    </div>
-
-    <div id="card-tc">
+      
+      <div id="card-tc">
       <div class="card-body">
         <h4 class="fw-bold">&nbsp; 소개</h4>
         <br />
@@ -375,109 +284,113 @@
           <br />
           <br />
           <br />
-          &nbsp; 📢 시작 전 드리는 당부의 말씀
-          <br />
-          <br />
-          &nbsp; 1️⃣ 과외에 있어서 기본적인 예의를 갖추지 않고 공부에 대한 의지가
-          없는 학생은 어떠한 경우에도 수업 진행하지 않습니다.
-          <br />
-          <br />
-          &nbsp; 2️⃣ 첫 수업 이전 필수적으로 상담 및 시범수업을 진행하고
-          있습니다. 상담 및 시범수업 이후에 선생님과 학생 모두 정규 수업을
-          원하는 경우에만 과외가 성사됩니다.
-          <br />
-          <br />
-          &nbsp; 3️⃣ 정규 수업 진행 여부 기준은 현재의 성적이 아닌 학생의 공부
-          의지와 수업에 임하는 태도입니다.
-          <br />
-          <br />
-          &nbsp; 4️⃣ 정규 수업에서 활용하는 각종 수업 자료와 커리큘럼은 시범수업
-          때 제공하는 점 참고 부탁드립니다.
-          <br />
-          <br />
-          &nbsp; 5️⃣ 학생이 뚜렷한 목표와 공부 의지를 갖고 수업에 임한다면 성적
-          향상은 확실하게 보장합니다. 현재 어떠한 상황이라도 최상의 결과로
-          보답하겠습니다.
-          <br />
-          <br />
-          <br />
-          &nbsp; 📢 시범수업 관련 안내
-          <br />
-          <br />
-          &nbsp; 1️⃣ 정규 수업 성사 여부와 관계없이 유료로 진행 중이며 수업료
-          입금이 확인되는 순서대로 수업 확정됩니다.
-          <br />
-          <br />
-          &nbsp; 2️⃣ 학생이 자유롭게 선생님을 선택할 수 있는 것처럼 저도 제
-          수업을 잘 따라올 수 있다고 판단하는 학생을 선택해서 수업 진행할 수
-          있는 점 양해해 주시기 바랍니다.
-          <br />
-          <br />
-          &nbsp; 3️⃣ 학생과의 간단한 상담 이후에 제가 준비한 수업 자료로 수업을
-          진행하고 그 수업을 바탕으로 수업 교재와 커리큘럼을 협의할 것입니다.
-          <br />
-          <br />
-          &nbsp; 4️⃣ 2시간 이내의 수업으로 어떤 부분에서 막히고 보완할 점이
-          무엇인지 파악하여 지금까지의 문제점을 빠르게 개선할 수 있도록 학생에게
-          알맞은 성적 향상 전략을 제시하겠습니다.
-          <br />
-          <br />
-          &nbsp; 5️⃣ 정규 수업 성사가 되지 않더라도 서로에게 헛된 시간이 되지
-          않도록 수학 외 다른 과목의 공부 방법과 입시에 대한 상담도 진행하고
-          있습니다.
-          <br />
-          <br />
-          <br />
-          &nbsp; 📢 과외 상담 시 규정
-          <br />
-          <br />
-          &nbsp; 1️⃣ 기본적인 예의를 갖추지 않고 문의하거나 상담 태도가
-          무례하다고 판단되면 더 이상 답장하지 않겠습니다.
-          <br />
-          <br />
-          &nbsp; 2️⃣ 연락처 교환은 정규 수업 확정 이후에만 가능합니다. 과외 상담
-          과정에서 연락처 알려주셔도 어떠한 경우에도 연락하지 않을 것이며 즉시
-          상담 종료합니다.
-          <br />
-          <br />
-          &nbsp; 3️⃣ 정규 수업 확정 이후에 학부모와 학생에 대한 상담을 하더라도
-          과외를 받을 학생이 직접 문의하는 것을 선호합니다.
-          <br />
-          <br />
-          &nbsp; 4️⃣ 정규 수업 진행 여부와 수업료에 대한 사항은 학부모와 충분한
-          상의 후 최종적으로 결정해서 저에게 말씀해 주시기 바랍니다.
-          <br />
-          <br />
-          &nbsp; 5️⃣ 제 프로필에 적어둔 과외 상담 시 규정만 잘 지켜서 문의주시면
-          학생 및 학부모에게 빠르고 친절한 상담으로 보답하겠습니다.
-          <br />
-          <br />
-          <br />
-          &nbsp; 📢 과외 진행 시 규정
-          <br />
-          <br />
-          &nbsp; 1️⃣ 학생의 개인적인 사정으로 수업을 당일에 취소하는 경우 이유
-          불문하고 수업 횟수에서 차감됩니다.
-          <br />
-          <br />
-          &nbsp; 2️⃣ 모든 수업료는 횟수 기준 선불로 받고 있습니다. 원활한 수업
-          진행을 위해 첫 수업 하루 전까지 입금해 주셔야 하고 새로운 1회차 수업이
-          시작되는 경우에도 마찬가지입니다.
-          <br />
-          <br />
-          &nbsp; 3️⃣ 선생님과 학생 모두 갑작스러운 수업 중단은 서로에 대한 예의가
-          아니라고 생각하기에 학생이 수업 중단을 요청하는 경우 사전에 최소한
-          1주일 정도의 기간을 두고 통지해 주시기 바랍니다.
-          <br />
-          <br />
-          &nbsp; 4️⃣ 선생님이 판단했을 때 학생의 태도가 성실하지 않고 수업 시간
-          변경이 잦은 경우와 학습과 관련된 지도를 따르지 않아 수업 진행이
-          어렵다고 판단되는 경우 즉시 수업 종료합니다.
-          <br />
-          <br />
-          &nbsp; 5️⃣ 학생이 수업 중단을 요청해서 수업료 환불이 진행되어야 하는
-          경우 판다 내 수업료 환불 규정을 따르며 수업 횟수의 절반이 지나면
-          수업료 환불은 진행하지 않는 점 참고 부탁드립니다.
+          <!-- 게시글 설명 시작 -->
+          <th:block th:utext="${board.contents}">
+          	  &nbsp; 📢 시작 전 드리는 당부의 말씀
+	          <br />
+	          <br />
+	          &nbsp; 1️⃣ 과외에 있어서 기본적인 예의를 갖추지 않고 공부에 대한 의지가
+	          없는 학생은 어떠한 경우에도 수업 진행하지 않습니다.
+	          <br />
+	          <br />
+	          &nbsp; 2️⃣ 첫 수업 이전 필수적으로 상담 및 시범수업을 진행하고
+	          있습니다. 상담 및 시범수업 이후에 선생님과 학생 모두 정규 수업을
+	          원하는 경우에만 과외가 성사됩니다.
+	          <br />
+	          <br />
+	          &nbsp; 3️⃣ 정규 수업 진행 여부 기준은 현재의 성적이 아닌 학생의 공부
+	          의지와 수업에 임하는 태도입니다.
+	          <br />
+	          <br />
+	          &nbsp; 4️⃣ 정규 수업에서 활용하는 각종 수업 자료와 커리큘럼은 시범수업
+	          때 제공하는 점 참고 부탁드립니다.
+	          <br />
+	          <br />
+	          &nbsp; 5️⃣ 학생이 뚜렷한 목표와 공부 의지를 갖고 수업에 임한다면 성적
+	          향상은 확실하게 보장합니다. 현재 어떠한 상황이라도 최상의 결과로
+	          보답하겠습니다.
+	          <br />
+	          <br />
+	          <br />
+	          &nbsp; 📢 시범수업 관련 안내
+	          <br />
+	          <br />
+	          &nbsp; 1️⃣ 정규 수업 성사 여부와 관계없이 유료로 진행 중이며 수업료
+	          입금이 확인되는 순서대로 수업 확정됩니다.
+	          <br />
+	          <br />
+	          &nbsp; 2️⃣ 학생이 자유롭게 선생님을 선택할 수 있는 것처럼 저도 제
+	          수업을 잘 따라올 수 있다고 판단하는 학생을 선택해서 수업 진행할 수
+	          있는 점 양해해 주시기 바랍니다.
+	          <br />
+	          <br />
+	          &nbsp; 3️⃣ 학생과의 간단한 상담 이후에 제가 준비한 수업 자료로 수업을
+	          진행하고 그 수업을 바탕으로 수업 교재와 커리큘럼을 협의할 것입니다.
+	          <br />
+	          <br />
+	          &nbsp; 4️⃣ 2시간 이내의 수업으로 어떤 부분에서 막히고 보완할 점이
+	          무엇인지 파악하여 지금까지의 문제점을 빠르게 개선할 수 있도록 학생에게
+	          알맞은 성적 향상 전략을 제시하겠습니다.
+	          <br />
+	          <br />
+	          &nbsp; 5️⃣ 정규 수업 성사가 되지 않더라도 서로에게 헛된 시간이 되지
+	          않도록 수학 외 다른 과목의 공부 방법과 입시에 대한 상담도 진행하고
+	          있습니다.
+	          <br />
+	          <br />
+	          <br />
+	          &nbsp; 📢 과외 상담 시 규정
+	          <br />
+	          <br />
+	          &nbsp; 1️⃣ 기본적인 예의를 갖추지 않고 문의하거나 상담 태도가
+	          무례하다고 판단되면 더 이상 답장하지 않겠습니다.
+	          <br />
+	          <br />
+	          &nbsp; 2️⃣ 연락처 교환은 정규 수업 확정 이후에만 가능합니다. 과외 상담
+	          과정에서 연락처 알려주셔도 어떠한 경우에도 연락하지 않을 것이며 즉시
+	          상담 종료합니다.
+	          <br />
+	          <br />
+	          &nbsp; 3️⃣ 정규 수업 확정 이후에 학부모와 학생에 대한 상담을 하더라도
+	          과외를 받을 학생이 직접 문의하는 것을 선호합니다.
+	          <br />
+	          <br />
+	          &nbsp; 4️⃣ 정규 수업 진행 여부와 수업료에 대한 사항은 학부모와 충분한
+	          상의 후 최종적으로 결정해서 저에게 말씀해 주시기 바랍니다.
+	          <br />
+	          <br />
+	          &nbsp; 5️⃣ 제 프로필에 적어둔 과외 상담 시 규정만 잘 지켜서 문의주시면
+	          학생 및 학부모에게 빠르고 친절한 상담으로 보답하겠습니다.
+	          <br />
+	          <br />
+	          <br />
+	          &nbsp; 📢 과외 진행 시 규정
+	          <br />
+	          <br />
+	          &nbsp; 1️⃣ 학생의 개인적인 사정으로 수업을 당일에 취소하는 경우 이유
+	          불문하고 수업 횟수에서 차감됩니다.
+	          <br />
+	          <br />
+	          &nbsp; 2️⃣ 모든 수업료는 횟수 기준 선불로 받고 있습니다. 원활한 수업
+	          진행을 위해 첫 수업 하루 전까지 입금해 주셔야 하고 새로운 1회차 수업이
+	          시작되는 경우에도 마찬가지입니다.
+	          <br />
+	          <br />
+	          &nbsp; 3️⃣ 선생님과 학생 모두 갑작스러운 수업 중단은 서로에 대한 예의가
+	          아니라고 생각하기에 학생이 수업 중단을 요청하는 경우 사전에 최소한
+	          1주일 정도의 기간을 두고 통지해 주시기 바랍니다.
+	          <br />
+	          <br />
+	          &nbsp; 4️⃣ 선생님이 판단했을 때 학생의 태도가 성실하지 않고 수업 시간
+	          변경이 잦은 경우와 학습과 관련된 지도를 따르지 않아 수업 진행이
+	          어렵다고 판단되는 경우 즉시 수업 종료합니다.
+	          <br />
+	          <br />
+	          &nbsp; 5️⃣ 학생이 수업 중단을 요청해서 수업료 환불이 진행되어야 하는
+	          경우 판다 내 수업료 환불 규정을 따르며 수업 횟수의 절반이 지나면
+	          수업료 환불은 진행하지 않는 점 참고 부탁드립니다.
+          </th:block>
+          <!-- 게시글 설명 끝 -->
         </p>
       </div>
     </div>
@@ -490,7 +403,7 @@
         >
           모집마감일
         </p>
-        <p>2023.08.29 17:00</p>
+        <p th:text="${#dates.format(board.deadline_date, 'yyyy-MM-dd HH시 mm분 ss초 까지')}">2023.08.29 17:00</p>
 
         <p class="card-text">믿고맡기는수학 선생님의 과외를 신청해보세요!</p>
 
@@ -505,7 +418,8 @@
       </div>
     </div>
     <br />
-    <button type="button" class="btn-List">목록가기</button>
+    <button type="button" class="btn-List" th:onclick="location.href='/recruitment'">목록가기</button>
+    <!-- TODO : 수정, 삭제 만들기 -->
     <button type="button" class="btn-modify">수정</button>
     <button type="button" class="btn-delete">삭제</button>
 
@@ -549,5 +463,8 @@
       </div>
     </div>
     <!-- 수업 신청 Modal 끝-->
+    </div>
+
+    
   </body>
 </html>
