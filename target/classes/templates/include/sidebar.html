@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>판다 :: 마이페이지</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/price-range.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet">
+    <link href="/css/mypage.css" rel="stylesheet">
+    <link href="/css/bootstrap2.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
+
+
+</head>
+<body>
+<div th:fragment="sidebar" class="leftMenu" style="margin-left: 170px">
+    <div class="leftMenuWrap">
+        <h3 class="leftMenuTitle">
+            나의정보
+        </h3>
+        <ul class="menuList">
+            <li>
+                <a href="/mypage"><span class="menuName">나의 정보</span><span class="liIcon">&gt;</span></a>
+            </li>
+            <li class="first">
+                <a href="/myconcern-list"><span class="menuName">나의 관심목록</span><span class="liIcon">&gt;</span></a>
+            </li>
+            <li>
+                <a href="/myclass-list"><span class="menuName">나의 수업목록</span><span class="liIcon">&gt;</span></a>
+            </li>
+            <li>
+                <a href="/myapply-list"><span class="menuName">나의 신청목록</span><span class="liIcon">&gt;</span></a>
+            </li>
+            <li>
+                <a href="/certification-submit"><span class="menuName">증빙서류제출</span><span class="liIcon">&gt;</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

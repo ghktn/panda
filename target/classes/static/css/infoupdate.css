@@ -1,0 +1,97 @@
+.location {
+  margin-bottom: 5%;
+}
+.home {
+  margin-left: 85%;
+}
+.input-group {
+  justify-content: center;
+  height: 45px;
+}
+
+.thumb {
+  width: 100%;
+  margin-left: 4%;
+  display: table;
+  font-size: 15px;
+}
+.thumbtitle {
+  font-weight: bolder;
+  font-size: 15pt;
+  margin-left: 250px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.box {
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: #eeeeee;
+}
+.id-check {
+  margin-top: 26px;
+}
+.chooseimg {
+  border-radius: 10px;
+  background-color: #0d2237;
+  color: white;
+  padding: 4px;
+}
+.profile {
+  width: 120px;
+  height: 130px;
+  float: left;
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  margin-left: 50px;
+}
+
+.leftMenuTitle {
+  padding-bottom: 7%;
+  border-bottom: 3px solid #2074d9;
+}
+
+.container {
+  visibility: visible;
+}
+.leftMenu {
+  float: left;
+  list-style-position: inside;
+}
+
+.menuList li {
+  margin: 30px 0px;
+  font-size: 15px;
+  padding-bottom: 3%;
+  border-bottom: 1px solid skyblue;
+}
+
+.sub {
+  width: 850px;
+  margin-left: 200px;
+}
+.btn.btn-primary.update {
+  border-radius: 8px;
+  background-color: #0d2237;
+  color: white;
+  margin-left: 155px;
+  padding: 8px;
+  margin-bottom: 30px;
+}
+.btn.btn-primary.cancel {
+  border-radius: 8px;
+  background-color: #ed5555;
+  color: white;
+  margin-left: 50px;
+  padding: 8px;
+  margin-bottom: 30px;
+}
+
+.myinfo {
+  padding-left: 50px;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif !important;
+}

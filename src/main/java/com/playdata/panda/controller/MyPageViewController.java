@@ -1,17 +1,19 @@
 package com.playdata.panda.controller;
 
-import com.playdata.panda.dto.CategoryMain;
-import com.playdata.panda.dto.CategorySub;
-import com.playdata.panda.dto.ConcernList;
-import com.playdata.panda.dto.RecruitmentBoard;
-import com.playdata.panda.service.ClassService;
-import com.playdata.panda.service.ConcernService;
-import lombok.RequiredArgsConstructor;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.List;
+import com.playdata.panda.dto.CategoryMain;
+import com.playdata.panda.dto.ConcernList;
+import com.playdata.panda.dto.RegionSd;
+import com.playdata.panda.service.ClassService;
+import com.playdata.panda.service.ConcernService;
+import com.playdata.panda.service.RegionService;
+
+import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
@@ -19,6 +21,7 @@ public class MyPageViewController {
 
     private final ClassService classService;
     private final ConcernService concernService;
+    private final RegionService regionService;
 
     @GetMapping("/myclass-list")
     public String myClassListViewPage() {
@@ -55,8 +58,9 @@ public class MyPageViewController {
 
     @GetMapping("/class-write")
     public String classWriteViewPage(Model model) {
-
         List<CategoryMain> categoryMainList = classService.findCategoryMainList();
+        List<RegionSd> regionSdList = regionService.findRegionSdList();
+		model.addAttribute("regionSdList", regionSdList);
         model.addAttribute("categoryMainList", categoryMainList);
         return "class/class-write";
     }

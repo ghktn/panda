@@ -1,0 +1,152 @@
+body {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
+
+#container {
+  height: 800px;
+}
+
+#header {
+  height: 20%;
+}
+#content {
+  height: 600px;
+  width: 50%;
+
+  margin-left: 10%;
+}
+#cardcard {
+  height: 320px;
+  width: 1100px;
+}
+.card-body {
+  padding: 1px;
+}
+.nav-tab {
+  height: 320px;
+  width: 1500px;
+}
+#mytabs {
+  width: 1130px;
+}
+.cardmb-3 {
+  width: 690px;
+  height: 310px;
+}
+#img-tc {
+  height: 250px;
+  width: 250px;
+}
+#likeButton {
+  float: right;
+}
+#medal {
+  width: 25px;
+  height: 25px;
+}
+.row {
+  display: flex;
+  width: 100%;
+}
+.col {
+  flex: 1;
+}
+#card-ps {
+  width: 300px;
+  height: 90px;
+  border-radius: 30px;
+  margin-left: 10%;
+  background-color: #fafafa;
+}
+
+#img-notice {
+  width: 20px;
+  height: 20px;
+}
+.lh-2 {
+  color: #9dd5ff;
+  font-size: 11pt;
+}
+.lh-1 {
+  font-size: 11pt;
+}
+#register {
+  background-color: #9dd5ff;
+  color: #fafafa;
+}
+#card-tc {
+  width: 1130px;
+  height: 1500px;
+  margin-left: 9%;
+  background-color: #fafafa;
+}
+#register-card {
+  width: 1130px;
+  margin-left: 9%;
+
+  background-color: #9dd5ff;
+  color: #fafafa;
+}
+.cardtext-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+#ask-card {
+  width: 18rem;
+  margin-left: 37%;
+  background-color: white;
+}
+.btn {
+  color: black;
+}
+.btn-List {
+  margin-left: 34%;
+  width: 10%;
+  height: 4%;
+  font-size: 1pc;
+}
+.btn-modify {
+  margin-left: 1%;
+  width: 10%;
+  height: 4%;
+  font-size: 1pc;
+}
+.btn-delete {
+  margin-left: 1%;
+  width: 10%;
+  height: 4%;
+  font-size: 1pc;
+}
+
+#aside {
+  height: 400px;
+  width: 500px;
+  float: right;
+  margin-left: auto;
+}
+.footer {
+}
+
+/* 수업 신청 모달창 */
+
+#myModal {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+  text-align: center;
+}
+
+.modal-body .buttonBox {
+  padding-top: 5px;
+  /* div 중앙 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body .buttonBox button {
+  font-size: 15px;
+  background-color: #0d2237;
+  border-radius: 10px;
+  color: white;
+}
