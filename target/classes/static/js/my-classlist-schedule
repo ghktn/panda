@@ -1,0 +1,500 @@
+/**
+ * 달력 만들기 js 파일
+ */
+
+// 필드
+let today = new Date(); // 오늘 날짜
+let year = ""; // 년도
+let month = ""; // 월
+let date = ""; // 날짜
+let calendarData = []; // 일정(달력)이 추가되면 수업Id, 날짜가 쌓인다.
+// ex) {classId : "1", classDate : "2023-10-02", classname : "피아노 배우기......", scheduleId : "12"}
+
+// TODO 2023.10.03 ~ 백엔드 후 사용할 지 정하기
+// // 수업 리스트 - 예시
+// const myClassList = [
+//   { number: 0, title: "수학 배우기......" },
+//   { number: 1, title: "과학 배우기......" },
+//   { number: 2, title: "영어 배우기......" },
+//   { number: 3, title: "일본어 배우기......" },
+//   { number: 4, title: "중국어 배우기......" },
+//   { number: 5, title: "물리 배우기......" },
+//   { number: 6, title: "화학 배우기......" },
+//   { number: 7, title: "체육 배우기......" },
+//   { number: 8, title: "영어2 배우기......" },
+//   { number: 9, title: "한글 배우기......" },
+//   { number: 10, title: "국어 배우기......" },
+//   { number: 11, title: "미술 배우기......" },
+//   { number: 12, title: "수영 배우기......" },
+//   { number: 13, title: "피아노 배우기......" },
+//   { number: 14, title: "댄스 배우기......" },
+// ];
+
+// * 드래그 앤드 드롭 이벤트 끝 *
+
+// 날짜 초기화
+// DOM 접근 객체 모아두기
+// 기능 : 타이틀 작성
+let writeTitle = () => {
+  const title = document.querySelector(".header .title"); // header title
+
+  // 출력해주기
+  title.innerHTML = `	
+		<h1>
+			<span class="lastMonthBtn">
+			<<
+			</span>
+			${year}년 ${month}월
+			<span class="nextMonthBtn">
+			>>
+			</span>	
+		</h1>
+	`;
+};
+
+// 기능 : 년도 출력하기
+let getYear = function () {
+  return today.getFullYear();
+};
+
+// 기능 : 월 출력하기
+const getMonth = function () {
+  return today.getMonth() + 1;
+};
+
+// 달의 마지막 날 구하기
+const getLastDate = function (year, month) {
+  let last = new Date(year, month, 0); // 달의 마지막 날짜
+  let lastDate = last.getDate(); // 달의 마지막 일
+  return lastDate;
+};
+
+// 기능 : 달의 날짜의 일수 배열 만들기
+const getDateList = function (year, month) {
+  // 마지막날 구하기
+  let lastDate = getLastDate(year, month);
+
+  // 날짜 배열 생성하기
+  const dates = [];
+  for (let i = 0; i < lastDate; i++) {
+    dates.push(i + 1);
+  }
+  return dates;
+};
+//getDateList(getYear(), getMonth()); // ok
+
+// 기능 : 일에 따른 요일 배열을 만들기
+const getDayList = function (year, month) {
+  let days = []; // 요일 배열
+  // 원하는 일수 배열 불러오기
+  const dates = getDateList(year, month);
+  // 원하는 날짜 배열 생성하기
+  const realDate = dates.map((date) => {
+    return new Date(year, month - 1, date);
+  });
+  // 해당 날짜의 요일을 배열로 만들기(0 ~ 6 : 일 ~ 토)
+  days = realDate.map((date) => {
+    return date.getDay();
+  });
+  // 요일 배열을 한글 배열로 만들기(TODO : map 사용)
+  const strDays = days.map((day) => {
+    let strDay = ""; // 글자 요일;
+    switch (day) {
+      case 0:
+        strDay = "일";
+        break;
+      case 1:
+        strDay = "월";
+        break;
+      case 2:
+        strDay = "화";
+        break;
+      case 3:
+        strDay = "수";
+        break;
+      case 4:
+        strDay = "목";
+        break;
+      case 5:
+        strDay = "금";
+        break;
+      case 6:
+        strDay = "토";
+        break;
+      default:
+        throw {
+          msg: "일치하는 요일이 없습니다.",
+          code: 500,
+          bigo: "일치 요일 없음",
+        };
+    }
+    return strDay;
+  });
+  return strDays;
+};
+
+/* 일정 기억 기능 시작 */
+
+const showSchedule = (year, month, date, calendarBox) => {
+  // 해당 년도월에 따른 날짜 모음
+  const dateList = getDateList(year, month);
+
+  // 저장되어 있는 일정 불러오기
+  calendarData.forEach((schedule, index) => {
+    // 일정 날짜 불러오기
+    const scheduleDate = schedule["classDate"];
+    // 이정 날짜를 year, month, date로 분리하기
+    const scheduleDateArr = scheduleDate.split("-");
+
+    if (
+      (scheduleDateArr[0] == year) &
+      (scheduleDateArr[1] == month) &
+      (scheduleDateArr[2] == date)
+    ) {
+      // 날짜가 같으면 div를 만들어 뿌려주기
+      const calendarSchedule = document.createElement("div");
+      calendarSchedule.classList.add("classTitle");
+      calendarSchedule.classList.add("express");
+      calendarSchedule.setAttribute("id", schedule["classId"]); // 수업 id
+      calendarSchedule.setAttribute("name", schedule["scheduleId"]); // 일정 id
+      calendarSchedule.innerText = schedule["classname"];
+
+      // 켈린더의 해당 날짜에 일정 추가하기
+      calendarBox.appendChild(calendarSchedule);
+    }
+  });
+};
+
+/* 일정 기억 기능 끝 */
+
+// 기능 :  클릭시 다음달로 넘어가기
+const clickNextMonth = function () {
+  // class=nextMonthBtn 불러오기
+  const nextMonthBtn = document.querySelector(".nextMonthBtn");
+  // 클릭이벤트 발생
+  nextMonthBtn.addEventListener("click", () => {
+    changeSessionStorageValue(year, month, date, 1); // year, month, date 값 변경
+    getSessionStorageValue();
+    //		let nextMonth = getMonth() + 1;// 다음달
+    // month + 1 로 get Calendar 실행
+    //		getCalendar(2023, nextMonth);
+    getCalendar(year, month);
+  });
+};
+// 기능 : 클릭시 이전달로 넘어가기
+const clickLastMonth = function () {
+  // class=nextMonthBtn 불러오기
+  const lastMonthBtn = document.querySelector(".lastMonthBtn");
+  // 클릭이벤트 발생
+  lastMonthBtn.addEventListener("click", () => {
+    changeSessionStorageValue(year, month, date, -1); // year, month, date 값 변경
+    getSessionStorageValue();
+    // month + 1 로 get Calendar 실행
+    //		getCalendar(2023, lastMonth);
+    getCalendar(year, month);
+  });
+};
+
+const getCalendar = (year, month) => {
+  // 일수 배열 불러오기
+  const dateList = getDateList(year, month);
+  // 요일 배열 불러오기
+  const dayList = getDayList(year, month);
+  // 오늘 날짜 불러오기
+  const today = new Date();
+  const todayDate = today.getDate();
+  const todayYear = today.getFullYear(); // 오늘 년도
+  const todayMonth = today.getMonth() + 1; // 오늘 달
+
+  // 달력 테이블 생성 생성
+  const calendarTable = document.createElement("div");
+  // 달력 테이블 자식 노드 생성
+  // 달의 주수 6으로 정한다.
+  const WEEK_LENGTH = 6;
+  let day = ""; // 요일
+  let date = ""; // 요일에 맞는 일
+  for (let i = 0; i < WEEK_LENGTH; i++) {
+    const tr = document.createElement("div"); // tr 노드 생성
+    tr.classList.add("row");
+    tr.classList.add("calendarRow");
+    const dayStrList = ["일", "월", "화", "수", "목", "금", "토"]; // 요일 배열
+    // tr의 자식 노드 td 생성하기
+    let tdTextNode = ""; // td의 텍스트 노드
+
+    if (i === 0) {
+      day = dayList.shift();
+      date = dateList.shift();
+      // 요일 생성하기
+      const titleTr = document.createElement("div"); // tr 노드 생성
+      titleTr.classList.add("row");
+      titleTr.classList.add("calendarRow");
+      dayStrList.forEach((day) => {
+        const th = document.createElement("div"); // 	td 노드 생성하기
+        th.classList.add("col-sm-2");
+        th.classList.add("calendarWeekDay");
+        const tdTextNode = document.createTextNode(day);
+        th.appendChild(tdTextNode);
+        titleTr.appendChild(th);
+      });
+      // table의 자식노드 추가하기
+      calendarTable.appendChild(titleTr);
+    }
+
+    // td자식 텍스트 노드 추가하기
+    // 날짜 추가하기
+    dayStrList.forEach((data) => {
+      const td = document.createElement("div"); // 	td 노드 생성하기
+
+      if (day === data) {
+        tdTextNode = document.createTextNode(date); // 있으면 요일 textNode 생성하기
+        // 오늘 날짜와 date가 같으면 todayDate class 추가하기
+        if (
+          (todayDate === date) &
+          (todayMonth === Number(month)) &
+          (todayYear === Number(year))
+        ) {
+          // 클래스 속성 추가방법(1, 2, 3)
+          //					td.classList.add('todayDate');
+          td.setAttribute("class", "todayDate");
+
+          //					td.className = 'todayDate';
+          // background-color 속성 추가방법
+          //					td.setAttribute('style', 'background-color: yellow');
+        }
+        // td 자식 노드 추가하기
+        td.appendChild(tdTextNode);
+        // 저장된 일정 보여주기
+        showSchedule(year, month, date, td); // year 현재년도, month 현재달, td 일정들어갈 div
+
+        day = dayList.shift();
+        date = dateList.shift();
+      } else {
+        tdTextNode = document.createTextNode(""); // 없으면 빈 textNode 생성
+        // td 자식 노드 추가하기
+        td.appendChild(tdTextNode);
+      }
+      td.classList.add("col-sm-2");
+      td.classList.add("calendarDate");
+
+      // tr에 자식노드 추가하기
+      tr.appendChild(td);
+    });
+
+    // table의 자식노드 추가하기
+    calendarTable.appendChild(tr);
+    // dateList가 없으면 종료
+    if (dateList.length === 0) {
+      break;
+    }
+  }
+  // div.article 부모의 자식노드로 달력테이블 추가하기
+  // 원하는 div === article에 출력하기
+  writeTitle();
+  const article = document.querySelector(".article");
+  article.innerHTML = ""; // 깨끗하게 만들기
+  article.appendChild(calendarTable);
+
+  // 클릭 이벤트 등록
+  clickLastMonth();
+  clickNextMonth();
+
+  // 드래그 앤드 드롭 이벤트 실행
+  addTdDragAndDropEvent();
+};
+
+// 기능 : 세션 스토리지 year, month, date 값 변경
+const changeSessionStorageValue = (year, month, date, num) => {
+  month = parseInt(month) + parseInt(num);
+  if (month < 1) {
+    month = 12;
+    year -= 1;
+  } else if (month > 12) {
+    month = 1;
+    year = parseInt(year) + parseInt(1);
+  }
+
+  window.sessionStorage.setItem("year", year);
+  window.sessionStorage.setItem("month", month);
+  window.sessionStorage.setItem("date", date);
+};
+//  기능 : 세션 스토리지 year, month, date 값 불러오기
+const getSessionStorageValue = () => {
+  year = sessionStorage.getItem("year");
+  month = window.sessionStorage.getItem("month");
+  date = window.sessionStorage.getItem("date");
+};
+
+// 기능 : 날짜 초기화
+const initial = () => {
+  // 세션에 날짜 저장하기
+  // 스토리지에 아무것도 없을 때
+  if (!year & !month & !date) {
+    today = new Date();
+
+    year = today.getFullYear();
+    month = today.getMonth() + 1;
+    date = today.getDate();
+
+    window.sessionStorage.setItem("year", year);
+    window.sessionStorage.setItem("month", month);
+    window.sessionStorage.setItem("date", date);
+  } else {
+    year = sessionStorage.getItem("year");
+    month = sessionStorage.getItem("month");
+    date = sessionStorage.getItem("date");
+
+    today = new Date(year, month, date);
+  }
+
+  writeTitle();
+};
+
+initial(); // 초기화
+getCalendar(year, month); // 달력 만들기
+// clickNextMonth(); // 다음달 달력으로
+// clickLastMonth(); // 저번달로
+
+// TODO 2023.10.03 ~ 백엔드 후 사용할 지 정하기
+// // 기능 : 수업 리스트 만들기
+// const classList = document.querySelector("#classList");
+
+// const showMyClassList = function (bound) {
+//   // ul element 만들기
+//   const ul = document.createElement("ul");
+//   // li element 만들기
+//   const topLi = document.createElement("li");
+//   topLi.innerHTML = `<div class="row">
+// 						<div class="col-sm-2">번호</div>
+// 						<div class="col-sm-10">제목</div>
+// 					  </div>`;
+//   ul.appendChild(topLi);
+
+//   myClassList.forEach((myClass, index) => {
+//     const li = document.createElement("li");
+//     li.innerHTML = `<div class="className" draggable="true">
+// 						<div>${index + 1}</div>
+// 						<div id="${index + 1}" name="${index + 1}" class="classTitle">${
+//       myClass.title
+//     }</div>
+// 					  </div>`;
+
+//     // li.innerHTML = `${index + 1}, ${myClass.title}`;
+//     // ul에 추가하기
+//     ul.appendChild(li);
+//   });
+
+//   classList.appendChild(ul);
+// };
+
+// showMyClassList();
+
+// * 드래그 앤드 드롭 이벤트 시작 *
+function addTdDragAndDropEvent() {
+  // 필드
+  // box를 불러오기
+  const boxes = document.querySelectorAll(".className");
+  const tdes = document.querySelectorAll(".calendarDate");
+  let cloneRealBox = ""; // 클론된 element
+
+  // drag가 생겼을 때 발생하는 메서드
+  const dragstart = (event) => {
+    // 해당 객체를 복사한다.
+    const childBoxes = event.target.cloneNode(true).children;
+    // classTile만 찾기
+    for (let childBox of childBoxes) {
+      for (let childBoxClassName of childBox.classList) {
+        // childElement 중 classTitle을 가진 childElement 찾기
+        if (childBoxClassName === "classTitle") {
+          // cloneRealBox를 div로 만들기
+          const scheduleBox = document.createElement("div");
+          // id 추가
+          scheduleBox.setAttribute("id", childBox.getAttribute("id"));
+          // name 추가
+          scheduleBox.setAttribute("name", childBox.getAttribute("name"));
+          // class 추가
+          for (let className of childBox.classList) {
+            scheduleBox.setAttribute("class", className);
+          }
+          // textNode 추가
+          const classNameTitle = document.createTextNode(childBox.innerText);
+          scheduleBox.appendChild(classNameTitle);
+
+          cloneRealBox = scheduleBox;
+        }
+      }
+    }
+    // 복사한 것의 속성에 classRegister className 붙이기
+    cloneRealBox.classList.add("classRegister");
+  };
+
+  // dragstart 이벤트 주기
+  boxes.forEach((box) => {
+    box.addEventListener("dragstart", dragstart);
+  });
+
+  const dragEnter = (event) => {
+    event.preventDefault();
+  };
+
+  const dragOver = (event) => {
+    event.preventDefault();
+  };
+
+  const dragLeave = (event) => {};
+
+  const drop = (event) => {
+    // 추가된 classRegister className 삭제
+    cloneRealBox.classList.remove("classRegister");
+    // 해당 td의 child로 만들기
+    // drop 되었을 때 className = express 추가
+    cloneRealBox.classList.add("express");
+    event.target.appendChild(cloneRealBox);
+
+    // 데이터를 json으로 저장해두기
+    let targetText = event.target.innerText; // 날짜
+    const classRealDate = targetText.match(/.*(?=\n)/)[0]; // 날짜 찾아오기
+    console.log(1);
+    // 날짜 만들기
+    const classRegisterDate = `${year}-${month}-${classRealDate}`;
+    // 수업 데이터베이스 저장 id 가져오기
+    const classId = cloneRealBox.getAttribute("id");
+    // 수업명
+    const className = cloneRealBox.innerText;
+    // 일정 아이디
+    const scheduleId = cloneRealBox.getAttribute("name");
+    // 데이터를 calendarData에 저장하기
+    calendarData = [
+      ...calendarData,
+      {
+        classId: classId,
+        classDate: classRegisterDate,
+        classname: className,
+        scheduleId: scheduleId,
+      },
+    ];
+    // 날짜가 넘어가면 이걸 뿌려준다. -- 10.02 여기부터 하기
+
+    // 일정 위에 다시 drop되는 drop 이벤트 없애기
+    cloneRealBox.addEventListener("drop", (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      event.dataTransfer.effectAllowed = "none";
+      event.dataTransfer.dropEffect = "none";
+    });
+    cloneRealBox.addEventListener("dragover", (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      event.dataTransfer.effectAllowed = "none";
+      event.dataTransfer.dropEffect = "none";
+    });
+  };
+
+  // drop이 일어났을 때 td에서 이벤트 만들기
+
+  tdes.forEach((td) => {
+    td.addEventListener("dragenter", dragEnter);
+    td.addEventListener("dragover", dragOver);
+    td.addEventListener("dragleave", dragLeave);
+    td.addEventListener("drop", drop);
+  });
+}

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모집 공고 등록</title>
+
+    <!-- 부트스트랩 CDN -->
+
+    <!-- jQuery CDN-->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <!-- css -->
+    <!-- <link rel="stylesheet" href="common/css/recruitment_view.css" /> -->
+    <link rel="stylesheet" href="css/recruitment_board.css" />
+
+    <!-- js -->
+    <script
+      defer="defer"
+      type="text/javascript"
+      src="js/recruitment_board.js"
+    ></script>
+
+    <!-- panda css -->
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- bootstrap 3 시작 -->
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- bootstrap 3 끝 -->
+
+    <!-- 조장님 만든 거 시작 -->
+
+    <!-- <link href="panda/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="panda/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="panda/css/prettyPhoto.css" rel="stylesheet" />
+    <link href="panda/css/price-range.css" rel="stylesheet" />
+    <link href="panda/css/animate.css" rel="stylesheet" />
+    <link href="panda/css/main.css" rel="stylesheet" />
+    <link href="panda/css/responsive.css" rel="stylesheet" /> -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="panda/images/ico/favicon.ico" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="panda/images/ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="panda/images/ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="panda/images/ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="panda/images/ico/apple-touch-icon-57-precomposed.png"
+    />
+
+    <!-- 조장님 만든 거 끝-->
+
+    <!-- Toast UI editor 시작 -->
+    <!-- css -->
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
+    />
+    <!-- javascript -->
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+
+    <!-- Toast UI editor 끝 -->
+  </head>
+  <body>
+    <!-- header 시작 -->
+    <header id="header">
+      <!--header-->
+      <div class="header_top"></div>
+
+      <div class="header-middle">
+        <!--header-middle-->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="logo pull-left">
+                <a href="../index.html"
+                  ><img src="images/home/logo2.png" alt=""
+                /></a>
+              </div>
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default change">
+                  선생님으로 전환하기
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="shop-menu pull-right">
+                <ul class="nav navbar-nav">
+                  <li>
+                    <a href="../member/my-page.html"
+                      ><i class="fa fa-user"></i> 내 정보</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-star"></i> 관심 목록</a>
+                  </li>
+                  <li>
+                    <a href="../member/login2.html"><i class="fa fa-lock"></i> 로그인</a>
+                  </li>
+                  <li>
+                    <a href="../member/register.html" class="register"> 회원가입</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/header-middle-->
+
+      <div class="header-bottom">
+        <!--header-bottom-->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-9">
+              <div class="navbar-header">
+                <button
+                  type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse"
+                >
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="mainmenu pull-left">
+                <ul class="nav navbar-nav collapse navbar-collapse">
+                  <li><a href="recruiment-board.html" class="active">수업 홍보</a></li>
+                  <li class="dropdown">
+                    <a href="#">커뮤니티<i class="fa fa-angle-down"></i></a>
+                    <ul role="menu" class="sub-menu">
+                      <li><a href="../shop.html">자유 게시판</a></li>
+                      <li><a href="product-details.html"></a></li>
+                      <!-- <li><a href="checkout.html">Checkout</a></li>
+                      <li><a href="cart.html">Cart</a></li>
+                      <li><a href="login.html">Login</a></li> -->
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">공지사항<i class="fa fa-angle-down"></i></a>
+                    <ul role="menu" class="sub-menu">
+                      <li><a href="blog.html">선생님</a></li>
+                      <li><a href="blog-single.html">학생</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="../404.html">문의하기</a></li>
+                  <li><a href="contact-us.html">포인트상점</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="search_box pull-right">
+                <input type="text" placeholder="검색어를 입력해주세요." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/header-bottom-->
+    </header>
+    <!--/header-->
+    <!-- header 끝 -->
+
+    <div id="main">
+      <div class="content">
+        <!-- 공고 등록 -->
+        <div class="contentTitle">
+          <h3>모집 공고 등록</h3>
+        </div>
+
+        <!-- header box 끝-->
+
+        <!-- TODO : form action post로 수정 필요 -->
+        <form action="recruiment-board.html" method="get">
+          <!-- 공고 제목 -->
+          <div class="formLine">
+            <div class="row">
+              <div class="col-sm-7">
+                <div class="form-group">
+                  <label for="title" class="form-label">제목</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="title"
+                    name="title"
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-5 myClassBox">
+                <!-- 내가 불러온 수업 시작 -->
+                <div class="myClassChoiceBox"></div>
+                <!-- 내가 불러온 수업 끝-->
+
+                <!-- 나의 수업 불러오기 -->
+                <div class="myClassCallBox">
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary btn-lg"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal"
+                    id="myClassCallBtn"
+                  >
+                    나의 수업 불러오기
+                  </button>
+                </div>
+                <!-- 나의 수업 불러오기 끝 -->
+              </div>
+            </div>
+          </div>
+
+          <div class="formLine">
+            <!-- 참여가능인원-->
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label for="maxStdCount" class="form-label"
+                    >참여가능인원</label
+                  >
+                  <select
+                    class="form-select form-control"
+                    id="maxStdCount"
+                    name="maxStdCount"
+                  >
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- 모집대상성별 -->
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label for="stdGender" class="form-label">모집성별</label>
+                  <select
+                    class="form-select form-control"
+                    id="stdGender"
+                    name="stdGender"
+                  >
+                    <option value="">선택</option>
+                    <option value="N">무관</option>
+                    <option value="M">남자</option>
+                    <option value="W">여자</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- 모집대상연령대 -->
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label for="stdAgeGroup" class="form-label">모집연령대</label>
+                  <select
+                    class="form-select form-control"
+                    id="stdAgeGroup"
+                    name="stdAgeGroup"
+                  >
+                    <option value="">선택</option>
+                    <option value="N">무관</option>
+                    <option value="0">14세미만</option>
+                    <option value="2">20세미만</option>
+                    <option value="3">30세미만</option>
+                    <option value="4">40세미만</option>
+                    <option value="5">.......</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 희망수강비 -->
+          <div class="formLine">
+            <!-- 수강비 -->
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label for="wishPay" class="form-label">수강비</label>
+                  <select
+                    class="form-select form-control"
+                    id="wishPay"
+                    name="wishPay"
+                  >
+                    <option value="">선택</option>
+                    <option value="N">협의가능</option>
+                    <option value="0">5만원이상</option>
+                    <option value="1">10만원이상</option>
+                    <option value="2">15만원이상</option>
+                    <option value="3">20만원이상</option>
+                    <option value="4">......</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- 수업형태 -->
+
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label for="lectureType" class="form-label">수업형태</label>
+                  <select
+                    class="form-select form-control"
+                    id="lectureType"
+                    name="lectureType"
+                  >
+                    <option value="">선택</option>
+                    <option value="N">무관</option>
+                    <option value="0">온라인</option>
+                    <option value="1">오프라인</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 수업희망요일 -->
+
+          <div class="formLine">
+            <!-- 수업희망요일 -->
+            <div class="form-group">
+              <label for="wishDays" class="form-label">수업희망요일</label>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-1">
+                <div class="form-group">
+                  <input
+                    type="checkbox"
+                    id="mon"
+                    class="wishDays"
+                    name="wishDays"
+                    value="N"
+                  />
+                  <label for="mon">무관</label>
+                </div>
+              </div>
+
+              <div class="col-sm-1">
+                <div class="form-group">
+                  <input
+                    type="checkbox"
+                    id="mon"
+                    class="wishDays"
+                    name="wishDays"
+                    value="0"
+                  />
+                  <label for="mon">월</label>
+                </div>
+              </div>
+
+              <div class="col-sm-1">
+                <div class="form-group">
+                  <input
+                    type="checkbox"
+                    id="tue"
+                    class="wishDays"
+                    name="wishDays"
+                    value="1"
+                  />
+                  <label for="tue">화</label>
+                </div>
+              </div>
+
+              <div class="col-sm-1">
+                <div class="form-group">
+                  <input
+                    type="checkbox"
+                    id="wen"
+                    class="wishDays"
+                    name="wishDays"
+                    value="2"
+                  />
+                  <label for="wen">수</label>
+                </div>
+              </div>
+
+              <div class="col-sm-1">
+                <div class="form-group">
+                  <input
+                    type="checkbox"
+                    id="thur"
+                    class="wishDays"
+                    name="wishDays"
+                    value="3"
+                  />
+                  <label for="thur">목</label>
+                </div>
+              </div>
+
+              <div class="col-sm-1">
+                <div class="form-group">
+                  <input
+                    type="checkbox"
+                    id="fri"
+                    class="wishDays"
+                    name="wishDays"
+                    value="4"
+                  />
+                  <label for="fri">금</label>
+                </div>
+              </div>
+
+              <div class="col-sm-1">
+                <div class="form-group">
+                  <input
+                    type="checkbox"
+                    id="sat"
+                    class="wishDays"
+                    name="wishDays"
+                    value="5"
+                  />
+                  <label for="sat">토</label>
+                </div>
+              </div>
+
+              <div class="col-sm-1">
+                <div class="form-group">
+                  <input
+                    type="checkbox"
+                    id="son"
+                    class="wishDays"
+                    name="wishDays"
+                    value="6"
+                  />
+                  <label for="son">일</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 소개 -->
+          <div class="form-group">
+            <label for="cinfo" class="form-label">소개</label>
+            <div id="toastUiBoard"></div>
+          </div>
+
+          <!-- 버튼 -->
+          <div class="form-group buttonBox">
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg"
+              onclick="location.href='board.html'"
+            >
+              등록
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-lg"
+              onclick="location.href = 'board.html';"
+            >
+              취소
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- footer 시작 -->
+    <div id="footer"></div>
+    <!-- footer 끝 -->
+
+    <!-- 나의 수업 불러오기 Modal 시작 -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">나의 수업 목록</h4>
+            <button type="button" class="close" data-dismiss="modal"></button>
+          </div>
+
+          <!-- Modal body - 수업 목록 -->
+          <div class="modal-body"></div>
+
+          <!-- Modal footer - 페이지 -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 나의 수업 불러오기 Modal 끝-->
+  </body>
+</html>

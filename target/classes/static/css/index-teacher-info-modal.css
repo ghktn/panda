@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap);
+
+.teacher_info_open {
+  font-weight: bold;
+  margin: 5px;
+  padding: 4px 6px;
+  background: #000;
+  color: #fff;
+}
+
+#pop_info {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
+
+.pop_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 0;
+  text-align: center;
+}
+.pop_wrap:after {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  content: "";
+}
+.pop_wrap .pop_inner {
+  display: inline-block;
+  padding: 20px 30px;
+  background: #fff;
+  width: 500px;
+  vertical-align: middle;
+  font-size: 15px;
+}
+
+.pop_wrap .info-title {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.pop_wrap .info-comment {
+  height: 100px;
+}
+
+/* 파일 첨부 */
+.insert {
+  display: block;
+  height: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.insert .file-list {
+  height: 100px;
+  overflow: auto;
+  border: 1px solid #989898;
+  padding: 10px;
+}
+.insert .file-list .filebox p {
+  font-size: 14px;
+  margin-top: 10px;
+  display: inline-block;
+}
+.insert .file-list .filebox .delete img {
+  margin-left: 5px;
+}
+
+.insert label {
+  cursor: pointer;
+}
+
+.insert input[type="file"] {
+  display: none;
+}
+
+.pop_wrap .register-btn button {
+  font-size: 15px;
+  background-color: #0d2237;
+  border-radius: 10px;
+  color: white;
+}

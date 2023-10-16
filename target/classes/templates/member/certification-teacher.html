@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/mypage-layout}">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>증명서제출</title>
+
+    <!-- 부트스트랩 CDN -->
+
+    <!-- jQuery CDN-->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/certification-teacher.css"/>
+
+    <!-- js -->
+
+    <!-- Plugin -->
+    <link
+            rel="stylesheet"
+            href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css"
+    />
+    <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+
+    <!-- panda css -->
+    <link rel="stylesheet" href="css/main.css"/>
+
+    <!-- bootstrap 3 시작 -->
+
+    <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- bootstrap 3 끝 -->
+
+    <!-- 조장님 만든 거 시작 -->
+
+    <link rel="shortcut icon" href="panda/images/ico/favicon.ico"/>
+    <link
+            rel="apple-touch-icon-precomposed"
+            sizes="144x144"
+            href="panda/images/ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+            rel="apple-touch-icon-precomposed"
+            sizes="114x114"
+            href="panda/images/ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+            rel="apple-touch-icon-precomposed"
+            sizes="72x72"
+            href="panda/images/ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+            rel="apple-touch-icon-precomposed"
+            href="panda/images/ico/apple-touch-icon-57-precomposed.png"
+    />
+    <link href="css/mypage.css" rel="stylesheet">
+
+    <!-- 조장님 만든 거 끝-->
+</head>
+<body>
+
+<div id="container">
+    <!-- header 시작-->
+    <header id="header">
+        <!--header-->
+        <div class="header_top"></div>
+
+        <div class="header-middle">
+            <!--header-middle-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo pull-left">
+                            <a href="../index.html"
+                            ><img src="images/home/logo2.png" alt=""
+                            /></a>
+                        </div>
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default change">
+                                선생님으로 전환하기
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="shop-menu pull-right">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="my-page.html"
+                                    ><i class="fa fa-user"></i> 내 정보</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i> 관심 목록</a>
+                                </li>
+                                <li>
+                                    <a href="login2.html"
+                                    ><i class="fa fa-lock"></i> 로그인</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="register.html" class="register"> 회원가입</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/header-middle-->
+
+        <div class="header-bottom">
+            <!--header-bottom-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="navbar-header">
+                            <button
+                                    type="button"
+                                    class="navbar-toggle"
+                                    data-toggle="collapse"
+                                    data-target=".navbar-collapse"
+                            >
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="mainmenu pull-left">
+                            <ul class="nav navbar-nav collapse navbar-collapse">
+                                <li><a href="../recruiment/recruiment-board.html" class="active">수업 홍보</a></li>
+                                <li class="dropdown">
+                                    <a href="#">커뮤니티<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="../shop.html">자유 게시판</a></li>
+                                        <li><a href="../product-details.html"></a></li>
+                                        <!-- <li><a href="checkout.html">Checkout</a></li>
+                                                      <li><a href="cart.html">Cart</a></li>
+                                                      <li><a href="login.html">Login</a></li> -->
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">공지사항<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="blog.html">선생님</a></li>
+                                        <li><a href="blog-single.html">학생</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="../404.html">문의하기</a></li>
+                                <li><a href="../contact-us.html">포인트상점</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="search_box pull-right">
+                            <input type="text" placeholder="검색어를 입력해주세요."/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/header-bottom-->
+    </header>
+    <!-- header 끝 -->
+    <section layout:fragment="content">
+    <!-- main 시작 -->
+    <div id="main">
+        <!-- mainHeader 시작-->
+        <div class="mainHeader">
+            <div class="certificationConfirmBox">
+                <!-- 내가 제출한 증명서 목록 -->
+                <div class="row">
+                    <div class="col">
+                        <h4>내가 제출한 증명서 목록</h4>
+                    </div>
+                </div>
+                <!-- 제목 시작 -->
+                <div class="row">
+                    <div class="col-sm-3">순번</div>
+                    <div class="col-sm-3">제목</div>
+                    <div class="col-sm-3">결과</div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <!-- 제목 끝 -->
+
+                <div class="row">
+                    <div class="col-sm-3">1</div>
+                    <div class="col-sm-3">재학증명서</div>
+                    <div class="col-sm-3">승인완료</div>
+                    <div class="col-sm-3">
+                        <button>취소</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">2</div>
+                    <div class="col-sm-3">자격증명서</div>
+                    <div class="col-sm-3">검토중</div>
+                    <div class="col-sm-3">
+                        <button>취소</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">3</div>
+                    <div class="col-sm-3">자격증명서</div>
+                    <div class="col-sm-3">반환됨</div>
+                    <div class="col-sm-3">
+                        <button>취소</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">4</div>
+                    <div class="col-sm-3">학업증명서</div>
+                    <div class="col-sm-3">검토중</div>
+                    <div class="col-sm-3">
+                        <button>취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mainHeader 끝-->
+
+        <!-- mainBody 시작-->
+        <div class="mainBody">
+            <div class="certificationBox">
+                <div id="dropzone">
+                    <form
+                            action="https://httpbin.org/post"
+                            class="dropzone needsclick"
+                            id="demo-upload"
+                    >
+                        <div class="dz-message needsclick">
+                  <span class="text">
+                    <img
+                            src="http://www.freeiconspng.com/uploads/------------------------------iconpngm--22.png"
+                            alt="Camera"
+                    />
+                    증명서 파일을 여기에 첨부하세요.
+                  </span>
+                            <span class="plus">+</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- mainBody 시작-->
+
+        <!-- mainFooter 시작-->
+        <div class="mainFooter"></div>
+        <!-- mainFooter 시작-->
+    </div>
+
+    <!-- main 끝 -->
+
+    <!-- footer 시작 -->
+    <div id="footer"></div>
+    <!-- footer 끝 -->
+    </section>
+</div>
+</body>
+</html>

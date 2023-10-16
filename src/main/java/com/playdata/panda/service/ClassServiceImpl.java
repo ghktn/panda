@@ -2,6 +2,7 @@ package com.playdata.panda.service;
 
 import com.playdata.panda.dto.CategoryMain;
 import com.playdata.panda.dto.CategorySub;
+import com.playdata.panda.dto.ClassListDTO;
 import com.playdata.panda.repository.ClassRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -30,5 +31,10 @@ public class ClassServiceImpl implements ClassService {
     public List<CategorySub> findCategorySubList(int category_main_id){
         return classRepository.findCategorySubList(category_main_id);
     }
+
+	@Override
+	public List<ClassListDTO> selectClassList() {
+		return classRepository.selectClassList();
+	}
 
 }

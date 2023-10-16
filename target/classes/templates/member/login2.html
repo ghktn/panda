@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main-layout}">
+<head>
+    <link rel="icon" href="images/tabicon.png"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>판다 : 로그인</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/prettyPhoto.css" rel="stylesheet"/>
+    <link href="css/price-range.css" rel="stylesheet"/>
+    <link href="css/animate.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet"/>
+    <link href="css/responsive.css" rel="stylesheet"/>
+
+    <link rel="shortcut icon" href="images/ico/favicon.ico"/>
+    <link
+            rel="apple-touch-icon-precomposed"
+            sizes="144x144"
+            href="images/ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+            rel="apple-touch-icon-precomposed"
+            sizes="114x114"
+            href="images/ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+            rel="apple-touch-icon-precomposed"
+            sizes="72x72"
+            href="images/ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+            rel="apple-touch-icon-precomposed"
+            href="images/ico/apple-touch-icon-57-precomposed.png"
+    />
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="text-center">
+<main class="form-signin" layout:fragment="content">
+    <form action="/login" method="post">
+
+        <!-- <img class="mb-4" src="images/home/logo2.png" alt="" width="72" height="57"> -->
+        <h1 class="h4 mb-3 fw-normal">아이디로 로그인</h1>
+
+        <div class="form-floating">
+
+            <input
+                    type="text"
+                    class="form-control login-input"
+                    id="floatingInput"
+                    name="userId"
+                    placeholder="아이디 입력"
+            />
+        </div>
+        <div class="form-floating">
+            <input
+                    type="password"
+                    class="form-control login-input"
+                    id="floatingPassword"
+                    name="password"
+                    placeholder="비밀번호 입력"
+            />
+
+        </div>
+
+        <div class="checkbox mb-3">
+            <label class="id-remember">
+                <input type="checkbox" value="remember-me"/> 아이디 기억하기
+            </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary loginbtn" type="submit">
+            로그인
+        </button>
+        <p class="mt-5 mb-3 text-muted">계정이 없으신가요?</p>
+        <a href="아이디_찾기_페이지_URL" class="btn btn-link">아이디 찾기</a>
+        <a href="비밀번호_찾기_페이지_URL" class="btn btn-link"
+        >비밀번호 찾기</a
+        >
+        <a href="register.html" class="btn btn-link">회원가입</a>
+    </form>
+</main>
+</body>
+</html>
