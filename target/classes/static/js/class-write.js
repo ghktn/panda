@@ -23,7 +23,7 @@
     function success_run(resultData) {
 
     let result = "";
-    result += "<option>선택</option>"
+    result += "<option value=''>선택</option>"
     resultData.forEach(function(data) {
     result += "<option value=" + data.category_sub_id + ">" + data.category_sub_name + "</option>"
 
