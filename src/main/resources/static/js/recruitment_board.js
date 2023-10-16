@@ -7,6 +7,40 @@ const editor = new toastui.Editor({
   initialEditType: "wysiwyg", // 최초로 보여줄 에디터 타입 (markdown || wysiwyg)
   initialValue: "나의 수업을 소개해주세요.", // 내용의 초기 값으로, 반드시 마크다운 문자열 형태여야 함
   previewStyle: "vertical", // 마크다운 프리뷰 스타일 (tab || vertical)
+  
+  /* start of hooks */
+	hooks: {
+	    async addImageBlobHook(blob, callback) { // 이미지 업로드 로직 커스텀
+	        try {
+	            /*
+	             * 1. 에디터에 업로드한 이미지를 FormData 객체에 저장
+	             *    (이때, 컨트롤러 uploadEditorImage 메서드의 파라미터인 'image'와 formData에 append 하는 key('image')값은 동일해야 함)
+	             */
+	            const formData = new FormData();
+	            formData.append('image', blob);
+	
+	            // 2. FileApiController - uploadEditorImage 메서드 호출
+	            const response = await fetch('/tui-editor/image-upload', {
+	                method : 'POST',
+	                body : formData,
+	            });
+	
+	            // 3. 컨트롤러에서 전달받은 디스크에 저장된 파일명
+	            const filename = await response.text();
+	            console.log('서버에 저장된 파일명 : ', filename);
+	
+	            // 4. addImageBlobHook의 callback 함수를 통해, 디스크에 저장된 이미지를 에디터에 렌더링
+	            const imageUrl = `/tui-editor/image-print?filename=${filename}`;
+	            callback(imageUrl, 'image alt attribute');
+	
+	        } catch (error) {
+	            console.error('업로드 실패 : ', error);
+	        }
+	    }
+	}
+  /* end of hooks */  
+  
+  
 });
 
 // 변수
@@ -26,7 +60,7 @@ const wishDays = document.querySelectorAll(".wishDays");
 const lectureType = document.querySelector("#lectureType");
 
 // 수업 리스트 - 예시
-const myClassList = [
+let myClassList = [
   { number: 0, title: "수학 배우기......" },
   { number: 1, title: "과학 배우기......" },
   { number: 2, title: "영어 배우기......" },
@@ -46,9 +80,10 @@ const myClassList = [
 
 /**
  * 모달창이 닫히면 입력될 데이터
- * 나중에는 수업 id로 데이터 불러와서 사용한다.
+ * 나중에는 수업 id로 데이터 불러와서 사용한다. - 완료(10.16)
+ * // 모집공고 데이터를 위해 필요하다.
  */
-const values = {
+let values = {
   maxStdCount: 2,
   stdGender: "M",
   stdAgeGroup: 3,
@@ -73,6 +108,21 @@ let interestHeartStatus = false; // 관심 하트 모양 상태
 //     }
 //   });
 // };
+
+/**
+ * 기능 : TODO : 수업 불러오기(2023.10.16 ~ )
+ */
+const getClassListByUserId = async () => {
+	
+	const userId = 1;
+	const url = `http://localhost:9010/classtests/${userId}`;
+	const classList = await fetch(url, {
+		method: 'get',
+	});
+	
+//	console.log(classList.json());
+	return classList.json();
+}
 
 /**
  * 기능 : 수업 목록을 보여준다.
@@ -105,19 +155,28 @@ const showMyClassList = function (bound) {
       // modal 창이 꺼진다.
       $("#myModal").modal("hide");
       // 공고에 데이터가 입력된다.
-      maxStdCount.value = values.maxStdCount;
-      stdGender.value = values.stdGender;
-      stdAgeGroup.value = values.stdAgeGroup;
+      const classValues = myClassList[index];
+      values = classValues;// 모집공고 데이터를 위해 필요하다.
+      console.log(values);
+
+      maxStdCount.value = classValues.max_std_count;
+      stdGender.value = classValues.std_gender;
+      stdAgeGroup.value = classValues.std_age_group;
       // wishStudyCount.value = values.wishStudyCount;
       // 수업희망요일 불러오기
+      // 배열로 만들기
+      const wishDaysArr = classValues.wish_days.split(",");
+//      console.log(wishDaysArr);
       wishDays.forEach((wishDay, index) => {
-        values.wishDays.forEach((wishDayValue, index2) => {
-          if (Number(wishDay.value) === wishDayValue) {
+		// 초기화
+		wishDay.checked = false;
+        wishDaysArr.forEach((wishDayValue, index2) => {
+          if (wishDay.value === wishDayValue) {
             wishDay.checked = true;
           }
         });
       });
-      lectureType.value = values.lectureType;
+      lectureType.value = classValues.lecture_type;
       // 내가 불러온 수업 추가
       myClassChoiceBox.innerHTML = `<div>수업 : ${myClass.title}</div>`;
     });
@@ -140,13 +199,96 @@ const openModal = function () {
 /**
  * 기능 : 실행함수
  */
-const start = function () {
+const start = async function () {
+
+  // ****** 10.16 ******
+  // classList 불러오기
+  try {
+  	myClassList = await getClassListByUserId();
+//  	console.log(myClassList);
+  } catch(error) {
+	console.log(error);
+  }	
+	
   // 나의 수업 확인하기 보여주기
   showMyClassList();
   // 관심 하트 모양 바꾸기 - 현재 사용 안함(2023.09.15~)
   // handleInterestHeartClick();
   // 모달창 열기
   openModal();
+
 };
 
 start();
+
+/**
+ * 기능 : 저장을 요청할 수 있습니다.
+ */
+const requestSave = async (data) => {
+	
+	// DB에 저장 요청하기
+	const url = "http://localhost:9010/recruitments";// 확인 ok
+	const result = await fetch(url, {
+		method: "post",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(data)
+	});
+	return result.json();
+}
+
+
+/**
+ * 기능 : 모집 공고 저장하기
+ */
+const handleSavingClick = async () => {
+	
+	const title = document.querySelector("#title");
+	const contents = editor.getHTML();
+//	console.log(contents);
+	const wishPay = document.querySelector("#wishPay");
+	
+	// 저장할 데이터
+	const data = {
+		id: values.class_reg_user_id,// 작성자 id
+		recruitment_board_id: "TS",// TODO : 임의로 정함 html에 추가해야 한다.
+		class_id: values.class_id,
+		title: title.value,
+		contents: contents,
+		wish_pay: wishPay.value,// TODO : 작성할 수 있도록 만들어야 한다. html에
+	}
+	
+//	console.log(data);// 확인 ok
+	
+	// DB에 저장 요청하기
+	try {
+		const result = await requestSave(data);
+		
+		console.log(result);
+		console.log(typeof result);
+		
+		// 성공하면 list로 간다.	
+		if(result === 1) {
+			location.href = "http://localhost:9010/recruitment";
+		}
+	} catch(error) {
+		console.log(error);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
