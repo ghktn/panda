@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.text.ParseException;
+
 
 @RequiredArgsConstructor
 @Controller
@@ -23,7 +25,7 @@ public class UserApiController {
      * @return 회원가입 후, 메인페이지를 리턴한다.
      */
     @PostMapping("/signup")
-    public String signUp(SignUpRegisterDTO signUpRegisterDTO) {
+    public String signUp(SignUpRegisterDTO signUpRegisterDTO) throws ParseException {
 
         System.out.println(signUpRegisterDTO);
         userService.signUp(signUpRegisterDTO);

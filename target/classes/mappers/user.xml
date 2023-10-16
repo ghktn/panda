@@ -5,60 +5,60 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.playdata.panda.repository.UserRepository">
-    <insert id="signUpUser" parameterType="User">
+    <insert id="signUpUser" parameterType="SignUpRegisterDTO">
         insert into users
-        	(
-        	id, 
-        	user_division_id, 
-        	sd_code, 
-        	sgg_code,
-        	emd_code, 
-        	user_id, 
-        	password, 
-        	name,
-        	nickname, 
-        	email, 
-        	birthday, 
-        	gender,
-        	review_score, 
-        	profile_photo, 
-        	self_introduction_comment, 
-        	reg_date,
-        	update_date, 
-        	last_con_date
-        	)
-        values 
-        	(
-        	users_seq.nextval, 
-       		0, 
-       		#{sd_code}, 
-       		#{sgg_code}, 
-       		#{emd_code}, 
-       		#{user_id},
-            #{password}, 
-            #{name}, 
-            #{nickname}, 
-            #{email}, 
-            #{birthday},
-            #{gender}, 
-            1, 
-            1, 
-            1, 
-            sysdate, 
-            sysdate, 
-            sysdate
-            )
+        (
+        id,
+        user_division_id,
+        sd_code,
+        sgg_code,
+        emd_code,
+        user_id,
+        password,
+        name,
+        nickname,
+        email,
+        birthday,
+        gender,
+        review_score,
+        profile_photo,
+        SELF_INTRODUCTION_COMENT,
+        reg_date,
+        update_date,
+        last_con_date
+        )
+        values
+        (
+        users_seq.nextval,
+        'S',
+        #{sd_code},
+        #{sgg_code},
+        #{emd_code},
+        #{user_id},
+        #{password},
+        #{name},
+        #{nickname},
+        #{email},
+        #{birthday},
+        #{gender},
+        1,
+        '1',
+        null,
+        sysdate,
+        sysdate,
+        sysdate
+        )
     </insert>
-    
+
     <!-- 유저 아이디 확인 -->
     <select id="findByUserIdAndPassword" parameterType="LoginDTO" resultType="User">
-    	select
-    		*
-    	from
-    		users
-    	where
-    		user_id = #{userId} 
-    		and
-    		password = #{password}
+        select
+        *
+        from
+        users
+        where
+        user_id = #{userId}
+        and
+        password = #{password}
     </select>
 </mapper>

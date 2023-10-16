@@ -1,5 +1,6 @@
 package com.playdata.panda.repository;
 
+import com.playdata.panda.dto.SignUpRegisterDTO;
 import com.playdata.panda.dto.User;
 import com.playdata.panda.dto.LoginDTO;
 
@@ -13,7 +14,7 @@ public interface UserRepository {
 	 * @param user
 	 * @return
 	 */
-    public int signUpUser(User user);
+    public int signUpUser(SignUpRegisterDTO user);
     
     /**
      * 기능 : 회원을 불러올 수 있습니다

@@ -2,7 +2,9 @@ package com.playdata.panda.dto;
 
 import lombok.*;
 
-import java.sql.Date;
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 
 @Getter
@@ -21,7 +23,7 @@ public class User {
     private String name;
     private String nickname;
     private String email;
-    private String birthday;
+    private Date birthday;
     private String gender;
     private Integer review_score;
     private String profile_photo;
@@ -30,17 +32,14 @@ public class User {
     private Date update_date;
     private Date last_con_date;
     private Integer badge_id;
-    
-    
-    public static User create(SignUpRegisterDTO signUpRegisterDTO) {
 
-        String birthday = signUpRegisterDTO.getYear() + "-" + signUpRegisterDTO.getMonth() + "-" + signUpRegisterDTO.getDate();
-//        Date birthday = Date.valueOf(birthdayStr);
+
+    public static User create(SignUpRegisterDTO signUpRegisterDTO) {
 
         return User.builder()
                 .name(signUpRegisterDTO.getName())
                 .gender(signUpRegisterDTO.getGender())
-                .birthday(birthday)
+                .birthday(signUpRegisterDTO.getBirthday())
                 .nickname(signUpRegisterDTO.getNickname())
                 .user_id(signUpRegisterDTO.getUser_id())
                 .password(signUpRegisterDTO.getPassword())
@@ -50,7 +49,6 @@ public class User {
                 .emd_code(signUpRegisterDTO.getEmd_code())
                 .build();
     }
-
 
 
 }

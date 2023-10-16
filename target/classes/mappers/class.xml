@@ -19,15 +19,5 @@
             category_sub
         where category_main_id = #{category_main_id}
     </select>
-    <select id="selectClassList" resultType="ClassListDTO">
-        select
-            c.*,
-            cs.category_sub_name
-        from
-            class c,
-            category_sub cs
-        where
-        	 c.category_sub_id = cs.category_sub_id
-    </select>
 
 </mapper>

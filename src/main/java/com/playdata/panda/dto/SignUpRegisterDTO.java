@@ -2,6 +2,8 @@ package com.playdata.panda.dto;
 
 import lombok.*;
 
+import java.util.Date;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -13,7 +15,7 @@ public class SignUpRegisterDTO {
     private String year;
     private String month;
     private String date;
-    private String birthday;
+    private Date birthday;
     private String nickname;
     private String user_id;
     private String password;
@@ -21,4 +23,5 @@ public class SignUpRegisterDTO {
     private String sd_code;
     private String sgg_code;
     private String emd_code;
+
 }
