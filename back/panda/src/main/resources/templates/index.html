@@ -466,7 +466,7 @@
                 style="margin: 0"
                 enctype="multipart/form-data"
                 onsubmit="return false;"
-s        >
+        >
             <fieldset class="info-detail">
                 <legend class="info-title">선생님 정보 입력</legend>
 
@@ -475,7 +475,7 @@ s        >
                 <div class="form-group">
                     <label for="classCategory" class="form-label">수업종류</label>
 
-                    <!-- 카테고리 코드 -->
+                    <!-- 시도 코드 -->
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="categoryMainIdBox">
@@ -486,11 +486,14 @@ s        >
                                         name="categoryMainId"
                                 >
                                     <option value="">선택</option>
-                                    <th:block th:each="category : ${categoryMainList}">
-                                        <option th:value="${category.Category_main_id}"
-                                                th:text="${category.Category_main_name}">학업
-                                        </option>
-                                    </th:block>
+                                    <option value="">학업</option>
+                                    <option value="">댄스</option>
+                                    <option value="">스포츠</option>
+                                    <option value="">외국어</option>
+                                    <option value="">음악</option>
+                                    <option value="">컴퓨터</option>
+                                    <option value="">취미생활</option>
+                                    <option value="">......</option>
                                 </select>
                             </div>
                         </div>
