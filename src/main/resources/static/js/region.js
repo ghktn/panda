@@ -10,9 +10,9 @@ $(document).ready(function() {
 		const sggName = $("#sggName");
 		if (sdName) {
 			sggName.html("<option value=''>선택</option>");
+			emdName.html("<option value=''>선택</option>");
 			return;
 		}
-
 		$.ajax({
 			url: "/region_sgg",
 			type: "get",
@@ -26,7 +26,7 @@ $(document).ready(function() {
 function success_sgg_run(resultData) {
 	console.log(resultData);
 	let result = "";
-	result += "<option>선택</option>"
+	result += "<option value=''>선택</option>"
 	resultData.forEach(function(data) {
 		result += "<option value=" + data.sgg_code + ">" + data.sgg_name + "</option>"
 	})
@@ -45,29 +45,28 @@ function error_run(obj, resMsg, errorMsg) {
 */
 $(document).ready(function() {
 	$("#sggName").on("change", function() {
-		const sggName = $("sggName").val();
 		var queryData = { "sgg_code": $("#sggName").val() }
-
+		const sggName = $("sggName").val();
+		console.log(sggName);	
 		const emdName = $("#emdName");
 		if (sggName) {
 			emdName.html("<option value=''>선택</option>");
 			return;
 		}
-
 		$.ajax({
 			url: "/region_emd",
-			type: "get",
+			type: "get",				
 			data: queryData,
 			success: success_emd_run,
 			error: error_run
-		})
+			})
 	})
 });
 
 function success_emd_run(resultData) {
 	console.log(resultData);
 	let result = "";
-	result += "<option>선택</option>"
+	result += "<option value=''>선택</option>"
 	resultData.forEach(function(data) {
 		result += "<option value=" + data.emd_code + ">" + data.emd_name + "</option>"
 	})
