@@ -1,0 +1,37 @@
+body {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
+.notice-content {
+  text-align: center;
+  font-size: 16px;
+}
+.notice-th {
+  text-align: center;
+  font-size: 18px;
+  padding: 2%;
+}
+
+table {
+  width: 100%;
+  border-top: 2px solid #8e8e8e;
+  border-collapse: collapse;
+}
+th,
+td {
+  border-bottom: 1px solid #b1b1b1;
+  padding: 10px;
+}
+.notice-category {
+  float: right;
+}
+.row {
+  margin-top: 3%;
+}
+.notice-content {
+  margin-top: 5%;
+}
+.page-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,115 @@
+.location {
+  float: right;
+  margin-left: 620px;
+  margin-bottom: 5%;
+}
+.input-group {
+  justify-content: center;
+  height: 45px;
+}
+.jobList {
+  border: 1px solid black;
+  margin-bottom: 50px;
+}
+.my-calender {
+  margin-top: 15px;
+  margin-left: 40px;
+  width: 880px;
+  padding-left: 45px;
+  margin-bottom: 15px;
+}
+
+table {
+  text-align: center;
+}
+
+table th {
+  text-align: center;
+}
+
+.class-register {
+  width: 80px;
+  height: 35px;
+  margin-left: 98%;
+  color: white;
+  background-color: #0d2237;
+  border-radius: 10px;
+  font-size: 11pt;
+}
+
+.thumb {
+  width: 100%;
+  font-size: 11pt;
+}
+.thumbtitle {
+  font-weight: bolder;
+  font-size: 15pt;
+  padding-top: 20px;
+  padding-left: 150px;
+  text-align: center;
+}
+
+.leftMenuTitle {
+  padding-bottom: 7%;
+  border-bottom: 3px solid #2074d9;
+}
+
+.container {
+  visibility: visible;
+}
+.leftMenu {
+  float: left;
+  list-style-position: inside;
+}
+
+.menuList li {
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  padding-bottom: 3%;
+}
+.sub {
+  width: 850px;
+  margin-left: 150px;
+}
+
+.pagenum {
+  margin-left: 280px;
+}
+
+thead {
+  background-color: #f4f4f4;
+}
+
+.reviewimg {
+  width: 18px;
+  height: 18px;
+}
+.addreview {
+  border-radius: 10px;
+  background-color: #ffff;
+}
+tbody tr:hover {
+  background-color: #c1c1e2;
+}
+.schduletitle {
+  font-weight: bolder;
+  font-size: 15pt;
+  padding-left: 150px;
+  text-align: center;
+}
+.addschdule {
+  width: 30px;
+  height: 30px;
+  color: #ffff;
+  margin-left: 100%;
+  background-color: #0d2237;
+
+  border-radius: 10px;
+  border-style: hidden;
+}
+body {
+  font-family: "Noto Sans KR", sans-serif !important;
+}

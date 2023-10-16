@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main-layout}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/prettyPhoto.css" rel="stylesheet" />
+    <link href="css/price-range.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/notice.css" />
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="images/ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="images/ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="images/ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="images/ico/apple-touch-icon-57-precomposed.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  
+    <div class="container" layout:fragment="content">
+      <div class="notice">
+        <h2>공지사항</h2>
+      </div>
+
+      <div>
+        <div class="row">
+          <div class="col-md-2">
+            <div class="notice-total">
+              총<strong class="notice-total-number">&nbsp;297</strong>&nbsp;건
+            </div>
+            <!-- notice-total -->
+          </div>
+          <!-- col-sm-2 -->
+          <div class="col-md-10">
+            <div class="notice-category">
+              <form action="">
+                <select name="category" id="category">
+                  <option value="all">전체게시물</option>
+                  <option value="이벤트">이벤트</option>
+                  <option value="신규서비스">신규서비스</option>
+                  <option value="공지사항">공지사항</option>
+                </select>
+              </form>
+            </div>
+            <!-- notice-category -->
+          </div>
+          <!-- col-sm-10 -->
+        </div>
+        <!-- row -->
+      </div>
+
+      <div class="notice-content">
+        <table>
+          <thead>
+            <tr>
+              <th class="notice-th">분류</th>
+              <th class="notice-th">제목</th>
+              <th class="notice-th">작성일</th>
+              <th class="notice-th">조회수</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr
+              class="notice-separator"
+              style="height: 90px; background: rgb(255, 248, 246)"
+            >
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-type">공지사항</span>
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <a href="/service-center/notice/4158"
+                  ><div class="Notice_title-wrap__BiTff">
+                    <div class="notice-title">
+                      판다 개인정보처리 방침에 대한 안내
+                    </div>
+                  </div></a
+                >
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-writedate">2023-03-16</span>
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-viewcount"> 2072</span>
+              </td>
+            </tr>
+            <tr
+              class="Table_--separator__Sm8j0"
+              style="height: 90px; background: rgb(255, 248, 246)"
+            >
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-type">공지사항</span>
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <a href="/service-center/notice/4115"
+                  ><div class="Notice_title-wrap__BiTff">
+                    <div class="notice-title">
+                      2023년 최저임금은 시급 9,620원입니다
+                    </div>
+                  </div></a
+                >
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-writedate">2022-12-21</span>
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-viewcount"> 152028</span>
+              </td>
+            </tr>
+
+            <tr
+              class="Table_--separator__Sm8j0"
+              style="height: 90px; background: none"
+            >
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-type">공지사항</span>
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <a href="/service-center/notice/4286"
+                  ><div class="Notice_title-wrap__BiTff">
+                    <div class="notice-title">추석 연휴 고객센터 운영 안내</div>
+                  </div></a
+                >
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-writedate">2023-09-21</span>
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-viewcount"> 259</span>
+              </td>
+            </tr>
+            <tr
+              class="Table_--separator__Sm8j0"
+              style="height: 90px; background: none"
+            >
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-type">이벤트</span>
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <a href="/service-center/notice/4256"
+                  ><div class="Notice_title-wrap__BiTff">
+                    <div class="notice-title">
+                      영화 (메가로돈 2) 예매권 이벤트
+                    </div>
+                  </div></a
+                >
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-writedate">2023-08-02</span>
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-viewcount"> 1040</span>
+              </td>
+            </tr>
+            <tr
+              class="Table_--separator__Sm8j0"
+              style="height: 90px; background: none"
+            >
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-type">이벤트</span>
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <a href="/service-center/notice/4260"
+                  ><div class="Notice_title-wrap__BiTff">
+                    <div class="notice-title">1억 알밥이 릴레이 이벤트</div>
+                  </div></a
+                >
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-writedate">2023-08-08</span>
+              </td>
+              <td colspan="1" rowspan="1" class="">
+                <span class="notice-viewcount"> 3886</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- notice-content -->
+      <div class="page-box">
+        <ul class="pagination">
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- container -->
+  </body>
+</html>

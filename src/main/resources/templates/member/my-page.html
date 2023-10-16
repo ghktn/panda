@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/mypage-layout}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>판다 :: 마이페이지</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet">
+    <link href="css/mypage.css" rel="stylesheet">
+    <link href="css/bootstrap2.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+
+</head>
+
+<body>
+
+<section layout:fragment="content">
+    <div class="container">
+        <div class="contentsInner">
+            <div class="siteWidthLayer">
+                <div class="sub">
+                    <div class="titleWrap">
+                        <div class="thumb">
+                            <div class="thumbtitle">판다 프로필</div>
+                            <button th:onclick="|location.href='@{/myinfo-update}'|" type="button" class="accset">
+                                계정설정
+                            </button>
+                            <img class="profill" src="images/myinfo/empty_photo.jpeg">
+                            </img>
+                            <div class="name">닉네임 : 판다짱</div>
+                            <div class="user-type">회원구분 : 학생</div>
+                            <div class="email">이메일 : panda@naver.com</div>
+                            <div class="gender">성별 : 남자</div>
+                            <!-- <div class="badge"><img class="medal" src="images/recruitment/badge.jpeg"></div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="middle">
+                    <ul class="PointList">
+                        <li><b>소개글</b></li>
+                        <div class="introduction">판다 곰 같은 학생입니당</div>
+                        <li><b>판다 포인트</b></li>
+                        <li class="use"><a href="#">사용하기</a><span class="point">100포인트</span></li>
+                        <li class="use"><a href="#">적립/사용내역</a></li>
+                        <li><b>선생님 리뷰</b></li>
+                        <li class="use">별점<span class="grade">4.8점</span></li>
+                        <li class="use"><a href="#">수업별 리뷰/평점</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+</html>

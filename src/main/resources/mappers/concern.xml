@@ -1,0 +1,21 @@
+<!-- mybatis board reply 매퍼 파일 만들기 -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.playdata.panda.repository.ConcernRepository">
+    <select id="findMyConcernList">
+        SELECT rb.RECRUITMENT_ID,
+            rb.TITLE,
+            cs.category_sub_name,
+            rbt.BOARD_NAME,
+            cl.CURRENT_STD_COUNT,
+            rb.wish_pay,
+            u.NICKNAME
+        FROM RECRUITMENT_BOARD rb
+            INNER JOIN CONCERN c ON rb.RECRUITMENT_ID = c.recruitment_std_id
+            INNER JOIN CLASS cl on rb.class_id = cl.class_id
+            INNER JOIN CATEGORY_SUB cs on cl.category_sub_id = cs.category_sub_id
+            INNER JOIN USERS u on rb.ID = u.ID
+            INNER JOIN RECRUITMENT_BOARD_TYPE rbt on rb.RECRUITMENT_BOARD_ID = rbt.RECRUITMENT_BOARD_ID
+    </select>
+</mapper>
