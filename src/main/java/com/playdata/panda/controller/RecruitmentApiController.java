@@ -59,8 +59,8 @@ public class RecruitmentApiController {
 		return ResponseEntity.ok()
 				.body(resultMap);
 	}
-	
-	
-	
-	
+
+//	@PostMapping("/concern")
+//	@ResponseBody
+//	public
 }

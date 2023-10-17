@@ -6,28 +6,28 @@
 <mapper namespace="com.playdata.panda.repository.ClassRepository">
     <select id="findCategoryMainList">
         select
-            *
+        *
         from
-            category_main
+        category_main
         order by category_main_id
     </select>
 
     <select id="findCategorySubList" parameterType="int">
         select
-            *
+        *
         from
-            category_sub
+        category_sub
         where category_main_id = #{category_main_id}
     </select>
     <select id="selectClassList" resultType="ClassListDTO">
         select
-            c.*,
-            cs.category_sub_name
+        c.*,
+        cs.category_sub_name
         from
-            class c,
-            category_sub cs
+        class c,
+        category_sub cs
         where
-        	 c.category_sub_id = cs.category_sub_id
+        c.category_sub_id = cs.category_sub_id
     </select>
     <insert id="registerClass" parameterType="PandaClass">
     	insert
