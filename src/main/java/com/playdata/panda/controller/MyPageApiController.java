@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.playdata.panda.dto.CategorySub;
 import com.playdata.panda.dto.PandaClass;
+import com.playdata.panda.dto.User;
 import com.playdata.panda.service.ClassService;
+import com.playdata.panda.service.UserService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -17,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class MyPageApiController {
     private final ClassService classService;
+    private final UserService userService;
 
     @GetMapping("/category-sub")
     @ResponseBody
@@ -30,4 +33,13 @@ public class MyPageApiController {
     	System.out.println(dto);
     	return "redirect:/myclass-list";
     }
+    
+    //회원정보수정 - post
+    @PostMapping("/myinfo-update")
+    public String updateMyInfo(User user) {
+    	System.out.println(user);
+    	userService.updateMyInfo(user);
+    	return "redirect:/mypage";
+    }
+
 }

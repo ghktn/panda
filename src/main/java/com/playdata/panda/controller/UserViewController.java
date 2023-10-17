@@ -1,7 +1,11 @@
 package com.playdata.panda.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.playdata.panda.dto.User;
+import com.playdata.panda.service.UserService;
 
 @Controller
 public class UserViewController {
@@ -23,5 +27,7 @@ public class UserViewController {
     public String myPageView() {
         return "member/my-page";
     }
+    
+    
 
 }

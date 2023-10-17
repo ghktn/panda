@@ -9,5 +9,5 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class TeacherChangeServiceImpl implements TeacherChangeService{
-	private final TeacherChangeRepository tcRepository;
+	
 }

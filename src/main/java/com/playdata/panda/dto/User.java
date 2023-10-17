@@ -7,6 +7,7 @@ import java.sql.Date;
 
 @Getter
 @Builder
+@ToString
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)

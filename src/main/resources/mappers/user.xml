@@ -61,4 +61,29 @@
     		and
     		password = #{password}
     </select>
+    
+    
+    <!-- 회원 정보 수정에 데이터 불러오기 -->
+    <select id="selectMyInfo" parameterType="String" resultType="User">
+    select 
+    	*
+    from
+    	users
+    where id = #{id}
+    
+    </select>
+    
+    <!-- 회원정보 수정 -->
+    <update id="updateMyInfo" parameterType="String">
+  		update 
+  			users 
+  		set 
+  			profile_photo = #{profile_photo}, 
+  			nickname = #{nickname}, 
+  			password = #{password}, 
+  			self_introduction_comment = #{self_introduction_comment}
+  		where 
+  			id = 1
+  	
+  	</update>
 </mapper>
