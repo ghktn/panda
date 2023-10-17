@@ -60,8 +60,11 @@
                             <li>
                                 <a href="/myconcern-list"><i class="fa fa-star"></i> 관심 목록</a>
                             </li>
-                            <li>
+                            <li th:if="${session.LOGIN_MEMBER == null}">
                                 <a href="/login"><i class="fa fa-lock"></i> 로그인</a>
+                            </li>
+                            <li th:unless="${session.LOGIN_MEMBER == null}">
+                                <a href="/logout"><i class="fa fa-lock"></i> 로그아웃</a>
                             </li>
                             <li>
                                 <a href="/signup" class="register"> 회원가입</a>
