@@ -29,7 +29,7 @@ $(document).ready(function() {
 		}
 
 		$.ajax({
-			url: "/category-sub",
+			url: "/cate-sub",
 			type: "get",
 			data: queryData,
 			success: success_run,
