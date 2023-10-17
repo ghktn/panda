@@ -1,15 +1,4 @@
-// 필드
-const teacherUser = {
-  name: "나선생",
-  classInfo: {
-    title: "국어 수업",
-    pay: "120,000",
-    category: {
-      big: "학업",
-      small: "국어",
-    },
-  },
-};
+
 
 // 수업 이름 배치하기
 $(document).ready(function () {
