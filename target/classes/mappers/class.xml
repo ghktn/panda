@@ -21,13 +21,18 @@
     </select>
     <select id="selectClassList" resultType="ClassListDTO">
         select
-        c.*,
-        cs.category_sub_name
+            c.*,
+            cs.category_sub_name,
+            u.nickname,
+            u.profile_photo
         from
-        class c,
-        category_sub cs
+            class c,
+            category_sub cs,
+            users u
         where
-        c.category_sub_id = cs.category_sub_id
+        	 c.category_sub_id = cs.category_sub_id and
+        	 u.id=c.class_reg_user_id
+        	 
     </select>
     <insert id="registerClass" parameterType="PandaClass">
     	insert
@@ -37,4 +42,24 @@
 		values(seq.nextval, 1, #{category_main_id}, #{category_sub_id}, #{sd_code}, #{sgg_code}, #{emd_code}, 'R', #{title}, NULL, #{max_std_count}, #{current_std_count}, #{std_gender}, #{std_age_group}, #{pay}, #{wish_study_count}, #{wish_days}, #{lecture_type}, 0)
     </insert>
 
+    <select id="getClassInfo" parameterType="String" resultType="ClassListDTO">
+        select
+            c.*,
+            cs.category_sub_name,
+            u.nickname,
+            u.profile_photo
+        from
+            class c,
+            category_sub cs,
+            users u
+        where
+        	 c.category_sub_id = cs.category_sub_id and c.class_id=#{class_id}
+        	 and u.id = c.class_reg_user_id
+    </select>
+	<insert id="registerReview" parameterType="Review">
+    	insert
+    	into
+    		review
+		values(seq.nextval,#{class_id},3,#{score},null,sysdate )
+    </insert>
 </mapper>
