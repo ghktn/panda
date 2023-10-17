@@ -21,4 +21,8 @@ public interface UserRepository {
      */
     public User findByUserIdAndPassword(LoginDTO userDto);
 
+	public User selectMyInfo(String userId);
+
+	public void updateMyInfo(User user);
+
 }

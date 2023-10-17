@@ -18,4 +18,9 @@ public interface UserService {
      * @param userDto
      */
     LoginSuccessDTO login(LoginDTO userDto);
+
+	User selectMyInfo(String userId);
+
+	void updateMyInfo(User user);
+
 }

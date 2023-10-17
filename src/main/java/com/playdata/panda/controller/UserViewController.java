@@ -7,7 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+<<<<<<< HEAD
 import java.util.List;
+=======
+import com.playdata.panda.dto.User;
+import com.playdata.panda.service.UserService;
+>>>>>>> feature/profile
 
 @Controller
 @RequiredArgsConstructor
@@ -34,5 +39,7 @@ public class UserViewController {
     public String myPageView() {
         return "member/my-page";
     }
+    
+    
 
 }

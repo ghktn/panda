@@ -56,4 +56,15 @@ public class UserServiceImpl implements UserService {
         // 회원이 있으면 성공한다.
         return LoginSuccessDTO.create(user.getId(), user.getUser_id());
     }
+
+	@Override
+	public User selectMyInfo(String userId) {
+		return userRepository.selectMyInfo(userId);
+	}
+
+	@Override
+	public void updateMyInfo(User user) {
+		userRepository.updateMyInfo(user);
+	}
+
 }
