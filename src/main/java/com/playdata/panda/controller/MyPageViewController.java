@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.playdata.panda.dto.CategoryMain;
+import com.playdata.panda.dto.ClassListDTO;
 import com.playdata.panda.dto.ConcernList;
 import com.playdata.panda.dto.RegionSd;
 import com.playdata.panda.service.ClassService;
@@ -24,7 +25,9 @@ public class MyPageViewController {
     private final RegionService regionService;
 
     @GetMapping("/myclass-list")
-    public String myClassListViewPage() {
+    public String myClassListViewPage(Model model) {
+    	 List<ClassListDTO> dto = classService.selectClassList();
+    	 model.addAttribute("classInfo",dto);
         return "class/my-classlist";
     }
 
@@ -60,7 +63,7 @@ public class MyPageViewController {
     public String classWriteViewPage(Model model) {
         List<CategoryMain> categoryMainList = classService.findCategoryMainList();
         List<RegionSd> regionSdList = regionService.findRegionSdList();
-		model.addAttribute("regionSdList", regionSdList);
+        model.addAttribute("regionSdList", regionSdList);
         model.addAttribute("categoryMainList", categoryMainList);
         return "class/class-write";
     }

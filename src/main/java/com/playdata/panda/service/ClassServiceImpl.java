@@ -1,13 +1,16 @@
 package com.playdata.panda.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.playdata.panda.dto.CategoryMain;
 import com.playdata.panda.dto.CategorySub;
 import com.playdata.panda.dto.ClassListDTO;
+import com.playdata.panda.dto.PandaClass;
 import com.playdata.panda.repository.ClassRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
@@ -35,6 +38,11 @@ public class ClassServiceImpl implements ClassService {
 	@Override
 	public List<ClassListDTO> selectClassList() {
 		return classRepository.selectClassList();
+	}
+
+	@Override
+	public void registerClass(PandaClass dto) {
+		classRepository.registerClass(dto);
 	}
 
 }

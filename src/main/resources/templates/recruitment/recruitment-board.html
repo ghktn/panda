@@ -14,31 +14,19 @@
     <link href="css/responsive.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/board.css"/>
     <link rel="shortcut icon" href="images/ico/favicon.ico"/>
-    <link
-            rel="apple-touch-icon-precomposed"
-            sizes="144x144"
-            href="images/ico/apple-touch-icon-144-precomposed.png"
-    />
-    <link
-            rel="apple-touch-icon-precomposed"
-            sizes="114x114"
-            href="images/ico/apple-touch-icon-114-precomposed.png"
-    />
-    <link
-            rel="apple-touch-icon-precomposed"
-            sizes="72x72"
-            href="images/ico/apple-touch-icon-72-precomposed.png"
-    />
-    <link
-            rel="apple-touch-icon-precomposed"
-            href="images/ico/apple-touch-icon-57-precomposed.png"
-    />
+
     <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <!-- 조건에 따른 목록 조회 시작 -->
+
+	<script defer="defer" type="text/javascript" src="/js/recruitment-list-condition.js"></script>
+	
+	<!-- 조건에 따른 목록 조회 끝 -->
 </head>
 <body>
 <div layout:fragment="content" class="container">
@@ -51,15 +39,16 @@
                     ></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <input type="checkbox" name="category" value="1"/>학업<br/>
+                            <input type="checkbox" name="category" class="category" value="1"/>학업<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="category" value="2"/>댄스<br/>
+                            <input type="checkbox" name="category" class="category" value="2"/>댄스<br/>
                         </li>
                         <li>
                             <input
                                     type="checkbox"
                                     name="category"
+                                    class="category"
                                     value="3"
                             />스포츠<br/>
                         </li>
@@ -67,16 +56,18 @@
                             <input
                                     type="checkbox"
                                     name="category"
+                                    class="category"
                                     value="4"
                             />외국어<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="category" value="5"/>음악<br/>
+                            <input type="checkbox" name="category" class="category" value="5"/>음악<br/>
                         </li>
                         <li>
                             <input
                                     type="checkbox"
                                     name="category"
+                                    class="category"
                                     value="6"
                             />컴퓨터<br/>
                         </li>
@@ -84,6 +75,7 @@
                             <input
                                     type="checkbox"
                                     name="category"
+                                    class="category"
                                     value="7"
                             />취미생활<br/>
                         </li>
@@ -91,6 +83,7 @@
                             <input
                                     type="checkbox"
                                     name="category"
+                                    class="category"
                                     value="8"
                             />취업준비<br/>
                         </li>
@@ -98,6 +91,7 @@
                             <input
                                     type="checkbox"
                                     name="category"
+                                    class="category"
                                     value="9"
                             />투자/부업/N잡<br/>
                         </li>
@@ -105,6 +99,7 @@
                             <input
                                     type="checkbox"
                                     name="category"
+                                    class="category"
                                     value="10"
                             />시험/자격증<br/>
                         </li>
@@ -112,16 +107,18 @@
                             <input
                                     type="checkbox"
                                     name="category"
+                                    class="category"
                                     value="11"
                             />요리/조리<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="category" value="12"/>연기<br/>
+                            <input type="checkbox" name="category" class="category" value="12"/>연기<br/>
                         </li>
                         <li>
                             <input
                                     type="checkbox"
                                     name="category"
+                                    class="category"
                                     value="13"
                             />패션/뷰티<br/>
                         </li>
@@ -133,58 +130,58 @@
                     ></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <input type="checkbox" name="location" value="1"/>서울<br/>
+                            <input type="checkbox" name="location" class="location" value="1"/>서울<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="2"/>경기<br/>
+                            <input type="checkbox" name="location" class="location" value="2"/>경기<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="3"/>인천<br/>
+                            <input type="checkbox" name="location" class="location" value="3"/>인천<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="4"/>강원<br/>
+                            <input type="checkbox" name="location" class="location" value="4"/>강원<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="5"/>대전<br/>
+                            <input type="checkbox" name="location" class="location" value="5"/>대전<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="6"/>세종<br/>
+                            <input type="checkbox" name="location" class="location" value="6"/>세종<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="7"/>충남<br/>
+                            <input type="checkbox" name="location" class="location" value="7"/>충남<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="8"/>충북<br/>
+                            <input type="checkbox" name="location" class="location" value="8"/>충북<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="9"/>부산<br/>
+                            <input type="checkbox" name="location" class="location" value="9"/>부산<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="10"/>울산<br/>
+                            <input type="checkbox" name="location" class="location" value="10"/>울산<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="11"/>경남<br/>
+                            <input type="checkbox" name="location" class="location" value="11"/>경남<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="12"/>경북<br/>
+                            <input type="checkbox" name="location" class="location" value="12"/>경북<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="13"/>대구<br/>
+                            <input type="checkbox" name="location" class="location" value="13"/>대구<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="14"/>광주<br/>
+                            <input type="checkbox" name="location" class="location" value="14"/>광주<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="15"/>전남<br/>
+                            <input type="checkbox" name="location" class="location" value="15"/>전남<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="16"/>전북<br/>
+                            <input type="checkbox" name="location" class="location" value="16"/>전북<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="17"/>제주<br/>
+                            <input type="checkbox" name="location" class="location" value="17"/>제주<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="location" value="18"/>전국<br/>
+                            <input type="checkbox" name="location" class="location" value="18"/>전국<br/>
                         </li>
                     </ul>
                 </li>
@@ -193,20 +190,20 @@
                     >학생 수 <span class="caret"></span
                     ></a>
                     <ul class="dropdown-menu">
-                        <li>
-                            <input type="checkbox" name="stu-num" value="1"/>1명<br/>
+                    	<li>
+                            <input type="checkbox" name="stu-num" class="maxStdCount" value="N"/>무관<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="stu-num" value="2"/>2명<br/>
+                            <input type="checkbox" name="stu-num" class="maxStdCount" value="1"/>1명<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="stu-num" value="3"/>3명<br/>
+                            <input type="checkbox" name="stu-num" class="maxStdCount" value="2"/>2명<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="stu-num" value="4"/>4명<br/>
+                            <input type="checkbox" name="stu-num" class="maxStdCount" value="3"/>3명<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="stu-num" value="5"/>무관<br/>
+                            <input type="checkbox" name="stu-num" class="maxStdCount" value="4"/>4명<br/>
                         </li>
                     </ul>
                 </li>
@@ -220,6 +217,7 @@
                                     type="number"
                                     min="0"
                                     max="100"
+                                    class="payPrice"
                                     value="cou_low_price"
                             />
                             ~
@@ -227,6 +225,7 @@
                                     type="number"
                                     min="0"
                                     max="100"
+                                    class="payPrice"
                                     value="cou_high_price"
                             />
                         </li>
@@ -237,29 +236,29 @@
                     >희망 요일 <span class="caret"></span
                     ></a>
                     <ul class="dropdown-menu">
-                        <li>
-                            <input type="checkbox" name="day" value="1"/>일요일<br/>
+                    	<li>
+                            <input type="checkbox" name="day" class="wishDay" value="N"/>무관<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="day" value="2"/>월요일<br/>
+                            <input type="checkbox" name="day" class="wishDay" value="0"/>월요일<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="day" value="3"/>화요일<br/>
+                            <input type="checkbox" name="day" class="wishDay" value="1"/>화요일<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="day" value="4"/>수요일<br/>
+                            <input type="checkbox" name="day" class="wishDay" value="2"/>수요일<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="day" value="5"/>목요일<br/>
+                            <input type="checkbox" name="day" class="wishDay" value="3"/>목요일<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="day" value="6"/>금요일<br/>
+                            <input type="checkbox" name="day" class="wishDay" value="4"/>금요일<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="day" value="7"/>토요일<br/>
+                            <input type="checkbox" name="day" class="wishDay" value="5"/>토요일<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="day" value="8"/>무관<br/>
+                            <input type="checkbox" name="day" class="wishDay"  value="6"/>일요일<br/>
                         </li>
                     </ul>
                 </li>
@@ -269,13 +268,13 @@
                     ></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <input type="checkbox" name="type" value="1"/>온라인<br/>
+                            <input type="checkbox" name="type" class="lectureType" value="0"/>온라인<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="type" value="2"/>오프라인<br/>
+                            <input type="checkbox" name="type" class="lectureType" value="1"/>오프라인<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="type" value="3"/>무관<br/>
+                            <input type="checkbox" name="type" class="lectureType" value="N"/>무관<br/>
                         </li>
                     </ul>
                 </li>
@@ -285,13 +284,13 @@
                     ></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <input type="checkbox" name="gender" value="1"/>여자<br/>
+                            <input type="checkbox" name="gender" class="gender" value="W"/>여자<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="gender" value="2"/>남자<br/>
+                            <input type="checkbox" name="gender" class="gender" value="M"/>남자<br/>
                         </li>
                         <li>
-                            <input type="checkbox" name="gender" value="3"/>무관<br/>
+                            <input type="checkbox" name="gender" class="gender" value="N"/>무관<br/>
                         </li>
                     </ul>
                 </li>
@@ -299,8 +298,8 @@
         </div>
         <!-- col-sm-11 -->
         <div class="col-sm-1">
-            <button type="button" class="filter-button">
-                <a href="##">검색</a>
+            <button type="button" class="filter-button" id="conditionBtn">
+                검색
             </button>
         </div>
         <!-- col-sm-1 -->
@@ -324,342 +323,65 @@
     </div>
     <!-- notice-sort -->
 
+	<!-- notice  시작 -->
     <div class="notice">
-        <div class="row">
-            <div class="col-sm-6 col-md-3">
-                <div class="caption" onclick="location.href='/recruiment-detail'">
+        <div class="row" id="noticeView">
+        	<!-- boardList 출력 시작 -->
+        	<div th:each="board : ${boardList}" class="col-sm-6 col-md-3" >
+        		<div class="caption" th:onclick="|location.href='@{/recruitment/detail/}${board.recruitment_id}'|">
                     <div class="notice-title">
-                        <h4>스프링 한 달 마스터</h4>
+                        <h4 th:text="${board.title}">스프링 한 달 마스터</h4>
                     </div>
+                    <!-- TODO : 인증 체크부분 있는지 확인하기 -->
                     <div class="badge">판다인증🐼</div>
-                    <div class="location"><span>지역 : </span> 서울 독산동</div>
-                    <div class="type"><span>수업 형태 : </span> 온라인</div>
-                    <div class="stu-num"><span>학생 수 : </span> (0/5)명</div>
-                    <div class="price"><span>수강료 : </span> 200,000원</div>
+                    <div class="location">
+                    	<span>지역 : </span> 
+                    	<span th:text="${board.sd_name}">서울 독산동</span>
+                    	<span th:text="${board.sgg_name}">서울 독산동</span>
+                    	<span th:text="${board.emd_name}">서울 독산동</span>
+                    </div>
+                    <div class="type">
+                    	<span>수업 형태 : </span>
+                    	<th:block th:switch=${board.lecture_type}  >
+                    		<span th:case="N" th:text="무관">온라인</span>
+                    		<span th:case="0" th:text="온라인">온라인</span>
+                    		<span th:case="1" th:text="오프라인">온라인</span>
+                    		<span th:case="*" th:text="그 외">온라인</span>
+                    	</th:switch>
+                    </div>
+                    <div class="stu-num">
+                    	<span>학생 수 : </span> 
+                    	(<span th:text="${board.current_std_count}">0</span>/<span th:text="${board.max_std_count}">0</span>)명
+                    </div>
+                    <div class="price">
+                    	<span>수강료 : </span>
+                    	<!-- TODO : class의 수강비인지 모집공고의 희망수강비인지 확인 필요하다 -->
+                    	<span th:text="${board.wish_pay}">200,000</span>원
+                   	</div>
                     <div class="t-nickname">
                         <div>
-                  <span>
-                    <a href="###">
-                      <br/>
-                      <img src="images/home/girl1.jpg" width="20px"/>
-                      스프링장인
-                    </a>
-                  </span>
-                            <span id="star">⭐4.5</span>
+		                  <span>
+		                  	<!-- TODO : 개인정보 상세보기 이동 필요하다. -->
+		                    <a href="###">
+		                      <br/>
+		                      <img th:src="@{/hello}" src="images/home/girl1.jpg" width="20px"/>
+		                      <span th:text="${board.nickname}">스프링장인</span>
+		                    </a>
+		                  </span>
+                          <span id="star">⭐<span th:text="${board.review_score}">4.5</span></span>
                         </div>
                     </div>
                     <!-- t-nickname -->
                 </div>
                 <!-- caption -->
-            </div>
-            <!-- col-sm-6 col-md-3 -->
-            <div class="col-sm-6 col-md-3">
-                <div class="caption" onclick="location.href='#'">
-                    <div class="notice-title">
-                        <h4>자바 별거 없음</h4>
-                    </div>
-                    <div class="badge">판다인증🐼</div>
-                    <div class="location"><span>지역 : </span> 서울 독산동</div>
-                    <div class="type"><span>수업 형태 : </span> 오프라인</div>
-                    <div class="stu-num"><span>학생 수 : </span> (3/16)명</div>
-                    <div class="price"><span>수강료 : </span> 130,000원</div>
-                    <div class="t-nickname">
-                        <div>
-                  <span>
-                    <a href="###">
-                      <br/>
-                      <img src="images/home/girl1.jpg" width="20px"/>
-                      자바일타강사
-                    </a>
-                  </span>
-                            <span id="star">⭐4.5</span>
-                        </div>
-                    </div>
-                    <!-- t-nickname -->
-                </div>
-                <!-- caption -->
-            </div>
-            <!-- col-sm-6 col-md-3 -->
-            <div class="col-sm-6 col-md-3">
-                <div class="caption" onclick="location.href='#'">
-                    <div class="notice-title">
-                        <h4>나약한 자, 야생으로</h4>
-                    </div>
-                    <div class="badge">판다인증🐼</div>
-                    <div class="location"><span>지역 : </span> 안양 만안구</div>
-                    <div class="type"><span>수업 형태 : </span> 온라인</div>
-                    <div class="stu-num"><span>학생 수 : </span> (0/1)명</div>
-                    <div class="price"><span>수강료 : </span> 10,000원</div>
-                    <div class="t-nickname">
-                        <div>
-                  <span>
-                    <a href="###">
-                      <br/>
-                      <img src="images/home/girl1.jpg" width="20px"/>
-                      김숑
-                    </a>
-                  </span>
-                            <span id="star">⭐4.3</span>
-                        </div>
-                    </div>
-                    <!-- t-nickname -->
-                </div>
-                <!-- caption -->
-            </div>
-            <!-- col-sm-6 col-md-3 -->
-            <div class="col-sm-6 col-md-3">
-                <div class="caption" onclick="location.href='#'">
-                    <div class="notice-title">
-                        <h4>회오리감자 고수</h4>
-                    </div>
-                    <div class="badge">판다인증🐼</div>
-                    <div class="location"><span>지역 : </span> 서울 독산동</div>
-                    <div class="type"><span>수업 형태 : </span> 온라인</div>
-                    <div class="stu-num"><span>학생 수 : </span> (7/8)명</div>
-                    <div class="price"><span>수강료 : </span> 300,000원</div>
-                    <div class="t-nickname">
-                        <div>
-                  <span>
-                    <a href="###">
-                      <br/>
-                      <img src="images/home/girl1.jpg" width="20px"/>
-                      귀여운 우진이
-                    </a>
-                  </span>
-                            <span id="star">⭐4.3</span>
-                        </div>
-                    </div>
-                    <!-- t-nickname -->
-                </div>
-                <!-- caption -->
-            </div>
-            <!-- col-sm-6 col-md-3 -->
-        </div>
-        <!-- row -->
-        <div class="row">
-            <div class="col-sm-6 col-md-3">
-                <div class="caption" onclick="location.href='#'">
-                    <div class="notice-title">
-                        <h4>스프링 한 달 마스터</h4>
-                    </div>
-                    <div class="badge">판다인증🐼</div>
-                    <div class="location"><span>지역 : </span> 서울 독산동</div>
-                    <div class="type"><span>수업 형태 : </span> 온라인</div>
-                    <div class="stu-num"><span>학생 수 : </span> (0/5)명</div>
-                    <div class="price"><span>수강료 : </span> 200,000원</div>
-                    <div class="t-nickname">
-                        <div>
-                  <span>
-                    <a href="###">
-                      <br/>
-                      <img src="images/home/girl1.jpg" width="20px"/>
-                      스프링장인
-                    </a>
-                  </span>
-                            <span id="star">⭐4.5</span>
-                        </div>
-                    </div>
-                    <!-- t-nickname -->
-                </div>
-                <!-- caption -->
-            </div>
-            <!-- col-sm-6 col-md-3 -->
-            <div class="col-sm-6 col-md-3">
-                <div class="caption" onclick="location.href='#'">
-                    <div class="notice-title">
-                        <h4>자바 별거 없음</h4>
-                    </div>
-                    <div class="badge">판다인증🐼</div>
-                    <div class="location"><span>지역 : </span> 서울 독산동</div>
-                    <div class="type"><span>수업 형태 : </span> 오프라인</div>
-                    <div class="stu-num"><span>학생 수 : </span> (3/16)명</div>
-                    <div class="price"><span>수강료 : </span> 130,000원</div>
-                    <div class="t-nickname">
-                        <div>
-                  <span>
-                    <a href="###">
-                      <br/>
-                      <img src="images/home/girl1.jpg" width="20px"/>
-                      자바일타강사
-                    </a>
-                  </span>
-                            <span id="star">⭐4.5</span>
-                        </div>
-                    </div>
-                    <!-- t-nickname -->
-                </div>
-                <!-- caption -->
-            </div>
-            <!-- col-sm-6 col-md-3 -->
-            <div class="col-sm-6 col-md-3">
-                <div class="caption" onclick="location.href='#'">
-                    <div class="notice-title">
-                        <h4>나약한 자, 야생으로</h4>
-                    </div>
-                    <div class="badge">판다인증🐼</div>
-                    <div class="location"><span>지역 : </span> 안양 만안구</div>
-                    <div class="type"><span>수업 형태 : </span> 온라인</div>
-                    <div class="stu-num"><span>학생 수 : </span> (0/1)명</div>
-                    <div class="price"><span>수강료 : </span> 10,000원</div>
-                    <div class="t-nickname">
-                        <div>
-                  <span>
-                    <a href="###">
-                      <br/>
-                      <img src="images/home/girl1.jpg" width="20px"/>
-                      김숑
-                    </a>
-                  </span>
-                            <span id="star">⭐4.3</span>
-                        </div>
-                    </div>
-                    <!-- t-nickname -->
-                </div>
-                <!-- caption -->
-            </div>
-            <!-- col-sm-6 col-md-3 -->
-            <div class="col-sm-6 col-md-3">
-                <div class="caption" onclick="location.href='#'">
-                    <div class="notice-title">
-                        <h4>회오리감자 고수</h4>
-                    </div>
-                    <div class="badge">판다인증🐼</div>
-                    <div class="location"><span>지역 : </span> 서울 독산동</div>
-                    <div class="type"><span>수업 형태 : </span> 온라인</div>
-                    <div class="stu-num"><span>학생 수 : </span> (7/8)명</div>
-                    <div class="price"><span>수강료 : </span> 300,000원</div>
-                    <div class="t-nickname">
-                        <div>
-                  <span>
-                    <a href="###">
-                      <br/>
-                      <img src="images/home/girl1.jpg" width="20px"/>
-                      귀여운 우진이
-                    </a>
-                  </span>
-                            <span id="star">⭐4.3</span>
-                        </div>
-                    </div>
-                    <!-- t-nickname -->
-                </div>
-                <!-- caption -->
-            </div>
-            <!-- col-sm-6 col-md-3 -->
-        </div>
-        <!-- row -->
-        <div class="row">
-            <div class="col-sm-6 col-md-3">
-                <div class="caption" onclick="location.href='#'">
-                    <div class="notice-title">
-                        <h4>스프링 한 달 마스터</h4>
-                    </div>
-                    <div class="badge">판다인증🐼</div>
-                    <div class="location"><span>지역 : </span> 서울 독산동</div>
-                    <div class="type"><span>수업 형태 : </span> 온라인</div>
-                    <div class="stu-num"><span>학생 수 : </span> (0/5)명</div>
-                    <div class="price"><span>수강료 : </span> 200,000원</div>
-                    <div class="t-nickname">
-                        <div>
-                  <span>
-                    <a href="###">
-                      <br/>
-                      <img src="images/home/girl1.jpg" width="20px"/>
-                      스프링장인
-                    </a>
-                  </span>
-                            <span id="star">⭐4.5</span>
-                        </div>
-                    </div>
-                    <!-- t-nickname -->
-                </div>
-                <!-- caption -->
-            </div>
-            <!-- col-sm-6 col-md-3 -->
-            <div class="col-sm-6 col-md-3">
-                <div class="caption" onclick="location.href='#'">
-                    <div class="notice-title">
-                        <h4>자바 별거 없음</h4>
-                    </div>
-                    <div class="badge">판다인증🐼</div>
-                    <div class="location"><span>지역 : </span> 서울 독산동</div>
-                    <div class="type"><span>수업 형태 : </span> 오프라인</div>
-                    <div class="stu-num"><span>학생 수 : </span> (3/16)명</div>
-                    <div class="price"><span>수강료 : </span> 130,000원</div>
-                    <div class="t-nickname">
-                        <div>
-                  <span>
-                    <a href="###">
-                      <br/>
-                      <img src="images/home/girl1.jpg" width="20px"/>
-                      자바일타강사
-                    </a>
-                  </span>
-                            <span id="star">⭐4.5</span>
-                        </div>
-                    </div>
-                    <!-- t-nickname -->
-                </div>
-                <!-- caption -->
-            </div>
-            <!-- col-sm-6 col-md-3 -->
-            <div class="col-sm-6 col-md-3">
-                <div class="caption" onclick="location.href='#'">
-                    <div class="notice-title">
-                        <h4>나약한 자, 야생으로</h4>
-                    </div>
-                    <div class="badge">판다인증🐼</div>
-                    <div class="location"><span>지역 : </span> 안양 만안구</div>
-                    <div class="type"><span>수업 형태 : </span> 온라인</div>
-                    <div class="stu-num"><span>학생 수 : </span> (0/1)명</div>
-                    <div class="price"><span>수강료 : </span> 10,000원</div>
-                    <div class="t-nickname">
-                        <div>
-                  <span>
-                    <a href="###">
-                      <br/>
-                      <img src="images/home/girl1.jpg" width="20px"/>
-                      김숑
-                    </a>
-                  </span>
-                            <span id="star">⭐4.3</span>
-                        </div>
-                    </div>
-                    <!-- t-nickname -->
-                </div>
-                <!-- caption -->
-            </div>
-            <!-- col-sm-6 col-md-3 -->
-            <div class="col-sm-6 col-md-3">
-                <div class="caption" onclick="location.href='#'">
-                    <div class="notice-title">
-                        <h4>회오리감자 고수</h4>
-                    </div>
-                    <div class="badge">판다인증🐼</div>
-                    <div class="location"><span>지역 : </span> 서울 독산동</div>
-                    <div class="type"><span>수업 형태 : </span> 온라인</div>
-                    <div class="stu-num"><span>학생 수 : </span> (7/8)명</div>
-                    <div class="price"><span>수강료 : </span> 300,000원</div>
-                    <div class="t-nickname">
-                        <div>
-                  <span>
-                    <a href="###">
-                      <br/>
-                      <img src="images/home/girl1.jpg" width="20px"/>
-                      귀여운 우진이
-                    </a>
-                  </span>
-                            <span id="star">⭐4.3</span>
-                        </div>
-                    </div>
-                    <!-- t-nickname -->
-                </div>
-                <!-- caption -->
-            </div>
-            <!-- col-sm-6 col-md-3 -->
+        	</div>
+        	<!-- boardList 출력 끝 -->
         </div>
         <!-- row -->
     </div>
-    <!-- notice -->
+    <!-- notice 끝 -->
+    
+    <!-- page-box 시작 -->
     <div class="page-box">
         <ul class="pagination">
             <li class="active"><a href="#">1</a></li>
@@ -669,13 +391,21 @@
             <li><a href="#">5</a></li>
         </ul>
     </div>
+    <!-- page-box 끝 -->
+    
+    <!-- container -->
+	<div id="write-post" title="글 작성하기">
+	    <a href="/recruitment/write">
+	    	<i class="post">
+	    		<img src="images/board/plus-icon.png" alt="글작성"/>
+	    	</i>
+	    </a>
+	</div>
+	<!-- write-post -->
+    
 </div>
-<!-- container -->
-<div id="write-post" title="글 작성하기">
-    <a href="#"
-    ><i class="post"><img src="images/board/plus-icon.png" alt=""/></i
-    ></a>
-</div>
-<!-- write-post -->
+
+
+
 </body>
 </html>
