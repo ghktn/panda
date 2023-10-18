@@ -29,12 +29,13 @@ public class MyPageApiController {
         return categorySubList;
     }
     @PostMapping("/register-class")
-    public String registerClass(PandaClass dto) {
-    	classService.registerClass(dto);
-    	System.out.println(dto);
-    	return "redirect:/myclass-list";
+    @ResponseBody
+    public ResponseEntity<Integer> registerClass(@RequestBody PandaClass dto) {
+    	int result= classService.registerClass(dto);
+    	return ResponseEntity.ok()
+				.body(result);
     }
-    @PostMapping
+    @PostMapping("/review")
 	@ResponseBody
 	public ResponseEntity<Integer> save(@RequestBody Review review) {
 		

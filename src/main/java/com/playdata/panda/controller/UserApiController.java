@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -37,7 +38,7 @@ public class UserApiController {
 
 
     /**
-     * 기능 : 회원가입을 요청한다.
+     * 기능 : 로그인을 한다.
      */
     @PostMapping("/login")
     public String signIn(@RequestParam(defaultValue = "/") String returnUrl, LoginDTO userDto, HttpServletRequest request) {
@@ -60,4 +61,11 @@ public class UserApiController {
         return "redirect:" + returnUrl;
     }
 
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        if (session != null) {
+            session.invalidate();
+        }
+        return "redirect:/";
+    }
 }

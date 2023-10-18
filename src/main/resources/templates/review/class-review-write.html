@@ -89,8 +89,11 @@
           <div class="imageBox">
             <img alt="선생님이미지" src="images/review/review_teacher.png" />
           </div>
+          
           <input type=hidden id="class_id" name=class_id th:value="${classInfo.class_id}">
+          
           <!-- class info -->
+          
           <div class="infoBox">
             <div class="row">
               <!-- 선생님 닉네임 -->
@@ -129,19 +132,19 @@
           </div>
           <!-- 별점 box -->
           <div class="starBox">
-            <input type="radio" id="5-stars" name="score" value="5" />
+            <input type="radio" id="5-stars" class="score" name="score" value="5" />
             <label for="5-stars" class="star">&#9733;</label>
 
-            <input type="radio" id="4-stars" name="score" value="4" />
+            <input type="radio" id="4-stars" class="score" name="score" value="4" />
             <label for="4-stars" class="star">&#9733;</label>
 
-            <input type="radio" id="3-stars" name="score" value="3" />
+            <input type="radio" id="3-stars" class="score" name="score" value="3" />
             <label for="3-stars" class="star">&#9733;</label>
 
-            <input type="radio" id="2-stars" name="score" value="2" />
+            <input type="radio" id="2-stars" class="score" name="score" value="2" />
             <label for="2-stars" class="star">&#9733;</label>
 
-            <input type="radio" id="1-star" name="score" value="1" />
+            <input type="radio" id="1-star" class="score" name="score" value="1" />
             <label for="1-star" class="star">&#9733;</label>
           </div>
 
