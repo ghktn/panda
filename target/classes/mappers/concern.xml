@@ -18,4 +18,19 @@
             INNER JOIN USERS u on rb.ID = u.ID
             INNER JOIN RECRUITMENT_BOARD_TYPE rbt on rb.RECRUITMENT_BOARD_ID = rbt.RECRUITMENT_BOARD_ID
     </select>
+
+    <select id="findByIdConcern" resultType="int">
+        select count(*) from concern
+        where USER_ID = #{user_id} and RECRUITMENT_STD_ID = #{recruitment_std_id}
+    </select>
+
+    <insert id="addConcern">
+        insert into CONCERN (CONCERN_ID, RECRUITMENT_STD_ID, USER_ID, CONCERN_DATE)
+        values (concern_seq.nextval, #{recruitment_std_id}, #{user_id}, sysdate)
+    </insert>
+
+    <delete id="cancelConcern">
+        DELETE FROM CONCERN
+        WHERE RECRUITMENT_STD_ID = #{recruitment_std_id} and USER_ID = #{user_id}
+    </delete>
 </mapper>

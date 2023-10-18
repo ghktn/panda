@@ -1,261 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.playdata.panda.repository.RecruitmentRepository">
 
-	<!-- 기능 : 데이터 한 개 저장할 수 있습니다. -->
-	<insert id="saveOne" parameterType="RecruitmentBoard">
-		insert into 
-			recruitment_board
-		(
-			recruitment_id,
-			id,
-			recruitment_board_id,
-			class_id,
-			title,
-			contents,
-			wish_pay
-		)
-		values
-		(
-			recruitment_seq.nextval,
-			#{id},
-			#{recruitment_board_id},
-			#{class_id},
-			#{title},
-			#{contents},
-			#{wish_pay}
-		)
-	</insert>
-	
-	<!-- 기능 : 모든 리스트를 불러올 수 이습니다. -->
-	<select id="findAll" resultType="RecruitmentBoardPandaClassDTO">
-		select
-			rb.*,
-			c.*,
-			u.nickname,
-			u.review_score,
-			u.profile_photo,
-			sd.*,
-			sgg.*,
-			emd.*
-		from
-			recruitment_board rb
-			join class c
-				on rb.class_id = c.class_id
-			join users u
-				on rb.id = u.id
-			join region_sd sd
-				on c.sd_code = sd.sd_code
-			join region_sgg sgg
-				on c.sgg_code = sgg.sgg_code
-			join region_emd emd
-				on c.emd_code = emd.emd_code
-		order by
-			rb.recruitment_id desc
-	</select>
-	
-	<!-- 기능 : 데이터 한 개를 불러올 수 있습니다. -->
-	<select id="findById" parameterType="Integer" resultType="RecruitmentBoardPandaClassDTO">
-		select
-			rb.*,
-			c.*,
-			u.nickname,
-			u.review_score,
-			u.profile_photo,
-			sd.*,
-			sgg.*,
-			emd.*,
-			cm.*,
-			cs.*
-		from
-			recruitment_board rb
-			join class c
-				on rb.class_id = c.class_id
-			join users u
-				on rb.id = u.id
-			join region_sd sd
-				on c.sd_code = sd.sd_code
-			join region_sgg sgg
-				on c.sgg_code = sgg.sgg_code
-			join region_emd emd
-				on c.emd_code = emd.emd_code
-			join category_main cm
-				on c.category_main_id = cm.category_main_id
-			join category_sub cs
-				on c.category_sub_id = cs.category_sub_id
-		where
-			rb.recruitment_id = #{id}
-		order by
-			rb.recruitment_id desc
-	</select>
-	
-	<!-- 기능 : 조건에 따른 모든 데이터를 조회할 수 있습니다. -->
-	<select id="findAllByCondtion" parameterType="RecruitmentConditionDTO" resultType="RecruitmentBoardPandaClassDTO">
-		select
-			rb.*,
-			c.*,
-			u.nickname,
-			u.review_score,
-			u.profile_photo,
-			sd.*,
-			sgg.*,
-			emd.*,
-			cm.*,
-			cs.*
-		from
-			recruitment_board rb
-			join class c
-				on rb.class_id = c.class_id
-			join users u
-				on rb.id = u.id
-			join region_sd sd
-				on c.sd_code = sd.sd_code
-			join region_sgg sgg
-				on c.sgg_code = sgg.sgg_code
-			join region_emd emd
-				on c.emd_code = emd.emd_code
-			join category_main cm
-				on c.category_main_id = cm.category_main_id
-			join category_sub cs
-				on c.category_sub_id = cs.category_sub_id
-		<where>
-			<!-- 대분류 카테고리 -->
-			<if test="categoryList != null and categoryList.length != 0">
-				and c.catgory_main_id in
-				<foreach collection="categoryList" item="category" separator="," open="(" close=")">
-					#{category}
-				</foreach>
-			</if>
-			
-			<!-- 시도 리스트 -->
-			<if test="locationList != null and locationList.length != 0">
-				and c.sd_code in
-				<foreach collection="locationList" item="location" separator="," open="("  close=")" >
-					#{location}
-				</foreach>
-			</if>
-			
-			<!-- 인원수 리스트 -->
-			<if test="maxStdCountList != null and maxStdCountList.length != 0">
-				and c.max_std_count in
-				<foreach collection="maxStdCountList" item="maxStdCount" separator="," open="(" close=")">
-					#{maxStdCount}
-				</foreach>
-			</if>
-			
-			<!-- 수강료(low, high) -->
-			<if test="payPriceList != null and payPriceList.length != 0">
-				and rb.wish_pay 
-				<foreach collection="payPriceList" item="payPrice" open="between" separator="and">
-					#{payPrice}
-				</foreach>
-			</if>
-			
-			<!-- 수업 희망 요일 -->
-			<if test="wishDayListStr != null and wishDayListStr.length != 0">
-				and c.wish_days like #{wishDayListStr}
-			</if>
-			
-			<!-- 수업형태 리스트 -->
-			<if test="lectureTypeList != null and lectureTypeList.length != 0">
-				and c.lecture_type in
-				<foreach collection="lectureTypeList" item="lectureType" separator="," open="(" close=")" >
-					#{lectureType}
-				</foreach>
-			</if>
-			
-			<!-- 모집대상 성별 리스트 -->
-			<if test="genderList != null and genderList.length != 0">
-				and c.std_gender in
-				<foreach collection="genderList" item="gender" separator="," open="(" close=")" >
-					#{gender}
-				</foreach>
-			</if>
-			<!-- -->
-		</where>
-		order by
-			rb.recruitment_id desc
-	</select>
-	
-	<!-- 전체 list의 개수를 불러오기 -->
-	<select id="findTotalCount" parameterType="RecruitmentConditionDTO" resultType="Long">
-		select
-			count(rb.recruitment_id)
-		from
-			recruitment_board rb
-			join class c
-				on rb.class_id = c.class_id
-			join users u
-				on rb.id = u.id
-			join region_sd sd
-				on c.sd_code = sd.sd_code
-			join region_sgg sgg
-				on c.sgg_code = sgg.sgg_code
-			join region_emd emd
-				on c.emd_code = emd.emd_code
-			join category_main cm
-				on c.category_main_id = cm.category_main_id
-			join category_sub cs
-				on c.category_sub_id = cs.category_sub_id
-		<where>
-			<!-- 대분류 카테고리 -->
-			<if test="categoryList != null and categoryList.length != 0">
-				and c.catgory_main_id in
-				<foreach collection="categoryList" item="category" separator="," open="(" close=")">
-					#{category}
-				</foreach>
-			</if>
-			
-			<!-- 시도 리스트 -->
-			<if test="locationList != null and locationList.length != 0">
-				and c.sd_code in
-				<foreach collection="locationList" item="location" separator="," open="("  close=")" >
-					#{location}
-				</foreach>
-			</if>
-			
-			<!-- 인원수 리스트 -->
-			<if test="maxStdCountList != null and maxStdCountList.length != 0">
-				and c.max_std_count in
-				<foreach collection="maxStdCountList" item="maxStdCount" separator="," open="(" close=")">
-					#{maxStdCount}
-				</foreach>
-			</if>
-			
-			<!-- 수강료(low, high) -->
-			<if test="payPriceList != null and payPriceList.length != 0">
-				and rb.wish_pay 
-				<foreach collection="payPriceList" item="payPrice" open="between" separator="and">
-					#{payPrice}
-				</foreach>
-			</if>
-			
-			<!-- 수업 희망 요일 -->
-			<if test="wishDayListStr != null and wishDayListStr.length != 0">
-				and c.wish_days like #{wishDayListStr}
-			</if>
-			
-			<!-- 수업형태 리스트 -->
-			<if test="lectureTypeList != null and lectureTypeList.length != 0">
-				and c.lecture_type in
-				<foreach collection="lectureTypeList" item="lectureType" separator="," open="(" close=")" >
-					#{lectureType}
-				</foreach>
-			</if>
-			
-			<!-- 모집대상 성별 리스트 -->
-			<if test="genderList != null and genderList.length != 0">
-				and c.std_gender in
-				<foreach collection="genderList" item="gender" separator="," open="(" close=")" >
-					#{gender}
-				</foreach>
-			</if>
-		</where>
-	</select>
-	
+    <!-- 기능 : 데이터 한 개 저장할 수 있습니다. -->
+    <insert id="saveOne" parameterType="RecruitmentBoard">
+        insert into
+        recruitment_board
+        (
+        recruitment_id,
+        id,
+        recruitment_board_id,
+        class_id,
+        title,
+        contents,
+        wish_pay
+        )
+        values
+        (
+        recruitment_seq.nextval,
+        #{id},
+        #{recruitment_board_id},
+        #{class_id},
+        #{title},
+        #{contents},
+        #{wish_pay}
+        )
+    </insert>
+
+    <!-- 기능 : 모든 리스트를 불러올 수 이습니다. -->
+    <select id="findAll" resultType="RecruitmentBoardPandaClassDTO">
+        select
+        rb.*,
+        c.*,
+        u.nickname,
+        u.review_score,
+        u.profile_photo,
+        sd.*,
+        sgg.*,
+        emd.*
+        from
+        recruitment_board rb
+        join class c
+        on rb.class_id = c.class_id
+        join users u
+        on rb.id = u.id
+        join region_sd sd
+        on c.sd_code = sd.sd_code
+        join region_sgg sgg
+        on c.sgg_code = sgg.sgg_code
+        join region_emd emd
+        on c.emd_code = emd.emd_code
+        order by
+        rb.recruitment_id desc
+    </select>
+
+    <!-- 기능 : 데이터 한 개를 불러올 수 있습니다. -->
+    <select id="findById" parameterType="Integer" resultType="RecruitmentBoardPandaClassDTO">
+        select
+        rb.*,
+        c.*,
+        u.nickname,
+        u.review_score,
+        u.profile_photo,
+        sd.*,
+        sgg.*,
+        emd.*,
+        cm.*,
+        cs.*
+        from
+        recruitment_board rb
+        join class c
+        on rb.class_id = c.class_id
+        join users u
+        on rb.id = u.id
+        join region_sd sd
+        on c.sd_code = sd.sd_code
+        join region_sgg sgg
+        on c.sgg_code = sgg.sgg_code
+        join region_emd emd
+        on c.emd_code = emd.emd_code
+        join category_main cm
+        on c.category_main_id = cm.category_main_id
+        join category_sub cs
+        on c.category_sub_id = cs.category_sub_id
+        where
+        rb.recruitment_id = #{id}
+        order by
+        rb.recruitment_id desc
+    </select>
+
+
+    <!-- 기능 : 조건에 따른 모든 데이터를 조회할 수 있습니다. -->
+    <select id="findAllByCondtion" parameterType="RecruitmentConditionDTO" resultType="RecruitmentBoardPandaClassDTO">
+        select
+        rb.*,
+        c.*,
+        u.nickname,
+        u.review_score,
+        u.profile_photo,
+        sd.*,
+        sgg.*,
+        emd.*,
+        cm.*,
+        cs.*
+        from
+        recruitment_board rb
+        join class c
+        on rb.class_id = c.class_id
+        join users u
+        on rb.id = u.id
+        join region_sd sd
+        on c.sd_code = sd.sd_code
+        join region_sgg sgg
+        on c.sgg_code = sgg.sgg_code
+        join region_emd emd
+        on c.emd_code = emd.emd_code
+        join category_main cm
+        on c.category_main_id = cm.category_main_id
+        join category_sub cs
+        on c.category_sub_id = cs.category_sub_id
+        <where>
+            <!-- 대분류 카테고리 -->
+            <if test="categoryList != null and categoryList.length != 0">
+                and c.catgory_main_id in
+                <foreach collection="categoryList" item="category" separator="," open="(" close=")">
+                    #{category}
+                </foreach>
+            </if>
+
+            <!-- 시도 리스트 -->
+            <if test="locationList != null and locationList.length != 0">
+                and c.sd_code in
+                <foreach collection="locationList" item="location" separator="," open="(" close=")">
+                    #{location}
+                </foreach>
+            </if>
+
+            <!-- 인원수 리스트 -->
+            <if test="maxStdCountList != null and maxStdCountList.length != 0">
+                and c.max_std_count in
+                <foreach collection="maxStdCountList" item="maxStdCount" separator="," open="(" close=")">
+                    #{maxStdCount}
+                </foreach>
+            </if>
+
+            <!-- 수강료(low, high) -->
+            <if test="payPriceList != null and payPriceList.length != 0">
+                and rb.wish_pay
+                <foreach collection="payPriceList" item="payPrice" open="between" separator="and">
+                    #{payPrice}
+                </foreach>
+            </if>
+
+            <!-- 수업 희망 요일 -->
+            <if test="wishDayListStr != null and wishDayListStr.length != 0">
+                and c.wish_days like #{wishDayListStr}
+            </if>
+
+            <!-- 수업형태 리스트 -->
+            <if test="lectureTypeList != null and lectureTypeList.length != 0">
+                and c.lecture_type in
+                <foreach collection="lectureTypeList" item="lectureType" separator="," open="(" close=")">
+                    #{lectureType}
+                </foreach>
+            </if>
+
+            <!-- 모집대상 성별 리스트 -->
+            <if test="genderList != null and genderList.length != 0">
+                and c.std_gender in
+                <foreach collection="genderList" item="gender" separator="," open="(" close=")">
+                    #{gender}
+                </foreach>
+            </if>
+            <!-- -->
+        </where>
+        order by
+        rb.recruitment_id desc
+    </select>
+
+    <!-- 전체 list의 개수를 불러오기 -->
+    <select id="findTotalCount" parameterType="RecruitmentConditionDTO" resultType="Long">
+        select
+        count(rb.recruitment_id)
+        from
+        recruitment_board rb
+        join class c
+        on rb.class_id = c.class_id
+        join users u
+        on rb.id = u.id
+        join region_sd sd
+        on c.sd_code = sd.sd_code
+        join region_sgg sgg
+        on c.sgg_code = sgg.sgg_code
+        join region_emd emd
+        on c.emd_code = emd.emd_code
+        join category_main cm
+        on c.category_main_id = cm.category_main_id
+        join category_sub cs
+        on c.category_sub_id = cs.category_sub_id
+        <where>
+            <!-- 대분류 카테고리 -->
+            <if test="categoryList != null and categoryList.length != 0">
+                and c.catgory_main_id in
+                <foreach collection="categoryList" item="category" separator="," open="(" close=")">
+                    #{category}
+                </foreach>
+            </if>
+
+            <!-- 시도 리스트 -->
+            <if test="locationList != null and locationList.length != 0">
+                and c.sd_code in
+                <foreach collection="locationList" item="location" separator="," open="(" close=")">
+                    #{location}
+                </foreach>
+            </if>
+
+            <!-- 인원수 리스트 -->
+            <if test="maxStdCountList != null and maxStdCountList.length != 0">
+                and c.max_std_count in
+                <foreach collection="maxStdCountList" item="maxStdCount" separator="," open="(" close=")">
+                    #{maxStdCount}
+                </foreach>
+            </if>
+
+            <!-- 수강료(low, high) -->
+            <if test="payPriceList != null and payPriceList.length != 0">
+                and rb.wish_pay
+                <foreach collection="payPriceList" item="payPrice" open="between" separator="and">
+                    #{payPrice}
+                </foreach>
+            </if>
+
+            <!-- 수업 희망 요일 -->
+            <if test="wishDayListStr != null and wishDayListStr.length != 0">
+                and c.wish_days like #{wishDayListStr}
+            </if>
+
+            <!-- 수업형태 리스트 -->
+            <if test="lectureTypeList != null and lectureTypeList.length != 0">
+                and c.lecture_type in
+                <foreach collection="lectureTypeList" item="lectureType" separator="," open="(" close=")">
+                    #{lectureType}
+                </foreach>
+            </if>
+
+            <!-- 모집대상 성별 리스트 -->
+            <if test="genderList != null and genderList.length != 0">
+                and c.std_gender in
+                <foreach collection="genderList" item="gender" separator="," open="(" close=")">
+                    #{gender}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
 
 </mapper>
