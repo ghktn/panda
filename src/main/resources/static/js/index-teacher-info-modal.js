@@ -23,7 +23,7 @@ $(document).ready(function() {
 function success_run(resultData) {
 
 	let result = "";
-	result += "<option>선택</option>"
+	result += "<option value=''>선택</option>"
 	resultData.forEach(function(data) {
 		result += "<option value=" + data.category_sub_id + ">" + data.category_sub_name + "</option>"
 
@@ -83,6 +83,12 @@ closeBtns.forEach((closeBtn, index, myself) => {
 	});
 });
 
+// 기능 :  선생님 정보 입력 모달 닫을 수 있습니다.
+const closeTheacherInfoModal = () => {
+	const popInfo = document.querySelector("#pop_info");
+	popInfo.style.display = "none";
+}
+
 /* 파일 업로드 시작 */
 
 var fileNo = 0;
@@ -128,6 +134,7 @@ function addFile(obj) {
 		}
 	}
 	// 초기화
+	// 파일이 초기화 된다
 	document.querySelector("input[type=file]").value = "";
 }
 
@@ -152,9 +159,11 @@ function validation(obj) {
 	} else if (obj.name.lastIndexOf(".") == -1) {
 		alert("확장자가 없는 파일은 제외되었습니다.");
 		return false;
-	} else if (!fileTypes.includes(obj.type)) {
-		alert("첨부가 불가능한 파일은 제외되었습니다.");
-		return false;
+	// TODO : 현재 사용 안 한다. 파일 확장자를 정하고 사용해 본다.(10.18~)
+//	} else if (!fileTypes.includes(obj.type)) {
+//		alert("첨부가 불가능한 파일은 제외되었습니다.");
+//		return false;
+//	} 
 	} else {
 		return true;
 	}
@@ -163,6 +172,7 @@ function validation(obj) {
 /* 첨부파일 삭제 */
 function deleteFile(num) {
 	document.querySelector("#file" + num).remove();
+	// 내부의 데이터를 저장할 수 있다.
 	filesArr[num].is_delete = true;
 }
 
@@ -170,28 +180,51 @@ function deleteFile(num) {
 function submitForm() {
 	// 폼데이터 담기
 	var form = document.querySelector("form");
-	var formData = new FormData(form);
+//	var formData = new FormData(form);
+	var formData = new FormData();
 	for (var i = 0; i < filesArr.length; i++) {
 		// 삭제되지 않은 파일만 폼데이터에 담기
 		if (!filesArr[i].is_delete) {
-			formData.append("attach_file", filesArr[i]);
+			console.log(filesArr[i]);
+			
+			formData.append("files", filesArr[i]);
 		}
 	}
-
+	// 데이터 담기
+	// TODO : 카테고리 대뷴류, 소분류 데이터 validation 처리하기
+	// TODO : 선생님 소개글 validation  처리하기
+	const categoryMainIdValue = document.querySelector("#categoryMainId").value;
+	const categorySubIdValue = document.querySelector("#categorySubId").value;
+	const commentValue = document.querySelector("#comment").value;
+	
+	
+	const teacherChange = {
+		category_main_id: categoryMainIdValue,
+		category_sub_id: categorySubIdValue,
+		teacher_introduce: commentValue
+	}
+	// 다른 데이터 formData에 담기
+	formData.append("teacherChange", new Blob([JSON.stringify(teacherChange)], {type: 'application/json'}));
+	
 	$.ajax({
 		method: "POST",
-		url: "/register",
-		dataType: "json",
+		url: "/teacherchange/save",
+		dataType: "text",
+		enctype: "multipart/form-data",
+		processData: false,
+		contentType: false,
 		data: formData,
 		async: true,
 		timeout: 30000,
 		cache: false,
 		headers: { "cache-control": "no-cache", pragma: "no-cache" },
 		success: function() {
-			alert("파일업로드 성공");
+			alert("선생님 등록이 완료되었습니다.");
+			closeTheacherInfoModal();
 		},
 		error: function(xhr, desc, err) {
 			alert("에러가 발생 하였습니다.");
+			console.log(xhr);
 			return;
 		},
 	});
