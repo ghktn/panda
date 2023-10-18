@@ -66,8 +66,10 @@ public class TeacherChangeApiController {
 		tcService.save(teacherChangeRequestDto, user.getId(), files);
 		// 유저 정보 불러오기
 		User userInfo = userService.findByIdV2(user.getId());
+		LoginSuccessDTO loginUser = LoginSuccessDTO.create(userInfo.getId(), userInfo.getUser_id());
+		// 유저 DTO로 변경하기
 		// 성공하면 유저정보 변경하기
-		session.setAttribute(SessionConst.LOGIN_MEMBER, userInfo);
+		session.setAttribute(SessionConst.LOGIN_MEMBER, loginUser);
 		
 		return ResponseEntity.ok()
 				.body("성공");
