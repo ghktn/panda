@@ -44,7 +44,7 @@ const editor = new toastui.Editor({
 const requestSave = async (data) => {
 	
 	// DB에 저장 요청하기
-	const url = "http://localhost:9010/recruitments";// 확인 ok
+	const url = "http://localhost:9010/register-class";// 확인 ok
 	const result = await fetch(url, {
 		method: "post",
 		headers: {
@@ -55,16 +55,45 @@ const requestSave = async (data) => {
 	return result.json();
 }
 const handleSavingClick = async () => {
-	const class_id = document.querySelector("#class_id");
-	const score = document.querySelector("#score");
-	const contents = editor.getHTML();
-//	console.log(contents);	
-	// 저장할 데이터
+	const title = document.querySelector("#title").value;
+	const category_main_id = document.querySelector("#categoryMainId").value;
+	const category_sub_id = document.querySelector("#categorySubId").value;
+	const max_std_count = document.querySelector("#maxStdCount").value;
+	const std_gender = document.querySelector("#stdGender").value;
+	const std_age_group = document.querySelector("#stdAgeGroup").value;
+	const pay = document.querySelector("#wishPay").value;
+	const wish_study_count = document.querySelector("#wishStudyCount").value;
+	const lecture_type = document.querySelector("#lectureType").value;
+	const sd_code = document.querySelector("#sdName").value;
+	const sgg_code = document.querySelector("#sggName").value;
+	const emd_code = document.querySelector("#emdName").value;
+	const wish_days = Array.from(document.querySelectorAll(".wishDays"));
+	const cinfo = editor.getHTML();
+	//wishDays만들기
+	const wish_days_arr = wish_days.filter((wishday) =>{
+		return wishday.checked == true;
+	}).map((wishday) => {
+		return wishday.value;
+	});
+	
+	const wish_days_str =  wish_days_arr.join();
+		
+	
 	const data = {
-		id: values.class_reg_user_id,// 작성자 id
-		class_id: values.class_id,
-		contents: contents,
-		score: values.score// TODO : 작성할 수 있도록 만들어야 한다. html에
+		title: title,
+		category_main_id:category_main_id,
+		category_sub_id:category_sub_id,
+		max_std_count:max_std_count,
+		std_gender:std_gender,
+		std_age_group:std_age_group,
+		pay:pay,
+		wish_study_count:wish_study_count,
+		lecture_type:lecture_type,
+		sd_code:sd_code,
+		sgg_code:sgg_code,
+		emd_code:emd_code,
+		wish_days:wish_days_str,
+		cinfo: cinfo
 	}
 	
 //	console.log(data);// 확인 ok
@@ -77,10 +106,9 @@ const handleSavingClick = async () => {
 		
 		// 성공하면 list로 간다.	
 		if(result === 1) {
-			location.href = "http://localhost:9010/recruitment";
+			location.href = "http://localhost:9010/myclass-list";
 		}
 	} catch(error) {
 		console.log(error);
 	}
 }
-​
