@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.playdata.panda.dto.CategoryMain;
 import com.playdata.panda.dto.CategorySub;
 import com.playdata.panda.dto.LoginSuccessDTO;
+import com.playdata.panda.dto.TeacherChange;
 import com.playdata.panda.dto.TeacherChangeRequestDTO;
 import com.playdata.panda.dto.User;
 import com.playdata.panda.service.ClassService;
@@ -58,20 +59,44 @@ public class TeacherChangeApiController {
 	@PostMapping("/teacherchange/save")
 	@ResponseBody
 	public ResponseEntity<String> save(@RequestPart(value = "teacherChange") TeacherChangeRequestDTO teacherChangeRequestDto, 
-			@RequestPart(value = "files") List<MultipartFile> files,
+			@RequestPart(value = "files", required = false) List<MultipartFile> files,
 			@SessionAttribute(name = SessionConst.LOGIN_MEMBER) LoginSuccessDTO user,
 			HttpSession session) {
 		
 		// 선생님 정보 저장하기
 		tcService.save(teacherChangeRequestDto, user.getId(), files);
-		// 유저 정보 불러오기
-		User userInfo = userService.findByIdV2(user.getId());
-		LoginSuccessDTO loginUser = LoginSuccessDTO.create(userInfo.getId(), userInfo.getUser_id());
-		// 유저 DTO로 변경하기
-		// 성공하면 유저정보 변경하기
-		session.setAttribute(SessionConst.LOGIN_MEMBER, loginUser);
+//		// 유저 정보 불러오기
+//		User userInfo = userService.findByIdV2(user.getId());
+//		LoginSuccessDTO loginUser = LoginSuccessDTO.create(userInfo.getId(), userInfo.getUser_id(), userInfo.getUser_division_id());
+//		// 유저 DTO로 변경하기
+//		// 성공하면 유저정보 변경하기
+//		session.setAttribute(SessionConst.LOGIN_MEMBER, loginUser);
 		
 		return ResponseEntity.ok()
 				.body("성공");
 	}
+	
+	/**
+	 * 기능 : 유저 아이디에 따른 선생님 정보를 불러올 수 있습니다.
+	 */
+	@GetMapping("/teacherchange/info")
+	@ResponseBody
+	public ResponseEntity<Boolean> selectOne(@SessionAttribute(value = SessionConst.LOGIN_MEMBER) LoginSuccessDTO user) {
+		
+		// 선생님 정보 불러오기
+		TeacherChange teacherChange = tcService.selectOne(user.getId());
+		// 결과값 반환하기
+		boolean result = false;
+		if(teacherChange != null) {
+			result = true;
+		}
+		
+		return ResponseEntity.ok()
+				.body(result);
+	}
+	
+	
+	
+	
+	
 }

@@ -3,6 +3,7 @@ package com.playdata.panda.controller;
 import com.playdata.panda.dto.LoginDTO;
 import com.playdata.panda.dto.LoginSuccessDTO;
 import com.playdata.panda.dto.SignUpRegisterDTO;
+import com.playdata.panda.dto.User;
 import com.playdata.panda.service.UserService;
 import com.playdata.panda.util.SessionConst;
 import lombok.RequiredArgsConstructor;
@@ -10,10 +11,15 @@ import lombok.RequiredArgsConstructor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.http.RequestEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import java.text.ParseException;
 
@@ -68,4 +74,71 @@ public class UserApiController {
         }
         return "redirect:/";
     }
+    
+    /**
+     * 기능 : 세션 유저정보를 받아올 수 있습니다.
+     */
+    @ResponseBody
+    @GetMapping("/users/info")
+    public ResponseEntity<LoginSuccessDTO> getSuccessuserInfo(@SessionAttribute(value = SessionConst.LOGIN_MEMBER) LoginSuccessDTO user) {
+    	
+    	return ResponseEntity.ok()
+    			.body(user);
+    }
+    
+    /**
+     * 기능 : 회원의 유저 구분 아이디를 '선생님'으로 변경할 수 있습니다.
+     */
+    @ResponseBody
+    @PostMapping("/users/divisionid/teacher")
+    public ResponseEntity<?> changeUserDivisionIdForTeacher(@SessionAttribute(value = SessionConst.LOGIN_MEMBER) LoginSuccessDTO user, HttpSession session) {
+    	
+    	String userDivisionId = "T";
+    	userService.updateUserDivisionId(user.getId(), userDivisionId);
+    	// 유저 정보 불러오기
+		User userInfo = userService.findByIdV2(user.getId());
+		LoginSuccessDTO loginUser = LoginSuccessDTO.create(userInfo.getId(), userInfo.getUser_id(), userInfo.getUser_division_id());
+		// 유저 DTO로 변경하기
+		// 성공하면 유저정보 변경하기
+		session.setAttribute(SessionConst.LOGIN_MEMBER, loginUser);
+
+    	return ResponseEntity.ok()
+    			.body("성공");
+    }
+    
+    
+    /**
+     * 기능 : 회원의 유저 구분 아이디를 '학생'으로 변경할 수 있습니다.
+     */
+    @ResponseBody
+    @PostMapping("/users/divisionid/student")
+    public ResponseEntity<?> changeUserDivisionIdForStudent(@SessionAttribute(value = SessionConst.LOGIN_MEMBER) LoginSuccessDTO user, HttpSession session) {
+    	
+    	String userDivisionId = "S";
+    	userService.updateUserDivisionId(user.getId(), userDivisionId);
+    	// 유저 정보 불러오기
+		User userInfo = userService.findByIdV2(user.getId());
+		LoginSuccessDTO loginUser = LoginSuccessDTO.create(userInfo.getId(), userInfo.getUser_id(), userInfo.getUser_division_id());
+		// 유저 DTO로 변경하기
+		// 성공하면 유저정보 변경하기
+		session.setAttribute(SessionConst.LOGIN_MEMBER, loginUser);
+    	
+    	return ResponseEntity.ok()
+    			.body("성공");
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
