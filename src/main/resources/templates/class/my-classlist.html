@@ -120,7 +120,7 @@
 										<th:block th:if="${class.class_status=='E'}">
 												<td>
 													<button type="button" class="addreview"
-														th:onclick="|location.href='@{/review-register}'|">
+														th:onclick="|location.href='@{/review-register(class_id=${class.class_id },cmd=view)}'|">
 														<img class="reviewimg" src="images/review.png" />
 													</button>
 												</td>
