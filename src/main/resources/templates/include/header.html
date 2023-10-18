@@ -1,10 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <head>
     <link rel="icon" href="/images/tabicon.png"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-
+    
     <link href="/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/css/bootstrap.css" rel="stylesheet"/>
     <link href="/css/font-awesome.min.css" rel="stylesheet"/>
@@ -22,11 +26,25 @@
     <!-- jQuery CDN-->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="/js/teacher-change-button.js"></script>
+    <!-- 선생님 정보 입력 -->
+    <script defer="defer" src="js/index-teacher-info-modal.js"></script>
+    
     <title>능력있는 선생님과 열정가득한 동료와 함께, 판다</title>
 </head><!--/head-->
 
 <body>
 <header th:fragment="header" id="header">
+
+	<!-- header css 부분 -->
+	<th:block>
+		<link href="/css/index-teacher-info-modal.css" rel="stylesheet"/>
+	</th:block>
+	
+	<!-- header 스크립트 부분 -->
+	<th:block>
+		<script defer="defer" src="/js/index-teacher-info-modal.js"></script>
+	</th:block>
+
     <!--header-->
     <div class="header_top"></div>
 
@@ -123,6 +141,106 @@
         </div>
     </div>
     <!--/header-bottom-->
+    
+    <!-- 선생님 전환 모달창 시작 -->
+
+    <div id="pop_info" class="pop_wrap" style="display: none">
+        <form
+                method="post"
+                action="#"
+                class="pop_inner"
+                style="margin: 0"
+                enctype="multipart/form-data"
+                onsubmit="return false;"
+        >
+            <fieldset class="info-detail">
+                <legend class="info-title">선생님 정보 입력</legend>
+
+                <!-- 분야 시작 -->
+
+                <div class="form-group">
+                    <label for="classCategory" class="form-label">수업종류</label>
+
+                    <!-- 시도 코드 -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="categoryMainIdBox">
+                                <span>대분류</span>
+                                <select
+                                        class="form-select form-control"
+                                        id="categoryMainId"
+                                        name="categoryMainId"
+                                >
+                                    <option value="">선택</option>
+                                   	<th:block th:each="category : ${categoryMainList}">
+                                        <option th:value="${category.Category_main_id}"
+                                                th:text="${category.Category_main_name}">학업
+                                        </option>
+                                    </th:block>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="categorySubIdBox">
+                                <!-- 시군구 코드 -->
+                                <span>소분류</span>
+                                <select
+                                        class="form-select form-control"
+                                        id="categorySubId"
+                                        name="categorySubId"
+                                >
+                                    <option value="">선택</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 분야 끝-->
+
+                <!-- 소개글 시작 -->
+                <div class="form-group">
+                    <label for="comment" class="form-label">소개글</label>
+                    <textarea
+                            id="comment"
+                            name="comment"
+                            class="info-comment"
+                            placeholder="선생님을 소개해주세요~"
+                            tabindex="1"
+                    ></textarea>
+                </div>
+
+                <!-- 소개글 끝 -->
+            </fieldset>
+
+            <!-- 첨부파일 제출 시작 -->
+            <div class="insert form-group">
+                <label for="info-file" class="form-label">
+                    증명서류첨부
+                    <img alt="첨부파일추가" src="/images/home/plus-square.svg"/>
+                </label>
+                <input
+                        id="info-file"
+                        name="files"
+                        type="file"
+                        onchange="addFile(this);"
+                        multiple
+                />
+                <div class="file-list"></div>
+            </div>
+            <!-- 첨부파일 제출 끝 -->
+
+            <!-- 댓글 버튼 박스 시작 -->
+            <div class="register-btn form-group">
+                <button type="submit" class="btn_enter" tabindex="5" onclick="submitForm();">등록</button>
+                <button type="button" class="teacher_info_close">닫기</button>
+            </div>
+            <!-- 댓글 버튼 박스 끝 -->
+        </form>
+    </div>
+
+    <!-- 선생님 전환 모달창 끝 -->
 </header>
 </body>
 </html>

@@ -59,10 +59,21 @@ public class TeacherChangeServiceImpl implements TeacherChangeService{
 				certificateRepository.insert(certificate);			
 			});
 		}
-		// 유저 정보 선생님으로 전환하기
-		String userDivisionId = "T";
-		userService.updateUserDivisionId(userId, userDivisionId);
+//		// 유저 정보 선생님으로 전환하기
+//		String userDivisionId = "T";
+//		userService.updateUserDivisionId(userId, userDivisionId);
 		
+	}
+
+	/**
+	 * 기능 : 유저 아이디에 따른 선생님 정보를 불러올 수 있습니다.
+	 */
+	@Override
+	public TeacherChange selectOne(long id) {
+		// 유저 아이디로 선생님 정보를 반환합니다.
+		TeacherChange teacherChange = tcRepository.findByUserId(id);
+		
+		return teacherChange;
 	}
 	
 	
