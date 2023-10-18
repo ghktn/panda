@@ -69,7 +69,7 @@
             <div class="col-md-8">
               <div class="card-body">
                 <!-- 찜하기 버튼 -->
-                <button id="likeButton" class="btn btn-danger" th:href="" >
+                <button id="likeButton" class="btn btn-danger">
                   <i class="fas fa-heart"></i> 관심수업등록
                 </button>
                 <h3 class="fw-bold" th:text="${board.title}">
@@ -439,16 +439,16 @@
 
           <!-- Modal body - 수업 목록 -->
           <div class="modal-body">
-            <form action="">
+            <form action="/application" method="post">
               <div class="messageBox">
                 <textarea
-                  name="message"
+                  name="application_contents"
                   rows="5"
                   placeholder="신청 인사말을 작성하면 수락 확률 증가!"
                 ></textarea>
               </div>
               <div class="buttonBox">
-                <button type="submit">신청</button>
+                <button type="submit" id="classApplicationButton">신청</button>
               </div>
             </form>
           </div>

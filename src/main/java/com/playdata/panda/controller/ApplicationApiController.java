@@ -12,12 +12,13 @@ import lombok.RequiredArgsConstructor;
 public class ApplicationApiController {
 	
 	private final ApplicationService applicationService;
+	
 	@PostMapping("/application")
 	public String application(Application application) {
+		System.out.println("================="+application);
 		applicationService.application(application);
 		
 		System.out.println(application);
-		return "redirect:/";
-		
+		return "redirect:/myapply-list";
 	}
 }
