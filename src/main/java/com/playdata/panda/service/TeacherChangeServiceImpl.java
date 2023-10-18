@@ -1,6 +1,8 @@
 package com.playdata.panda.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TeacherChangeServiceImpl implements TeacherChangeService{
 	
+	private final UserService userService;
 	private final TeacherChangeRepository tcRepository;
 	private final CertificateRepository certificateRepository;
 
@@ -56,6 +59,9 @@ public class TeacherChangeServiceImpl implements TeacherChangeService{
 				certificateRepository.insert(certificate);			
 			});
 		}
+		// 유저 정보 선생님으로 전환하기
+		String userDivisionId = "T";
+		userService.updateUserDivisionId(userId, userDivisionId);
 		
 	}
 	
