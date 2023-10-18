@@ -18,6 +18,5 @@ public class ApplicationApiController {
 		
 		System.out.println(application);
 		return "redirect:/";
-		
 	}
 }
