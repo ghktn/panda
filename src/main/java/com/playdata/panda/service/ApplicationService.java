@@ -1,11 +1,16 @@
 package com.playdata.panda.service;
 
-import com.playdata.panda.dto.Application;
+import java.util.List;
 
+import com.playdata.panda.dto.Application;
+import com.playdata.panda.dto.ApplicationList;
 public interface ApplicationService {
 	
 	Application insertApplication();
+	public void application(Application application);
+
+	List<ApplicationList> selectApplication();
 	
-	void application(Application application);
-		
+	//신청목록 삭제
+	void deleteApplication(String application_id);
 }

@@ -7,34 +7,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>판다 : 회원가입</title>
-    
-    <!-- jQuery CDN-->
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/price-range.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/price-range.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
           rel="stylesheet">
-    <link href="css/register.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link href="/css/register.css" rel="stylesheet">
+    <link href="/css/bootstrap2.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <script defer="defer" src="/js/region.js"></script>
+    <link rel="shortcut icon" href="/images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-    <!-- my js -->
-	<script defer="defer" src="js/region.js"></script>
+    <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <title>판다 : 회원가입</title>
+
+    <script type="text/javascript" defer="defer">
+        function selectAll(selectAll) {
+            const checkboxes
+                = document.getElementsByName("primaryinfo");
+
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = selectAll.checked;
+            })
+        }
+
+        function isSame() {
+            var pw = document.getElementById("password").value;
+            var confirmPW = document.getElementById("passwordcheck").value;
+            if (document.getElementById("password").value != '' && document.getElementById("passwordcheck").value != '') {
+                if (document.getElementById("password").value == document.getElementById("passwordcheck").value) {
+                    document.getElementById("same").innerHTML = '비밀번호가 일치합니다.';
+                    document.getElementById("same").style.color = 'blue';
+                } else {
+                    document.getElementById("same").innerHTML = '비밀번호가 일치하지 않습니다.';
+                    document.getElementById("same").style.color = 'red';
+                }
+            }
+        }
+
+        window.addEventListener("DOMContentLoaded", function () {
+            var selectElement = document.getElementById("year");
+            var currentYear = new Date().getFullYear();
+
+            for (var year = 1950; year <= currentYear; year++) {
+                var option = document.createElement("option");
+                option.value = year;
+                option.text = year;
+                selectElement.appendChild(option);
+            }
+
+            var dayElement = document.getElementById("date");
+
+            for (var day = 1; day <= 31; day++) {
+                var option = document.createElement("option");
+                option.value = day;
+                option.text = day;
+                dayElement.appendChild(option);
+            }
+        });
+
+    </script>
 </head>
 
 <body>
@@ -54,11 +93,11 @@
                             <label for="name">성별</label>
                             <br/>
                             <fieldset id="gender">
-                                <input type="radio" name="gender" id="male" value="1">
+                                <input type="radio" name="gender" id="male" value="M">
                                 <label for="male">
                                     남자
                                 </label>
-                                <input type="radio" name="gender" id="female" value="0">
+                                <input type="radio" name="gender" id="female" value="W">
                                 <label for="female">
                                     여자
                                 </label>
@@ -69,98 +108,26 @@
                         <div class="col-md-12 ">
                             <label for="nickname">생년월일</label>
                             <div class="birthday" id="info__birth">
-                                <select name="year" class="box col-md-4 " id="year">
-                                    <option disabled selected>출생 연도</option>
-                                    <option value="1999">1980년</option>
-                                    <option>1981년</option>
-                                    <option>1982년</option>
-                                    <option>1983년</option>
-                                    <option>1985년</option>
-                                    <option>1986년</option>
-                                    <option>1987년</option>
-                                    <option>1988년</option>
-                                    <option>1989년</option>
-                                    <option>1990년</option>
-                                    <option>1991년</option>
-                                    <option>1992년</option>
-                                    <option>1993년</option>
-                                    <option>1994년</option>
-                                    <option>1995년</option>
-                                    <option>1996년</option>
-                                    <option>1997년</option>
-                                    <option>1998년</option>
-                                    <option>1999년</option>
-                                    <option>2000년</option>
-                                    <option>2001년</option>
-                                    <option>2002년</option>
-                                    <option>2003년</option>
-                                    <option>2004년</option>
-                                    <option>2005년</option>
-                                    <option>2006년</option>
-                                    <option>2007년</option>
-                                    <option>2008년</option>
-                                    <option>2009년</option>
-                                    <option>2010년</option>
-                                    <option>2011년</option>
-                                    <option>2012년</option>
-                                    <option>2013년</option>
-                                    <option>2014년</option>
-                                    <option>2015년</option>
-                                    <option>2016년</option>
-                                    <option>2017년</option>
-                                    <option>2018년</option>
-                                    <option>2019년</option>
-                                    <option>2020년</option>
-                                    <option>2021년</option>
-                                    <option>2022년</option>
-                                    <option>2023년</option>
+                                <select id="year" name="year" class="box col-md-4">
+                                    <option disabled selected>출생연도</option>
                                 </select>
                                 <select name="month" class="box col-md-3" id="month">
                                     <option disabled selected>월</option>
-                                    <option value="1">1월</option>
-                                    <option>2월</option>
-                                    <option>3월</option>
-                                    <option>4월</option>
-                                    <option>5월</option>
-                                    <option>6월</option>
-                                    <option>7월</option>
-                                    <option>8월</option>
-                                    <option>9월</option>
-                                    <option>10월</option>
-                                    <option>11월</option>
-                                    <option>12월</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
                                 </select>
-                                <select name="date" class="box col-md-3 " id="day">
+                                <select name="date" class="box col-md-3 " id="date">
                                     <option disabled selected>일</option>
-                                    <option value="1">1일</option>
-                                    <option>2일</option>
-                                    <option>3일</option>
-                                    <option>4일</option>
-                                    <option>5일</option>
-                                    <option>6일</option>
-                                    <option>7일</option>
-                                    <option>8일</option>
-                                    <option>9일</option>
-                                    <option>10일</option>
-                                    <option>11일</option>
-                                    <option>12일</option>
-                                    <option>13일</option>
-                                    <option>14일</option>
-                                    <option>15일</option>
-                                    <option>16일</option>
-                                    <option>19일</option>
-                                    <option>20일</option>
-                                    <option>21일</option>
-                                    <option>22일</option>
-                                    <option>23일</option>
-                                    <option>24일</option>
-                                    <option>25일</option>
-                                    <option>26일</option>
-                                    <option>27일</option>
-                                    <option>28일</option>
-                                    <option>29일</option>
-                                    <option>30일</option>
-                                    <option>31일</option>
                                 </select>
                             </div>
                         </div>
@@ -225,15 +192,12 @@
                                 <div class="col-sm-4">
                                     <div class="sdNameBox">
                                         <span>시도</span>
-                                        <select name="sd_code" 
-                                        		class="form-select form-control" 
-                                        		id="sdName">
+                                        <select name="sd_code" class="form-select form-control" id="sdName">
                                             <option value="">선택</option>
                                             <th:block th:each="region:${regionSdList}">
-                                            	<option th:value="${region.sd_code}" 
-                                            			th:text="${region.sd_name}"></option>
+                                                <option th:value="${region.sd_code}"
+                                                        th:text="${region.sd_name}"></option>
                                             </th:block>
-                                           
                                         </select>
                                     </div>
                                 </div>

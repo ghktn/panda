@@ -6,10 +6,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.playdata.panda.dto.ApplicationList;
 import com.playdata.panda.dto.CategoryMain;
 import com.playdata.panda.dto.ClassListDTO;
 import com.playdata.panda.dto.ConcernList;
 import com.playdata.panda.dto.RegionSd;
+import com.playdata.panda.service.ApplicationService;
 import com.playdata.panda.service.ClassService;
 import com.playdata.panda.service.ConcernService;
 import com.playdata.panda.service.RegionService;
@@ -21,6 +23,7 @@ import lombok.RequiredArgsConstructor;
 public class MyPageViewController {
 
     private final ClassService classService;
+    private final ApplicationService applicationService;
     private final ConcernService concernService;
     private final RegionService regionService;
 
@@ -37,8 +40,16 @@ public class MyPageViewController {
     }
 
     @GetMapping("/myapply-list")
-    public String myapplyListViewPage() {
+    public String selectApplication(Model model) {
+    	List<ApplicationList> ApplicationList = applicationService.selectApplication();
+		model.addAttribute("ApplicationList", ApplicationList);
         return "member/my-applylist";
+    }
+    //신청목록 삭제
+    @GetMapping("/delete-myapply")
+    public String deleteApplication(String application_id) {
+    	applicationService.deleteApplication(application_id);
+		return "redirect:/myapply-list";
     }
 
     @GetMapping("/myinfo-update")

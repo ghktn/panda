@@ -51,6 +51,6 @@ public class RecruitmentViewController {
 		RecruitmentBoardPandaClassDTO board = recruitmentBoardService.selectOne(id);
 		model.addAttribute("board", board);
 		
-		return "/recruitment/recruitment-detail";
+		return "recruitment/recruitment-detail";
 	}
 }
