@@ -2,6 +2,7 @@ package com.playdata.panda.controller;
 
 import java.util.List;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,8 +48,17 @@ public class MyPageViewController {
     }
 
     @GetMapping("/review-register")
-    public String reviewRegisterViewPage() {
-        return "review/class-review-write";
+    public String reviewRegisterViewPage(String class_id,String cmd, Model model) {
+    	ClassListDTO cdto=classService.getClassInfo(class_id);		
+		String view = "";
+		if(cmd.equals("view")) {
+			view="review/class-review-write";
+		}
+		else {
+			view="board/update";
+		}
+		model.addAttribute("classInfo",cdto);
+		return view;
     }
 
     @GetMapping("/myconcern-list")
