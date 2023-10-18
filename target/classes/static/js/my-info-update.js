@@ -18,16 +18,19 @@ function isSame() {
 /*
 닉네임 중복 확인
 */
-function checkNickname() {
-	var nickname = document.getElementById("nickname").value;
-//	var existingNickname = "aa";
-	const existingNickname = $("#nickname").val();
+$(document).ready(function() {
+	$("#checkNicknameButton").click(function() {
+		var nickname = $("#nickname").val();
 
-	// 닉네임 중복 여부 확인
-	if (nickname === existingNickname) {
-		document.getElementById("check").textContent = "이미 사용 중인 닉네임입니다.";
-	} else {
-		document.getElementById("check").textContent = "사용 가능한 닉네임입니다.";
-	}
-	
-}
+		// AJAX 요청
+		$.ajax({
+			url: "/checkNickname",
+			type: "POST",
+			data: { nickname: nickname },
+			success: function(response) {
+				$("#resultMessage").text(response.message);
+			}
+		});
+	});
+});
+

@@ -5,6 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+
 public class LoginDTO {
 	
 	private String userId;// 아이디

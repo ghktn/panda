@@ -2,6 +2,8 @@ package com.playdata.panda.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,11 +48,12 @@ public class MyPageViewController {
 
 	// 회원정보 수정 전에 디비 불러오기
 	@GetMapping("/myinfo-update")
-	public String myinfoUpdateViewPage(String userId, Model model) {
-		User userInfo = userService.selectMyInfo(userId);
-		model.addAttribute("userInfo", userInfo);
-		System.out.println(userInfo);
-		//User에 담긴 정보를 sysout출력하고 모델에 저장하고 작업
+	public String myinfoUpdateViewPage(String userId, Model model, HttpSession session) {
+		//User userInfo = userService.selectMyInfo(userId);
+		//model.addAttribute("userInfo", userInfo);
+		//System.out.println(userInfo);
+		// User에 담긴 정보를 sysout출력하고 모델에 저장하고 작업
+		
 		return "member/my-info-update";
 	}
 

@@ -1,11 +1,11 @@
 package com.playdata.panda.service;
 
-import com.playdata.panda.dto.User;
+import java.text.ParseException;
+
 import com.playdata.panda.dto.LoginDTO;
 import com.playdata.panda.dto.LoginSuccessDTO;
 import com.playdata.panda.dto.SignUpRegisterDTO;
-
-import java.text.ParseException;
+import com.playdata.panda.dto.User;
 
 public interface UserService {
 
@@ -21,6 +21,9 @@ public interface UserService {
 
 	User selectMyInfo(String userId);
 
-	void updateMyInfo(User user);
+	void updateMyInfo(User users);
+
+	LoginSuccessDTO findByUserId(User user);
+
 
 }

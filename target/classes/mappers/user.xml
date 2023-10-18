@@ -5,85 +5,97 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.playdata.panda.repository.UserRepository">
-    <insert id="signUpUser" parameterType="SignUpRegisterDTO">
-        insert into users
-        (
-        id,
-        user_division_id,
-        sd_code,
-        sgg_code,
-        emd_code,
-        user_id,
-        password,
-        name,
-        nickname,
-        email,
-        birthday,
-        gender,
-        review_score,
-        profile_photo,
-        SELF_INTRODUCTION_COMENT,
-        reg_date,
-        update_date,
-        last_con_date
-        )
-        values
-        (
-        users_seq.nextval,
-        'S',
-        #{sd_code},
-        #{sgg_code},
-        #{emd_code},
-        #{user_id},
-        #{password},
-        #{name},
-        #{nickname},
-        #{email},
-        #{birthday},
-        #{gender},
-        1,
-        '1',
-        null,
-        sysdate,
-        sysdate,
-        sysdate
-        )
-    </insert>
+	<insert id="signUpUser" parameterType="SignUpRegisterDTO">
+		insert into users
+		(
+		id,
+		user_division_id,
+		sd_code,
+		sgg_code,
+		emd_code,
+		user_id,
+		password,
+		name,
+		nickname,
+		email,
+		birthday,
+		gender,
+		review_score,
+		profile_photo,
+		SELF_INTRODUCTION_COMENT,
+		reg_date,
+		update_date,
+		last_con_date
+		)
+		values
+		(
+		users_seq.nextval,
+		'S',
+		#{sd_code},
+		#{sgg_code},
+		#{emd_code},
+		#{user_id},
+		#{password},
+		#{name},
+		#{nickname},
+		#{email},
+		#{birthday},
+		#{gender},
+		1,
+		'1',
+		null,
+		sysdate,
+		sysdate,
+		sysdate
+		)
+	</insert>
 
-    <!-- 유저 아이디 확인 -->
-    <select id="findByUserIdAndPassword" parameterType="LoginDTO" resultType="User">
-        select
-        *
-        from
-        users
-        where
-        user_id = #{userId}
-        and
-        password = #{password}
-    </select>
-    
-    
-    <!-- 회원 정보 수정에 데이터 불러오기 -->
-    <select id="selectMyInfo" parameterType="String" resultType="User">
-    select 
-    	*
-    from
-    	users
-    where id = #{id}
-    
-    </select>
-    
-    <!-- 회원정보 수정 -->
-    <update id="updateMyInfo" parameterType="String">
-  		update 
-  			users 
-  		set 
-  			profile_photo = #{profile_photo}, 
-  			nickname = #{nickname}, 
-  			password = #{password}, 
-  			self_introduction_comment = #{self_introduction_comment}
-  		where 
-  			id = 1
-  	
-  	</update>
+	<!-- 유저 아이디 확인 -->
+	<select id="findByUserIdAndPassword" parameterType="LoginDTO"
+		resultType="User">
+		select
+			*
+		from
+			users
+		where
+			user_id = #{userId}
+		and
+			password = #{password}
+	</select>
+	
+	
+	<!-- update된 데이터 조회 -->
+	<select id="findByUserId" parameterType="User" resultType="LoginSuccessDTO">
+		select
+			*
+		from
+			users
+		where
+			id = #{id}
+	</select>
+
+	<!-- 회원 정보 수정에 데이터 불러오기 -->
+<!-- 	<select id="selectMyInfo" parameterType="String" resultType="User">
+		select
+			*
+		from
+			users
+		where 
+			id = #{id}
+	</select> -->
+
+	<!-- 회원정보 수정 -->
+	<update id="updateMyInfo" parameterType="User">
+		update
+		users
+		set
+		profile_photo = #{profile_photo},
+		nickname = #{nickname},
+		password = #{password},
+		self_introduction_comment = #{self_introduction_comment}
+		where
+		id = #{id}
+
+	</update>
+
 </mapper>

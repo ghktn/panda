@@ -18,4 +18,9 @@
             INNER JOIN USERS u on rb.ID = u.ID
             INNER JOIN RECRUITMENT_BOARD_TYPE rbt on rb.RECRUITMENT_BOARD_ID = rbt.RECRUITMENT_BOARD_ID
     </select>
+
+    <select id="findByIdConcern" resultType="int">
+        select count(*) from concern
+        where USER_ID = 6 and RECRUITMENT_STD_ID = 2
+    </select>
 </mapper>
