@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.playdata.panda.controller;
 
 import org.springframework.stereotype.Controller;
@@ -11,7 +12,9 @@ import lombok.RequiredArgsConstructor;
 @Controller
 @RequiredArgsConstructor
 public class ApplicationViewController {
+	
 	private final ApplicationService applicationService;
+	
 	@GetMapping("/recruitment-detail")
 	public String applicationViewPage() {
 		return "recruitment/recruitment-detail";
@@ -26,4 +29,5 @@ public class ApplicationViewController {
 		applicationService.rejectApply(application_id);
 		return "redirect:/myapply-list";
 	}
+
 }

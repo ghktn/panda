@@ -1,6 +1,7 @@
 package com.playdata.panda.dto;
 
 import lombok.Getter;
+
 import lombok.Setter;
 
 @Setter
@@ -19,4 +20,5 @@ public class ClassListDTO {
 	private String profile_photo; //프로필 사진
 	
 }
+
 

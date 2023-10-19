@@ -1,7 +1,8 @@
 package com.playdata.panda.controller;
 
-
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,7 @@ import com.playdata.panda.service.ApplicationService;
 import com.playdata.panda.service.ClassService;
 import com.playdata.panda.service.ConcernService;
 import com.playdata.panda.service.RegionService;
+import com.playdata.panda.service.UserService;
 import com.playdata.panda.util.SessionConst;
 
 import lombok.RequiredArgsConstructor;
@@ -26,10 +28,12 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class MyPageViewController {
 
-    private final ClassService classService;
-    private final ApplicationService applicationService;
-    private final ConcernService concernService;
-    private final RegionService regionService;
+	
+	private final ApplicationService applicationService;
+	private final ClassService classService;
+	private final ConcernService concernService;
+	private final RegionService regionService;
+	private final UserService userService;
 
     @GetMapping("/myclass-list")
     public String myClassListViewPage(@SessionAttribute(value=SessionConst.LOGIN_MEMBER) LoginSuccessDTO user,Model model) {
@@ -44,16 +48,29 @@ public class MyPageViewController {
     }
 
     @GetMapping("/myapply-list")
-    public String myapplyListViewPage(@SessionAttribute(value=SessionConst.LOGIN_MEMBER) LoginSuccessDTO user,Model model) {
-    	List<ApplicationList> ApplicationList = applicationService.selectApplication(user);
+    public String selectApplication(Model model) {
+    	List<ApplicationList> ApplicationList = applicationService.selectApplication();
 		model.addAttribute("ApplicationList", ApplicationList);
         return "member/my-applylist";
     }
 
-    @GetMapping("/myinfo-update")
-    public String myinfoUpdateViewPage() {
-        return "member/my-info-update";
+    //신청목록 삭제
+    @GetMapping("/delete-myapply")
+    public String deleteApplication(String application_id) {
+    	applicationService.deleteApplication(application_id);
+		return "redirect:/myapply-list";
     }
+
+ // 회원정보 수정 전에 디비 불러오기
+ 	@GetMapping("/myinfo-update")
+ 	public String myinfoUpdateViewPage(String userId, Model model, HttpSession session) {
+ 		//User userInfo = userService.selectMyInfo(userId);
+ 		//model.addAttribute("userInfo", userInfo);
+ 		//System.out.println(userInfo);
+ 		// User에 담긴 정보를 sysout출력하고 모델에 저장하고 작업
+ 		
+ 		return "member/my-info-update";
+ 	}
 
     @GetMapping("/review-register")
     public String reviewRegisterViewPage(String class_id,String cmd, Model model) {

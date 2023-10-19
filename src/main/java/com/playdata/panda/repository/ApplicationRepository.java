@@ -2,6 +2,7 @@ package com.playdata.panda.repository;
 
 import java.util.List;
 
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.playdata.panda.dto.Application;
@@ -23,3 +24,4 @@ public interface ApplicationRepository {
 	void rejectApply(String application_id);
 		
 }
+

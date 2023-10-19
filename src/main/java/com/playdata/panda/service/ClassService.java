@@ -20,3 +20,4 @@ public interface ClassService {
     void registerReview(Review review);
     int save(Review review);
 }
+

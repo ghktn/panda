@@ -2,6 +2,7 @@ package com.playdata.panda.service;
 
 import java.util.List;
 
+
 import com.playdata.panda.dto.Application;
 import com.playdata.panda.dto.ApplicationList;
 import com.playdata.panda.dto.LoginSuccessDTO;
@@ -20,3 +21,4 @@ public interface ApplicationService {
 
 		void rejectApply(String application_id);	
 }
+

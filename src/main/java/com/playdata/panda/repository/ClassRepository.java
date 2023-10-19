@@ -23,4 +23,3 @@ public interface ClassRepository {
 	void registerReview(Review review);
 	int saveOne(Review review);;
 }
-
