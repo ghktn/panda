@@ -98,11 +98,13 @@
                     </div>
                 </div>
             </div>
+            <input type="hidden" name="class_reg_user_id" th:value="${session.LOGIN_MEMBER.id}">
             <!-- 수업 카테고리 -->
             <!-- DB에서 받아온다. -->
             <div class="formLine">
                 <div class="form-group">
                     <label for="classCategory" class="form-label">수업종류</label>
+
 
                     <!-- 시도 코드 -->
                     <div class="row">

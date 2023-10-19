@@ -19,7 +19,7 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
         String requestUrl = request.getRequestURI();
         System.out.println("requestUrl = " + requestUrl);
 
-        System.out.println(" 로그인 필터 들어옴");
+        System.out.println("  로그인 필터 들어옴");
         if (session == null || session.getAttribute(SessionConst.LOGIN_MEMBER) == null) {
             // 여기서 로그인 세션이 없으면 화면에 전달할 내용이 담긴 로직을 만들어주면 될것같다
             response.sendRedirect("/login?returnUrl="+requestUrl);

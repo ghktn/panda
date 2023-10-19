@@ -2,6 +2,7 @@ package com.playdata.panda.service;
 
 import java.util.List;
 
+
 import org.springframework.stereotype.Service;
 
 import com.playdata.panda.dto.CategoryMain;
@@ -49,7 +50,8 @@ public class ClassServiceImpl implements ClassService {
 	}
 
 	@Override
-	public int registerClass(PandaClass dto) {
+	public int registerClass(int class_reg_user_id,PandaClass dto) {
+		dto.setClass_reg_user_id(class_reg_user_id);
 		return classRepository.registerClass(dto);
 	}
 
@@ -69,3 +71,4 @@ public class ClassServiceImpl implements ClassService {
 	}
 
 }
+

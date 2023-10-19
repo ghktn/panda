@@ -2,7 +2,6 @@ package com.playdata.panda.service;
 
 import java.util.List;
 
-import com.playdata.panda.dto.Concern;
 import org.springframework.stereotype.Service;
 
 import com.playdata.panda.dto.RecruitmentBoard;
@@ -67,5 +66,9 @@ public class RecruitmentBoardServiceImpl implements RecruitmentBoardService {
 		Long totalCount = recruitmentRepository.findTotalCount(condition);
 		return totalCount;
 	}
+	
+	
+	
+	
 
 }

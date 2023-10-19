@@ -42,14 +42,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			id = #{id}
 	</select>
 
-	<!-- 기능 : 유저 아이디로 선생님 정보를 불러올 수 있습니다. -->
-	<select id="findByUserId" parameterType="Long" resultType="TeacherChange">
-		select
-			*
-		from
-			teacher_change
-		where
-			id = #{id}
-	</select>
+
+
 
 </mapper>

@@ -1,6 +1,7 @@
 package com.playdata.panda.controller;
 
 import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
@@ -15,13 +16,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ApplicationApiController {
 	
-	private final ApplicationService applicationService;
+private final ApplicationService applicationService;
 	
 	@PostMapping("/application")
 	public String application(@SessionAttribute(value = SessionConst.LOGIN_MEMBER) LoginSuccessDTO user, Application application) {
-		System.out.println("================="+application);
 		applicationService.application(application,user.getId());
-		
 		System.out.println(application);
 		return "redirect:/myapply-list";
 	}

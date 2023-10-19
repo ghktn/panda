@@ -58,18 +58,18 @@
               	DO : 대체이미지 추가했다.
               -->
               <img
-                      alt="..."
-                      class="img-fluid rounded-start"
-                      id="img-tc"
-                      src="/images/recruitment/math.jpeg"
-                      th:onerror="this.src = '/images/recruitment/math.jpeg'"
-                      th:src="@{/}"
+              	th:src="@{/}"
+              	th:onerror="this.src='/images/recruitment/math.jpeg'"
+                src="/images/recruitment/math.jpeg"
+                class="img-fluid rounded-start"
+                id="img-tc"
+                alt="..."
               />
             </div>
             <div class="col-md-8">
               <div class="card-body">
                 <!-- 찜하기 버튼 -->
-                <button id="likeButton" class="btn btn-danger" th:href="" >
+                <button id="likeButton" class="btn btn-danger">
                   <i class="fas fa-heart"></i> 관심수업등록
                 </button>
                 <h3 class="fw-bold" th:text="${board.title}">
@@ -154,7 +154,7 @@
                   <th:block th:switch=${board.std_gender}>
 	                  <span th:case="N" th:text="무관">&nbsp; 남자</span>
 	                  <span th:case="M" th:text="남자">&nbsp; 남자</span>
-	                  <span th:case="F" th:text="여자">&nbsp; 여자</span>
+	                  <span th:case="F" th:text="여자">&nbsp; 여자</span>                  
                   </th:switch>
                 </p>
               </div>

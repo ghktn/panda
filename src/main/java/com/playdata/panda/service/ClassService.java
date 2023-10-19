@@ -15,8 +15,9 @@ public interface ClassService {
 
     List<CategorySub> findCategorySubList(int category_main_id);
     List<ClassListDTO> selectClassList(LoginSuccessDTO user);
-    int registerClass(PandaClass dto);
+    int registerClass(int class_reg_user_id,PandaClass dto);
     ClassListDTO getClassInfo(String class_id);
     void registerReview(Review review);
     int save(Review review);
 }
+

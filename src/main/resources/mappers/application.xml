@@ -1,3 +1,107 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mybatis board reply 매퍼 파일 만들기 -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.playdata.panda.repository.ApplicationRepository">
+	<insert id="insertApplication" parameterType="Application">
+		insert into application
+			(
+			application_id,
+			id,
+			class_id,
+			accept_yn,
+			application_contents,
+			reg_date
+			)
+		values
+			(
+			application_seq.nextval, 
+			#{id},
+			#{class_id},
+			'W',
+			#{application_contents},
+			sysdate
+			)
+	</insert>
+	
+	<!-- 나의 신청목록 학생버젼 -->
+ 	<select id="selectApplicationList" parameterType="LoginSuccessDTO" resultType="ApplicationList">
+		select 
+			a.*, 
+			u.id,
+			u.nickname,
+			u.profile_photo,
+			c.class_reg_user_id,
+			c.current_std_count,
+			c.max_std_count,
+			rb.title
+		from application a, users u, recruitment_board rb, class c
+		where
+			a.class_id = c.class_id
+			and a.id = #{id}
+			and c.class_id = rb.class_id and c.class_reg_user_id = u.id
+	</select>
+	<!-- 나의 신청목록 선생버젼 -->
+ 	<select id="selectResultList" parameterType="LoginSuccessDTO" resultType="ApplicationList">
+		select 
+			distinct
+			a.*, 
+			u.id,
+			u.nickname,
+			u.profile_photo,
+			c.class_reg_user_id,
+			c.current_std_count,
+			c.max_std_count,
+			rb.title
+		from application a, users u, recruitment_board rb, class c
+		where
+			c.class_reg_user_id = #{id}
+			and a.class_id = c.class_id 
+			and c.class_id = rb.class_id
+			and a.id = u.id
+			and a.accept_yn= 'W'
+	</select>
+	<!-- 삭제하기 -->
+	<delete id="deleteApplication" parameterType="String">
+		delete from application
+		where application_id = #{application_id}
+	</delete>
+	
+	<select id="">
+		select *
+		from application
+		where application_id
+	</select>
+	<update id="acceptApply_yn" parameterType="String">
+		update	
+			application
+		set
+			accept_yn = 'Y'
+		where
+			application_id = #{application_id}
+			
+	</update>
+	<update id="acceptApply_count" parameterType="String">
+		update 
+			class
+		set
+			current_std_count = current_std_count + 1
+		where 
+			class_id = #{class_id}
+	</update>
+	<update id="rejectApply" parameterType="String">
+		update	
+			application
+		set
+			accept_yn = 'N'
+		where application_id = #{application_id}
+			
+	</update>
+	
+=======
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- mybatis board reply 매퍼 파일 만들기 -->
 <!DOCTYPE mapper
@@ -56,4 +160,5 @@
 		where application_id
 	</select>
 	
+>>>>>>> 20d92a7f354e2a159cf61f2cca462c586e781b61
 </mapper>

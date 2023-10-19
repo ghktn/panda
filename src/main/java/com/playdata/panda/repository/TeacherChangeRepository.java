@@ -17,10 +17,5 @@ public interface TeacherChangeRepository {
 	 */
 	int findTeacherIdById(int userId);
 
-	/**
-	 * 기능 : 유저 아이디에 따른 선생님 정보를 불러올 수 있습니다.
-	 */
-	public TeacherChange findByUserId(long id);
-
 
 }

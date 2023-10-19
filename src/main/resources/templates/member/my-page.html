@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
           rel="stylesheet">
     <link href="css/mypage.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap2.min.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -43,20 +43,15 @@
                     <div class="titleWrap">
                         <div class="thumb">
                             <div class="thumbtitle">판다 프로필</div>
-                            <button th:onclick="|location.href='@{/myinfo-update(userId=#{id})}'|" type="button" class="accset"
-                            >
+                            <button th:onclick="|location.href='@{/myinfo-update}'|" type="button" class="accset">
                                 계정설정
                             </button>
-                            <img class="profile" th:src="${session.LOGIN_MEMBER.nickname}">
+                            <img class="profill" src="images/myinfo/empty_photo.jpeg">
                             </img>
-                            <div class="name" >닉네임 : <span th:text="${session.LOGIN_MEMBER.nickname}"></span></div>
-                            <div class="user-type">회원구분 :
-                            	<th:block th:if="${session.LOGIN_MEMBER.user_division_id == 'S '}"><span>학생</span></th:block>
-                            	<th:block th:unless="${session.LOGIN_MEMBER.user_division_id == 'S '}"><span>선생님</span></th:block></div>
-                            <div class="email">이메일 : <span th:text="${session.LOGIN_MEMBER.email}"></span></div>
-                            <div class="gender">성별 : 
-                            	<th:block th:if="${session.LOGIN_MEMBER.gender == 'M'}"><span>남자</span></th:block>
-                            	<th:block th:unless="${session.LOGIN_MEMBER.gender == 'M'}"><span>여자</span></th:block></div>
+                            <div class="name">닉네임 : 판다짱</div>
+                            <div class="user-type">회원구분 : 학생</div>
+                            <div class="email">이메일 : panda@naver.com</div>
+                            <div class="gender">성별 : 남자</div>
                             <!-- <div class="badge"><img class="medal" src="images/recruitment/badge.jpeg"></div> -->
                         </div>
                     </div>
@@ -64,7 +59,7 @@
                 <div class="middle">
                     <ul class="PointList">
                         <li><b>소개글</b></li>
-                        <li class="introduction"><span th:text="${session.LOGIN_MEMBER.self_introduction_comment}"></span></li>
+                        <div class="introduction">판다 곰 같은 학생입니당</div>
                         <li><b>판다 포인트</b></li>
                         <li class="use"><a href="#">사용하기</a><span class="point">100포인트</span></li>
                         <li class="use"><a href="#">적립/사용내역</a></li>

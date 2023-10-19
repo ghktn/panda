@@ -1,7 +1,5 @@
 package com.playdata.panda.util;
-
 import java.io.File;
-
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -9,11 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collector;
-
 import org.springframework.web.multipart.MultipartFile;
-
 import com.playdata.panda.dto.Certificate;
-
 /**
  * FileStore
  * @author Playdata
@@ -30,14 +25,14 @@ public class FileStore {
 	 * @return
 	 */
 	public List<Certificate> saveFileList(List<MultipartFile> files) {
-
+	
 		List<Certificate> certificateList = new ArrayList<>();
 		for(MultipartFile file : files) {
-
+			
 			Certificate certificate = saveFile(file);
 			certificateList.add(certificate);
 		}
-
+		
 		return certificateList;
 	 }
 	
@@ -75,7 +70,6 @@ public class FileStore {
 		// 증명서 생성하기
 		return Certificate.creaet(orginalFileName, savedFileName);
 	}
-
 	/**
 	 * 기능 : 저장될 파일 이름을 찾을 수 있습니다.
 	 * @param orginalFileName
@@ -89,11 +83,5 @@ public class FileStore {
 		
 		return storedFileName;
 	}
-	
-	
-	
-	
-	
-	
-
+		
 }

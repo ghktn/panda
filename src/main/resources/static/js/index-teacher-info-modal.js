@@ -1,6 +1,4 @@
-/**
- * 기능 : 카테고리 소분류를 출력할 수 있습니다.
- */
+//카테고리 소분류
 $(document).ready(function() {
 	$("#categoryMainId").on("change", function() {
 		const categoryMainId = $("#categoryMainId").val();
@@ -22,9 +20,6 @@ $(document).ready(function() {
 	})
 });
 
-/**
- * 기능 : 카테고리 소분류 출력할 수 있습니다.
- */
 function success_run(resultData) {
 
 	let result = "";
@@ -36,9 +31,6 @@ function success_run(resultData) {
 	$("#categorySubId").html(result);
 }
 
-/**
- * 기능 : ajax 에러 처리할 수 있습니다.
- */
 function error_run(obj, resMsg, errorMsg) {
 	console.log("error");
 	console.log(obj);
@@ -46,145 +38,6 @@ function error_run(obj, resMsg, errorMsg) {
 	console.log(errorMsg);
 }
 
-// 10.19 추가 시작
-
-/**
- * 기능 : 처음 시작 회원 학생, 선생님 상태 전환버튼 확인
- */
-const changeUserDivisionBtnStart = async (changeSignal) => {
-	if (changeSignal !== "T ") {
-//		console.log("학생으로 들어왔다.");
-		$(".btn.change").html("선생님으로 전환하기");
-
-	} else {
-//		console.log("선생으로 들어왔다.");
-		$(".btn.change").html("학생으로 전환하기");
-	}
-}
-
-/**
- * 기능 : 회원 학생, 선생님 상태 전환버튼 전환
- */
-const changeUserDivisionBtn = async (changeSignal) => {
-
-	// 선생님 데이터가 있는지 확인 요청하기
-	try {
-		const teacherInfo = await confirmTeacher();
-		// 선생님 정보 없으면 전환 못한다.
-		if(teacherInfo === "false") {
-			return
-		}
-	} catch(error) {
-		console.log(error);
-	}
-
-	if (changeSignal === "T ") {
-		try {
-			// 회원의 유저 구분 아이디를 '학생'으로 변경할 수 있습니다.
-			await changeUserDivisionIdForStudent();
-			$(".btn.change").html("선생님으로 전환하기");
-		} catch(err) {
-			console.log(err);
-		}
-	} else {
-		try {
-			// 회원의 유저 구분 아이디를 '선생님'으로 변경할 수 있습니다.
-			await changeUserDivisionIdForTeacher();
-			$(".btn.change").html("학생으로 전환하기");
-		} catch(err) {
-			console.log(err);
-		}
-	}
-}
-
-/**
- * 기능 : 회원의 유저 구분 아이디를 '선생님'으로 변경할 수 있습니다.
- */
-const changeUserDivisionIdForTeacher = async () => {
-
-	const url = "http://localhost:9010/users/divisionid/teacher";
-	// 유저 구분 아이디는 'T'로 변경된다.
-	const response = await fetch(url, {
-		method: "post"
-	});
-
-	return response.text();
-}
-
-/**
- * 기능 : 회원의 유저 구분 아이디를 '학생'으로 변경할 수 있습니다.
- */
-const changeUserDivisionIdForStudent = async () => {
-
-	const url = "http://localhost:9010/users/divisionid/student";
-	// 유저 구분 아이디는 'S'로 변경된다.
-	const response = await fetch(url, {
-		method: "post"
-	});
-
-	return response.text();
-}
-
-/**
- * 기능 : 회원의 UserDivisionId(유저 구분 아이디) 데이터 불러오기
- */
-const getUserDivisionId = async () => {
-
-	const url = "http://localhost:9010/users/info";
-
-	const result = await fetch(url, {
-		method: "get",
-		dataType: "application/json"
-	});
-
-	return result.json();
-}
-
-/**
- * 기능 : 회원의 UserDivisionId(유저 구분 아이디) 데이터 반환하기
- */
-const confirmUserDivisionId = async () => {
-
-	try {
-		const user = await getUserDivisionId();
-
-		return user.user_division_id;
-	} catch(err) {
-		console.log(err);
-	}
-}
-
-/**
- * 기능 : 선생님 정보가 있는지 요청합니다.
- */
-const getTeacherInfo = async () => {
-
-	const url = "http://localhost:9010/teacherchange/info";
-
-	const result = await fetch(url, {
-		method: "get"
-	});
-
-	return result.text();
-}
-
-/**
- * 기능 : 선생님 정보 데이터가 있는지 확인할 수 있습니다.
- */
-const confirmTeacher = async () => {
-
-	try {
-		// 선생님 정보 불러오기
-		const teacherInfo = await getTeacherInfo();
-		console.log("confirmTeacher teacherInfo : ", teacherInfo);
-		// 선생님 정보 반환하기
-		return teacherInfo;
-	} catch(error) {
-		console.log(error);
-	}
-}
-
-// TODO : 10.19 추가 끝
 
 // open 버튼 불러오기
 const openBtns = document.querySelectorAll(".teacher_info_open");
@@ -193,69 +46,24 @@ const closeBtns = document.querySelectorAll(".teacher_info_close");
 // 팝업창 선택하기
 let targetId = "";
 
-// TODO : 10.19 ~ 이후 추가한 부분 시작
-
-// 처음 시작
-// 선생님 전환 버튼인지 학생 전환 버튼인지 구분해 준다.
-async function start() {
-	const changeSignal = await confirmUserDivisionId(); // 바뀜상태
-//	console.log("cangeSignal : ", changeSignal);
-	// 처음 회원 학생, 선생님 상태 전환버튼 전환 값을 결정한다.
-	changeUserDivisionBtnStart(changeSignal);
-}
-// 처음 시작 실행
-start();
-
-// TODO : 10.19 ~ 이후 추가한 부분 끝
-
 // open이벤트 만들기
 openBtns.forEach((openBtn, index) => {
-
-	// TODO : 10.19 이전에 있던 부분
-	openBtn.addEventListener("click", async (event) => {
-
-		// TODO : 10.19 ~ 이후 추가한 부분 시작
-
-		// 선생님 데이터가 있는지 확인 요청하기
-		const teacherInfo = await confirmTeacher();
-//		console.log("teacherInfo : ", teacherInfo);
-
-		// 선생님 전환 버튼인지 학생 전환 버튼인지 구분해 준다.
-		const changeSignal = await confirmUserDivisionId(); // 바뀜상태
-//		console.log("버튼 : ", changeSignal);
-		// 회원 학생, 선생님 상태 전환버튼 전환 값을 결정한다.
-		await changeUserDivisionBtn(changeSignal);
-
-		// TODO : 10.19 ~ 이후 추가한 부분 끝
-
-		// 선생님 정보가 없으면 창을 연다.
-		console.log(teacherInfo === "false");
-		if(teacherInfo === "false") {
-
-			// TODO : 10.19 이전 추가한 부분 시작
-
-			// 팝업창 id 찾기
-			targetId = event.target.parentElement.getAttribute("href");
-			// 팝업창 열기
-			const popInfo = document.querySelector(targetId);
-			// 화면 보이기
-			popInfo.style.display = "block";
-			// 카테고리 대분류 요청하기
-			$.ajax({
-				url: "/cate-main",
-				type: "get",
-				success: success_main_run,
-				error: error_run
-			})
-
-			// TODO : 10.19 이전 추가한 부분 끝
-		}
+	openBtn.addEventListener("click", (event) => {
+		// 팝업창 id 찾기
+		targetId = event.target.parentElement.getAttribute("href");
+		// 팝업창 열기
+		const popInfo = document.querySelector(targetId);
+		// 화면 보이기
+		popInfo.style.display = "block";
+		// 카테고리 대분류
+		$.ajax({
+			url: "/cate-main",
+			type: "get",
+			success: success_main_run,
+			error: error_run
+		})
 	});
 });
-
-/**
- * 기능 : 카테고리 대분류를 출력할 수 있습니다.
- */
 function success_main_run(resultData) {
 
 	let result = "";
@@ -411,7 +219,7 @@ function submitForm() {
 		cache: false,
 		headers: { "cache-control": "no-cache", pragma: "no-cache" },
 		success: function() {
-			alert("선생님 등록이 완료되었습니다.\n선생님 전환이 가능합니다.");
+			alert("선생님 등록이 완료되었습니다.");
 			closeTheacherInfoModal();
 		},
 		error: function(xhr, desc, err) {
