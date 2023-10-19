@@ -132,6 +132,10 @@
 										<th:block th:unless="${class.class_status=='E'}">
 												<td></td>
 										</th:block>
+										</th:block>
+										<th:block th:unless="${session.LOGIN_MEMBER.user_division_id == 'S '}">
+													<td></td>
+										</th:block>
                                     </tr>
                                     </tbody>
                                 </table>

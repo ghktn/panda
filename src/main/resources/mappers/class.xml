@@ -54,7 +54,7 @@
     	into
     		class(CLASS_ID, CLASS_REG_USER_ID, CATEGORY_MAIN_ID, CATEGORY_SUB_ID, SD_CODE, SGG_CODE, EMD_CODE, CLASS_STATUS,
     		 TITLE, CINFO, MAX_STD_COUNT, CURRENT_STD_COUNT, STD_GENDER, STD_AGE_GROUP, PAY, WISH_STUDY_COUNT, WISH_DAYS, LECTURE_TYPE, APPLICATION_COUNT)
-		values(seq.nextval, 2, #{category_main_id}, #{category_sub_id}, #{sd_code}, #{sgg_code}, #{emd_code}, 'R', #{title}, #{cinfo}, #{max_std_count}, 0, #{std_gender}, #{std_age_group}, #{pay}, #{wish_study_count}, #{wish_days}, #{lecture_type}, 0)
+			values(seq.nextval, #{class_reg_user_id}, #{category_main_id}, #{category_sub_id}, #{sd_code}, #{sgg_code}, #{emd_code}, 'R', #{title}, #{cinfo}, #{max_std_count}, 0, #{std_gender}, #{std_age_group}, #{pay}, #{wish_study_count}, #{wish_days}, #{lecture_type}, 0)
     </insert>
 
     <select id="getClassInfo" parameterType="String" resultType="ClassListDTO">

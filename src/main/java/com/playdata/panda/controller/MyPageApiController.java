@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.playdata.panda.dto.CategorySub;
+import com.playdata.panda.dto.LoginSuccessDTO;
 import com.playdata.panda.dto.PandaClass;
-import com.playdata.panda.dto.RecruitmentBoard;
 import com.playdata.panda.dto.Review;
 import com.playdata.panda.service.ClassService;
+import com.playdata.panda.util.SessionConst;
 
 import lombok.RequiredArgsConstructor;
 
@@ -30,8 +32,8 @@ public class MyPageApiController {
     }
     @PostMapping("/register-class")
     @ResponseBody
-    public ResponseEntity<Integer> registerClass(@RequestBody PandaClass dto) {
-    	int result= classService.registerClass(dto);
+    public ResponseEntity<Integer> registerClass(@SessionAttribute(value=SessionConst.LOGIN_MEMBER) LoginSuccessDTO user,@RequestBody PandaClass dto) {
+    	int result= classService.registerClass((int)user.getId(),dto);
     	return ResponseEntity.ok()
 				.body(result);
     }
