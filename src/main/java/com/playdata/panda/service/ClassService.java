@@ -11,8 +11,6 @@ import com.playdata.panda.dto.Review;
 
 public interface ClassService {
     List<CategoryMain> findCategoryMainList();
-
-
     List<CategorySub> findCategorySubList(int category_main_id);
     List<ClassListDTO> selectClassList(LoginSuccessDTO user);
     int registerClass(int class_reg_user_id,PandaClass dto);

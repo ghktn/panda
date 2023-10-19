@@ -18,4 +18,3 @@
 			and c.class_id = rb.class_id
 		    and rownum &lt;=6
 	</select >
-</mapper >

@@ -19,10 +19,6 @@ public class ApplicationServiceImpl implements ApplicationService{
 	
 	private final ApplicationRepository applicationRepository;
 	
-	@Override
-	public Application insertApplication() {
-		return null;
-	}
 
 	@Override
 	public void application(Application application, long id) {

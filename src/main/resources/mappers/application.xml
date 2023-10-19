@@ -69,11 +69,6 @@
 		where application_id = #{application_id}
 	</delete>
 	
-	<select id="">
-		select *
-		from application
-		where application_id
-	</select>
 	<update id="acceptApply_yn" parameterType="String">
 		update	
 			application
