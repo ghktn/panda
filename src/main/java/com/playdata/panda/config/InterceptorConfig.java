@@ -36,7 +36,9 @@ public class InterceptorConfig implements WebMvcConfigurer {
                         // 공지사항
                         "/notice",
                         // 에러페이지
-                        "/error"
+                        "/error",
+                        // 유저 정보 확인
+                        "/teacherchange/info", "/users/info"
                 );
 
     }

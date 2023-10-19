@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+
+ 선생님 정보를 처리할 수 있습니다.
+
+ -->
+
+<mapper namespace="com.playdata.panda.repository.TeacherChangeRepository">
+
+	<!-- 기능 : 저장할 수 있습니다. -->
+	<insert id="insert" parameterType="TeacherChange">
+		insert into teacher_change
+		(
+			teacher_id,
+			id,
+			category_main_id,
+			category_sub_id,
+			teacher_introduce
+		)
+		values
+		(
+			teacher_seq.nextval,
+			#{id},
+			#{category_main_id},
+			#{category_sub_id},
+			#{teacher_introduce}		
+		)
+	</insert>
+	
+	<!-- 기능 : 유저 아이디로 선생님 아이디를 불러올 수 있습니다. -->
+	<select id="findTeacherIdById" parameterType="Integer" resultType="Integer">
+		select 
+			teacher_id
+		from
+			teacher_change
+		where
+			id = #{id}
+	</select>
+
+	<!-- 기능 : 유저 아이디로 선생님 정보를 불러올 수 있습니다. -->
+	<select id="findByUserId" parameterType="Long" resultType="TeacherChange">
+		select
+			*
+		from
+			teacher_change
+		where
+			id = #{id}
+	</select>
+
+</mapper>

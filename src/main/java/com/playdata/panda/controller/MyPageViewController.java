@@ -2,17 +2,21 @@ package com.playdata.panda.controller;
 
 import java.util.List;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.playdata.panda.dto.CategoryMain;
 import com.playdata.panda.dto.ClassListDTO;
 import com.playdata.panda.dto.ConcernList;
+import com.playdata.panda.dto.LoginSuccessDTO;
 import com.playdata.panda.dto.RegionSd;
 import com.playdata.panda.service.ClassService;
 import com.playdata.panda.service.ConcernService;
 import com.playdata.panda.service.RegionService;
+import com.playdata.panda.util.SessionConst;
 
 import lombok.RequiredArgsConstructor;
 
@@ -25,8 +29,8 @@ public class MyPageViewController {
     private final RegionService regionService;
 
     @GetMapping("/myclass-list")
-    public String myClassListViewPage(Model model) {
-    	 List<ClassListDTO> dto = classService.selectClassList();
+    public String myClassListViewPage(@SessionAttribute(value=SessionConst.LOGIN_MEMBER) LoginSuccessDTO user,Model model) {
+    	 List<ClassListDTO> dto = classService.selectClassList(user);
     	 model.addAttribute("classInfo",dto);
         return "class/my-classlist";
     }
@@ -47,8 +51,17 @@ public class MyPageViewController {
     }
 
     @GetMapping("/review-register")
-    public String reviewRegisterViewPage() {
-        return "review/class-review-write";
+    public String reviewRegisterViewPage(String class_id,String cmd, Model model) {
+    	ClassListDTO cdto=classService.getClassInfo(class_id);		
+		String view = "";
+		if(cmd.equals("view")) {
+			view="review/class-review-write";
+		}
+		else {
+			view="board/update";
+		}
+		model.addAttribute("classInfo",cdto);
+		return view;
     }
 
     @GetMapping("/myconcern-list")
