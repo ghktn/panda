@@ -119,7 +119,7 @@ const handleConditionBtnClick = async () => {
 
 
 // 실행 메서드
-const start = () => {
+const startCondition = () => {
 	// 모든 조건에 이벤트를 등록하기
 	categoryList.forEach((cd) => {
 		cd.addEventListener('click', () => {
@@ -186,7 +186,7 @@ const start = () => {
 };
 
 // 실행 메서드 호출
-start();
+startCondition();
 
 
 /**

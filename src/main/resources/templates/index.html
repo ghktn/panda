@@ -59,7 +59,7 @@
                 class="main-category category-list container"
         >
             <li data-v-2658e474="" class="category-item">
-                <a data-v-2658e474="" href="/레슨?from=main" class="">
+                <a data-v-2658e474="" href="/recruitment" class="">
                     <div data-v-2658e474="" class="category-icon">
                         <div data-v-2658e474="" class="categiry-img-wrapper">
                             <img
@@ -74,13 +74,13 @@
                 </a>
             </li>
             <li data-v-2658e474="" class="category-item">
-                <a data-v-2658e474="" href="/홈-리빙?from=main" class="">
+                <a data-v-2658e474="" href="//recruitment" class="">
                     <div data-v-2658e474="" class="category-icon">
                         <div data-v-2658e474="" class="categiry-img-wrapper">
                             <img
                                     data-v-2658e474=""
                                     src="https://assets.cdn.soomgo.com/icons/category1/service_living_home.svg"
-                                    alt="홈/==="
+                                    alt="취미생활"
                                     class="category-img"
                             />
                         </div>
@@ -89,13 +89,13 @@
                 </a>
             </li>
             <li data-v-2658e474="" class="category-item">
-                <a data-v-2658e474="" href="/이벤트?from=main" class="">
+                <a data-v-2658e474="" href="/recruitment" class="">
                     <div data-v-2658e474="" class="category-icon">
                         <div data-v-2658e474="" class="categiry-img-wrapper">
                             <img
                                     data-v-2658e474=""
                                     src="https://assets.cdn.soomgo.com/icons/category1/service_event_calendar.svg"
-                                    alt="이벤트"
+                                    alt="음악"
                                     class="category-img"
                             />
                         </div>
@@ -104,13 +104,13 @@
                 </a>
             </li>
             <li data-v-2658e474="" class="category-item">
-                <a data-v-2658e474="" href="/비즈니스?from=main" class="">
+                <a data-v-2658e474="" href="/recruitment" class="">
                     <div data-v-2658e474="" class="category-icon">
                         <div data-v-2658e474="" class="categiry-img-wrapper">
                             <img
                                     data-v-2658e474=""
                                     src="https://assets.cdn.soomgo.com/icons/category1/service_business_suit_case.svg"
-                                    alt="비즈니스"
+                                    alt="외국어"
                                     class="category-img"
                             />
                         </div>
@@ -119,13 +119,13 @@
                 </a>
             </li>
             <li data-v-2658e474="" class="category-item">
-                <a data-v-2658e474="" href="/디자인-개발?from=main" class="">
+                <a data-v-2658e474="" href="/recruitment" class="">
                     <div data-v-2658e474="" class="category-icon">
                         <div data-v-2658e474="" class="categiry-img-wrapper">
                             <img
                                     data-v-2658e474=""
                                     src="https://assets.cdn.soomgo.com/icons/category1/service_window_with_code.svg"
-                                    alt="디자인/개발"
+                                    alt="컴퓨터"
                                     class="category-img"
                             />
                         </div>
@@ -134,13 +134,13 @@
                 </a>
             </li>
             <li data-v-2658e474="" class="category-item">
-                <a data-v-2658e474="" href="/건강-미용?from=main" class="">
+                <a data-v-2658e474="" href="/recruitment" class="">
                     <div data-v-2658e474="" class="category-icon">
                         <div data-v-2658e474="" class="categiry-img-wrapper">
                             <img
                                     data-v-2658e474=""
                                     src="https://assets.cdn.soomgo.com/icons/category1/service_heart_with_rate.svg"
-                                    alt="컴퓨터"
+                                    alt="스포츠"
                                     class="category-img"
                             />
                         </div>
@@ -149,13 +149,13 @@
                 </a>
             </li>
             <li data-v-2658e474="" class="category-item">
-                <a data-v-2658e474="" href="/알바?from=main" class="">
+                <a data-v-2658e474="" href="/recruitment" class="">
                     <div data-v-2658e474="" class="category-icon">
                         <div data-v-2658e474="" class="categiry-img-wrapper">
                             <img
                                     data-v-2658e474=""
                                     src="https://assets.cdn.soomgo.com/icons/category1/service_shirt_with_tie.svg"
-                                    alt="알바"
+                                    alt="취업"
                                     class="category-img"
                             />
                         </div>
@@ -164,7 +164,7 @@
                 </a>
             </li>
             <li data-v-2658e474="" class="category-item">
-                <a data-v-2658e474="" href="/기타?from=main" class="">
+                <a data-v-2658e474="" href="/recruitment" class="">
                     <div data-v-2658e474="" class="category-icon">
                         <div data-v-2658e474="" class="categiry-img-wrapper">
                             <img
@@ -188,15 +188,15 @@
                         <!--features_items-->
                         <h2 class="title text-center">마감 임박 수업</h2>
                         <!-- 1-1 강의 연결 -->
-                        <div class="col-sm-4">
+                        <div class="col-sm-4" th:each="main:${MainDTO}">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="images/home/jeounhangil.jpg" alt=""/>
-                                        <h2>공무원 시험은 전한길</h2>
-                                        <p>14급/15급공무원</p>
-                                        <a href="#" class="btn btn-default add-to-cart"
-                                        ><i class="fa fa-hand-o-right"></i>신청하기</a
+                                        <img th:src="${main.profile_photo}" alt=""/>
+                                        <h2 th:text="${main.title}"></h2>
+                                        <p th:text="${main.nickname}"></p>
+                                        <a th:href="@{/recruitment/detail/{id}(id=${main.recruitment_id})}" class="btn btn-default add-to-cart"
+                                        ><i class="fa fa-hand-o-right" ></i>신청하기</a
                                         >
                                     </div>
                                 </div>
@@ -205,163 +205,12 @@
                                         <li>
                                             <div class="class-user-count">
                                                 <i class="fa fa-user"></i
-                                                ><span class="current-user-count">4</span> / 5 명
+                                                ><span class="current-user-count" th:text="${main.current_std_count}+'/'+${main.max_std_count}"></span> 명
                                             </div>
                                         </li>
                                         <li>
                                             <div class="class-user-pay">
-                                                <a><i class="fa fa-money"></i>1인당 50,000원</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 1-2 강의 연결 -->
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="images/home/msh1.jpg" alt=""/>
-                                        <h2>인문학은 문상훈, 진리를 깨우쳐요 !</h2>
-                                        <p>빠더너스</p>
-                                        <a href="#" class="btn btn-default add-to-cart"
-                                        ><i class="fa fa-hand-o-right"></i>신청하기</a
-                                        >
-                                    </div>
-                                </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li>
-                                            <div class="class-user-count">
-                                                <i class="fa fa-user"></i
-                                                ><span class="current-user-count">2</span> / 4 명
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="class-user-pay">
-                                                <a><i class="fa fa-money"></i>1인당 30,000원</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 1-3 강의 연결 -->
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="images/home/hansuckwon.jpeg" alt=""/>
-                                        <h2>미적분이 어려운가요?</h2>
-                                        <p>한석원</p>
-                                        <a href="#" class="btn btn-default add-to-cart"
-                                        ><i class="fa fa-hand-o-right"></i>신청하기</a
-                                        >
-                                    </div>
-                                </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li>
-                                            <div class="class-user-count">
-                                                <i class="fa fa-user"></i
-                                                ><span class="current-user-count">3</span> / 5 명
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="class-user-pay">
-                                                <a><i class="fa fa-money"></i>1인당 60,000원</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 1번쨰 줄 끝 -->
-                        <!-- 2-1 강의 연결 -->
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="images/home/choijun.jpg" alt=""/>
-                                        <h2>준이랑 커피 마셔요~ (여자만)</h2>
-                                        <p>커피집 사장 최준</p>
-                                        <a href="#" class="btn btn-default add-to-cart"
-                                        ><i class="fa fa-hand-o-right"></i>신청하기</a
-                                        >
-                                    </div>
-                                </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li>
-                                            <div class="class-user-count">
-                                                <i class="fa fa-user"></i
-                                                ><span class="current-user-count">0</span> / 1 명
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="class-user-pay">
-                                                <a><i class="fa fa-money"></i>1인당 무료</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 2-2 강의 연결 -->
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="images/home/leejiyoung.jpg" alt=""/>
-                                        <h2>한국사 1타 강사와 함께 수능 준비를</h2>
-                                        <p>이지영</p>
-                                        <a href="#" class="btn btn-default add-to-cart"
-                                        ><i class="fa fa-hand-o-right"></i>신청하기</a
-                                        >
-                                    </div>
-                                </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li>
-                                            <div class="class-user-count">
-                                                <i class="fa fa-user"></i
-                                                ><span class="current-user-count">4</span> / 5 명
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="class-user-pay">
-                                                <a><i class="fa fa-money"></i>1인당 70,000원</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 2-3 강의 연결 -->
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="images/home/woojin1.jpeg" alt=""/>
-                                        <h2>배드민턴 국가대표 지망생과 함께</h2>
-                                        <p>김우진</p>
-                                        <a href="#" class="btn btn-default add-to-cart"
-                                        ><i class="fa fa-hand-o-right"></i>신청하기</a
-                                        >
-                                    </div>
-                                </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li>
-                                            <div class="class-user-count">
-                                                <i class="fa fa-user"></i
-                                                ><span class="current-user-count">1</span> / 2 명
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="class-user-pay">
-                                                <a><i class="fa fa-money"></i>1인당 60,000원</a>
+                                                <a><i class="fa fa-money" th:text="'1인당 '+${main.pay}/${main.current_std_count}"></i>원</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -456,112 +305,11 @@
     </footer>
     <!--/Footer-->
 
-    <!-- 선생님 전환 모달창 시작 -->
-
-    <div id="pop_info" class="pop_wrap" style="display: none">
-        <form
-                method="post"
-                action="#"
-                class="pop_inner"
-                style="margin: 0"
-                enctype="multipart/form-data"
-                onsubmit="return false;"
-        >
-            <fieldset class="info-detail">
-                <legend class="info-title">선생님 정보 입력</legend>
-
-                <!-- 분야 시작 -->
-
-                <div class="form-group">
-                    <label for="classCategory" class="form-label">수업종류</label>
-
-                    <!-- 시도 코드 -->
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="categoryMainIdBox">
-                                <span>대분류</span>
-                                <select
-                                        class="form-select form-control"
-                                        id="categoryMainId"
-                                        name="categoryMainId"
-                                >
-                                    <option value="">선택</option>
-                                   	<th:block th:each="category : ${categoryMainList}">
-                                        <option th:value="${category.Category_main_id}"
-                                                th:text="${category.Category_main_name}">학업
-                                        </option>
-                                    </th:block>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="categorySubIdBox">
-                                <!-- 시군구 코드 -->
-                                <span>소분류</span>
-                                <select
-                                        class="form-select form-control"
-                                        id="categorySubId"
-                                        name="categorySubId"
-                                >
-                                    <option value="">선택</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 분야 끝-->
-
-                <!-- 소개글 시작 -->
-                <div class="form-group">
-                    <label for="comment" class="form-label">소개글</label>
-                    <textarea
-                            id="comment"
-                            name="comment"
-                            class="info-comment"
-                            placeholder="선생님을 소개해주세요~"
-                            tabindex="1"
-                    ></textarea>
-                </div>
-
-                <!-- 소개글 끝 -->
-            </fieldset>
-
-            <!-- 첨부파일 제출 시작 -->
-            <div class="insert form-group">
-                <label for="info-file" class="form-label">
-                    증명서류첨부
-                    <img alt="첨부파일추가" src="/images/home/plus-square.svg"/>
-                </label>
-                <input
-                        id="info-file"
-                        name="files"
-                        type="file"
-                        onchange="addFile(this);"
-                        multiple
-                />
-                <div class="file-list"></div>
-            </div>
-            <!-- 첨부파일 제출 끝 -->
-
-            <!-- 댓글 버튼 박스 시작 -->
-            <div class="register-btn form-group">
-                <button type="submit" class="btn_enter" tabindex="5" onclick="submitForm();">등록</button>
-                <button type="button" class="teacher_info_close">닫기</button>
-            </div>
-            <!-- 댓글 버튼 박스 끝 -->
-        </form>
-    </div>
-
-    <!-- 선생님 전환 모달창 끝 -->
-
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.scrollUp.min.js"></script>
     <script src="js/price-range.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/index-teacher-info-modal.js"></script>
 </body>
 </html>

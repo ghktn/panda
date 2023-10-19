@@ -5,22 +5,33 @@
 <mapper namespace="com.playdata.panda.repository.ConcernRepository">
     <select id="findMyConcernList">
         SELECT rb.RECRUITMENT_ID,
-            rb.TITLE,
-            cs.category_sub_name,
-            rbt.BOARD_NAME,
-            cl.CURRENT_STD_COUNT,
-            rb.wish_pay,
-            u.NICKNAME
+        rb.TITLE,
+        cs.category_sub_name,
+        rbt.BOARD_NAME,
+        cl.CURRENT_STD_COUNT,
+        rb.wish_pay,
+        u.NICKNAME
         FROM RECRUITMENT_BOARD rb
-            INNER JOIN CONCERN c ON rb.RECRUITMENT_ID = c.recruitment_std_id
-            INNER JOIN CLASS cl on rb.class_id = cl.class_id
-            INNER JOIN CATEGORY_SUB cs on cl.category_sub_id = cs.category_sub_id
-            INNER JOIN USERS u on rb.ID = u.ID
-            INNER JOIN RECRUITMENT_BOARD_TYPE rbt on rb.RECRUITMENT_BOARD_ID = rbt.RECRUITMENT_BOARD_ID
+        INNER JOIN CONCERN c ON rb.RECRUITMENT_ID = c.recruitment_std_id
+        INNER JOIN CLASS cl ON rb.class_id = cl.class_id
+        INNER JOIN CATEGORY_SUB cs ON cl.category_sub_id = cs.category_sub_id
+        INNER JOIN USERS u ON rb.ID = u.ID
+        INNER JOIN RECRUITMENT_BOARD_TYPE rbt ON rb.RECRUITMENT_BOARD_ID = rbt.RECRUITMENT_BOARD_ID
+        WHERE rb.RECRUITMENT_ID IS NOT NULL AND c.recruitment_std_id IS NOT NULL
     </select>
 
     <select id="findByIdConcern" resultType="int">
         select count(*) from concern
-        where USER_ID = 6 and RECRUITMENT_STD_ID = 2
+        where USER_ID = #{user_id} and RECRUITMENT_STD_ID = #{recruitment_std_id}
     </select>
+
+    <insert id="addConcern">
+        insert into CONCERN (CONCERN_ID, RECRUITMENT_STD_ID, USER_ID, CONCERN_DATE)
+        values (concern_seq.nextval, #{recruitment_std_id}, #{user_id}, sysdate)
+    </insert>
+
+    <delete id="cancelConcern">
+        DELETE FROM CONCERN
+        WHERE RECRUITMENT_STD_ID = #{recruitment_std_id} and USER_ID = #{user_id}
+    </delete>
 </mapper>

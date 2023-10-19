@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 
 @Getter
 @Builder
+@ToString
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)

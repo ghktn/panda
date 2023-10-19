@@ -38,8 +38,8 @@ public class MyPageApiController {
     }
     @PostMapping("/register-class")
     @ResponseBody
-    public ResponseEntity<Integer> registerClass(@RequestBody PandaClass dto) {
-    	int result= classService.registerClass(dto);
+    public ResponseEntity<Integer> registerClass(@SessionAttribute(value=SessionConst.LOGIN_MEMBER) LoginSuccessDTO user,@RequestBody PandaClass dto) {
+    	int result= classService.registerClass((int)user.getId(),dto);
     	return ResponseEntity.ok()
 				.body(result);
     }

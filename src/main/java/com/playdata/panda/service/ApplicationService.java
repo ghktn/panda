@@ -9,8 +9,6 @@ import com.playdata.panda.dto.LoginSuccessDTO;
 
 public interface ApplicationService {
 	
-	Application insertApplication();
-	
 	void application(Application application,long id);
 	
 	List<ApplicationList> selectApplication(LoginSuccessDTO user);
