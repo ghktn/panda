@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.playdata.panda.dto.CategoryMain;
 import com.playdata.panda.dto.CategorySub;
 import com.playdata.panda.dto.ClassListDTO;
+import com.playdata.panda.dto.LoginSuccessDTO;
 import com.playdata.panda.dto.PandaClass;
 import com.playdata.panda.dto.Review;
 import com.playdata.panda.repository.ClassRepository;
@@ -37,13 +38,19 @@ public class ClassServiceImpl implements ClassService {
     }
 
 	@Override
-	public List<ClassListDTO> selectClassList() {
-		return classRepository.selectClassList();
+	public List<ClassListDTO> selectClassList(LoginSuccessDTO user) {
+		if(user.getUser_division_id().equals("T ")) {
+			System.out.println(classRepository.selectClassTeacherList(user));
+			return classRepository.selectClassTeacherList(user);
+		}
+		else {
+			return classRepository.selectClassStudentList(user);
+		}
 	}
 
 	@Override
-	public void registerClass(PandaClass dto) {
-		classRepository.registerClass(dto);
+	public int registerClass(PandaClass dto) {
+		return classRepository.registerClass(dto);
 	}
 
 	@Override

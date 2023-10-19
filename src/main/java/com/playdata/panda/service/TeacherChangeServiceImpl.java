@@ -1,6 +1,8 @@
 package com.playdata.panda.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TeacherChangeServiceImpl implements TeacherChangeService{
 	
+	private final UserService userService;
 	private final TeacherChangeRepository tcRepository;
 	private final CertificateRepository certificateRepository;
 
@@ -56,6 +59,26 @@ public class TeacherChangeServiceImpl implements TeacherChangeService{
 				certificateRepository.insert(certificate);			
 			});
 		}
+//		// 유저 정보 선생님으로 전환하기
+//		String userDivisionId = "T";
+//		userService.updateUserDivisionId(userId, userDivisionId);
 		
 	}
+<<<<<<< HEAD
+=======
+
+	/**
+	 * 기능 : 유저 아이디에 따른 선생님 정보를 불러올 수 있습니다.
+	 */
+	@Override
+	public TeacherChange selectOne(long id) {
+		// 유저 아이디로 선생님 정보를 반환합니다.
+		TeacherChange teacherChange = tcRepository.findByUserId(id);
+		
+		return teacherChange;
+	}
+	
+	
+	
+>>>>>>> 353b5500944f5775c6949a731cc794768ba52f44
 }

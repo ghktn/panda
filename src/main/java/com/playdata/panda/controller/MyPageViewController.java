@@ -1,4 +1,3 @@
-
 package com.playdata.panda.controller;
 
 import java.util.List;
@@ -30,7 +29,7 @@ public class MyPageViewController {
 
     @GetMapping("/myclass-list")
     public String myClassListViewPage(Model model) {
-    	 List<ClassListDTO> dto = classService.selectClassList();
+    	 List<ClassListDTO> dto = classService.selectClassList(LoginSuccessDTO);
     	 model.addAttribute("classInfo",dto);
         return "class/my-classlist";
     }
@@ -89,3 +88,4 @@ public class MyPageViewController {
         return "class/class-write";
     }
 }
+

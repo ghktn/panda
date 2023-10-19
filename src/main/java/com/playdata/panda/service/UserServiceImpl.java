@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -54,6 +56,32 @@ public class UserServiceImpl implements UserService {
             return null;
         }
         // 회원이 있으면 성공한다.
-        return LoginSuccessDTO.create(user.getId(), user.getUser_id());
+        return LoginSuccessDTO.create(user.getId(), user.getUser_id(),user.getUser_division_id());
     }
+
+    /**
+     * 기능 : 회원 정보를 수정할 수 있습니다.
+     * commnet : 현재(10.18~)
+     *           -> 회원 구분 아이디를 변경할 수 있습니다.
+     */
+	@Override
+	public void updateUserDivisionId(Long userId, String userDivisionId) {
+		
+		// 유저 정보 선생님으로 전환하기
+		Map<String, Object> parameters = new HashMap<>();
+		parameters.put("id", userId);
+		parameters.put("userDivisionId", userDivisionId);
+		
+		userRepository.updateUserDivisionId(parameters);
+		
+	}
+
+	/**
+     * 기능 : 회원 정보를 불러올 수 있습니다.
+     */
+	@Override
+	public User findByIdV2(Long id) {
+		
+		return userRepository.findByIdV2(id);
+	}
 }
