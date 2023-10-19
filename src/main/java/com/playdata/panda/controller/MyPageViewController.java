@@ -29,7 +29,7 @@ public class MyPageViewController {
 
     @GetMapping("/myclass-list")
     public String myClassListViewPage(Model model) {
-    	 List<ClassListDTO> dto = classService.selectClassList(LoginSuccessDTO);
+    	 List<ClassListDTO> dto = classService.selectClassList();
     	 model.addAttribute("classInfo",dto);
         return "class/my-classlist";
     }
