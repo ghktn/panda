@@ -25,7 +25,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Controller
 public class MyPageViewController {
-
+	
+	
 	private final ClassService classService;
 	private final ConcernService concernService;
 	private final RegionService regionService;
