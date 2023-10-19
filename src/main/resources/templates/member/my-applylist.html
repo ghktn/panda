@@ -84,68 +84,28 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr onclick="location.href='#'" style="cursor:pointer;">
-                                        <td>스프링 한 달 마스터</td>
-                                        <td>신청</td>
-                                        <td>(3/4)</td>
-                                        <td><a href="#"><img src="images/home/girl1.jpg" width="20px"/>
-                                            자바일타강사</a></td>
-                                        <td id="delete" name="delete">
-                                            <button class="cancel" type="button"
-                                                    onclick="window.confirm('신청 취소하시겠습니까?')">신청취소
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr onclick="location.href='#'" style="cursor:pointer;">
-                                        <td>골프베이직</td>
-                                        <td>거절</td>
-                                        <td>(1/4)</td>
-                                        <td><a href="#"><img src="images/home/girl1.jpg" width="20px"/>
-                                            자바일타강사</a></td>
-                                    </tr>
-                                    <tr onclick="location.href='#'" style="cursor:pointer;">
-                                        <td>독산에스파</td>
-                                        <td>수락</td>
-                                        <td>(3/4)</td>
-                                        <td><a href="#"><img src="images/home/girl1.jpg" width="20px"/>
-                                            자바일타강사</a></td>
-                                        <td id="delete" name="delete">
-                                            <button class="cancel" type="button"
-                                                    onclick="window.confirm('신청 취소하시겠습니까?')">신청취소
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr onclick="location.href='#'" style="cursor:pointer;">
-                                        <td>수수박</td>
-                                        <td>신청</td>
-                                        <td>(1/3)</td>
-                                        <td><a href="#"><img src="images/home/girl1.jpg" width="20px"/>
-                                            자바일타강사</a></td>
-                                        <td id="delete" name="delete">
-                                            <button class="cancel" type="button"
-                                                    onclick="window.confirm('신청 취소하시겠습니까?')">신청취소
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr onclick="location.href='#'" style="cursor:pointer;">
-                                        <td>잉글리시스토리</td>
-                                        <td>거절</td>
-                                        <td>(2/4)</td>
-                                        <td><a href="#"><img src="images/home/girl1.jpg" width="20px"/>
-                                            자바일타강사</a></td>
-                                    </tr>
-                                    <tr onclick="location.href='#'" style="cursor:pointer;">
-                                        <td>용감한남매들</td>
-                                        <td>신청</td>
-                                        <td>(1/3)</td>
-                                        <td><a href="#"><img src="images/home/girl1.jpg" width="20px"/>
-                                            자바일타강사</a></td>
-                                        <td id="delete" name="delete">
-                                            <button class="cancel" type="button"
-                                                    onclick="window.confirm('신청 취소하시겠습니까?')">신청취소
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    <tr onclick="location.href='#'" style="cursor:pointer;" 
+                                    	th:each="apply:${ApplicationList}">
+                                        <td th:text="${apply.title}"></td>
+                                        <th:block th:switch="${apply.accept_yn}">
+                                        <td th:case="W">대기중</td>
+                                        <td th:case="Y">수락</td>
+                                        <td th:case="N">거절</td>
+                                        </th:block>
+                                        <td th:text="${apply.current_std_count}+'/'+${apply.max_std_count}"></td> 
+                                        <td th:text="${apply.nickname}"><a href="#"><img src="images/home/girl1.jpg" width="20px"/> 
+                                        </a></td> 
+                                        <th:block th:if="${apply.accept_yn == 'N'}">
+                                        	<td></td>
+                                        </th:block>
+										<th:block th:unless="${apply.accept_yn == 'N'}">
+											<td id="delete" name="delete">
+												<button class="cancel" type="button"
+												th:onclick="|location.href='@{/delete-myapply(application_id=${apply.application_id },cmd=view)}'|">신청취소
+												</button>
+											</td>
+										</th:block>
+											</tr>
                                     </tbody>
                                 </table>
                                 <div class="pagenum">
