@@ -68,5 +68,4 @@ public class LoginSuccessDTO {
 		this.profile_photo = profile_photo;
 	}
 
-	
 }

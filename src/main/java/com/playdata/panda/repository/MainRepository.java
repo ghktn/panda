@@ -11,3 +11,5 @@ public interface MainRepository {
 	
 	List<MainDTO> selectMain();
 }
+
+

@@ -8,3 +8,4 @@ public interface MainService {
 
 	List<MainDTO> selectMain();
 }
+

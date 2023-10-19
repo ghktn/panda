@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.playdata.panda.dto.CategorySub;
-import com.playdata.panda.dto.LoginDTO;
 import com.playdata.panda.dto.LoginSuccessDTO;
 import com.playdata.panda.dto.PandaClass;
 import com.playdata.panda.dto.Review;
