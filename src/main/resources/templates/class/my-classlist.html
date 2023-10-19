@@ -78,9 +78,11 @@
                         <div class="thumb">
                             <div class="thumbtitle">
                                 나의 수업목록
-                                <button type="button" onclick="location.href='/class-write'" class="class-register">
-                                수업 등록
-                                </button>
+                               <th:block th:if="${session.LOGIN_MEMBER.user_division_id == 'T '}">
+                               	 	<button type="button" onclick="location.href='/class-write'" class="class-register">
+                               	 		수업 등록
+                               		 </button>
+                               	</th:block>
                             </div>
                             <div class="col-xs-18 my-calender">
                                 <table class="table table-bordered">
@@ -117,6 +119,7 @@
                                         	<td th:text="${class.max_std_count}"></td>
                                         </th:block>
                                         <td th:text="${class.pay}"></td>
+                                        <th:block th:if="${session.LOGIN_MEMBER.user_division_id == 'S '}">
 										<th:block th:if="${class.class_status=='E'}">
 												<td>
 													<button type="button" class="addreview"
@@ -125,56 +128,10 @@
 													</button>
 												</td>
 										</th:block>
-										<th:block th:unless="${class.class_status=='E'}">
-												<td></td>
 										</th:block>
-                                    </tr>
-                                    <tr
-                                            class="className"
-                                            draggable="true"
-                                            onclick="location.href='#'"
-                                            style="cursor: pointer"
-                                    >
-                                        <td id="2" name="3" class="classTitle">골프베이직</td>
-                                        <td>수강중</td>
-                                        <td>스포츠</td>
-                                        <td>4</td>
-                                        <td>100,000</td>
-                                    </tr>
-                                    <tr
-                                            class="className"
-                                            draggable="true"
-                                            onclick="location.href='#'"
-                                            style="cursor: pointer"
-                                    >
-                                        <td id="3" name="5" class="classTitle">독산에스파</td>
-                                        <td>모집중</td>
-                                        <td>댄스</td>
-                                        <td>4</td>
-                                        <td>80,000</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr
-                                            class="className"
-                                            draggable="true"
-                                            onclick="location.href='#'"
-                                            style="cursor: pointer"
-                                    >
-                                        <td id="4" name="7" class="classTitle">수수박</td>
-                                        <td>수강완료</td>
-                                        <td>학업</td>
-                                        <td>3</td>
-                                        <td>150,000</td>
-                                        <td>
-                                            <button type="button" class="addreview"
-                                                    th:onclick="|location.href='@{/review-register}'|">
-                                                <img
-                                                        class="reviewimg"
-                                                        src="images/review.png"
-
-                                                />
-                                            </button>
-                                        </td>
+										<th:block th:unless="${session.LOGIN_MEMBER.user_division_id == 'S '}">
+													<td></td>
+										</th:block>
                                     </tr>
                                     </tbody>
                                 </table>

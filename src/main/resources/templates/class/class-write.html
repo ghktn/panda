@@ -98,13 +98,13 @@
                     </div>
                 </div>
             </div>
-
+            <input type="hidden" name="class_reg_user_id" th:value="${session.LOGIN_MEMBER.id}">
             <!-- 수업 카테고리 -->
             <!-- DB에서 받아온다. -->
             <div class="formLine">
                 <div class="form-group">
                     <label for="classCategory" class="form-label">수업종류</label>
-
+					
                     <!-- 시도 코드 -->
                     <div class="row">
                         <div class="col-sm-4">
@@ -129,7 +129,6 @@
 
                         <div class="col-sm-4">
                             <div class="categorySubIdBox">
-                                <!-- 시군구 코드 -->
                                 <span>소분류</span>
                                 <select
                                         class="form-select form-control"
@@ -426,7 +425,7 @@
 
             <!-- 버튼 -->
             <div class="form-group buttonBox">
-                <button type="submit" class="btn btn-primary btn-lg">등록</button>
+                <button type="button" class="btn btn-primary btn-lg" onclick="handleSavingClick();">등록</button>
                 <button
                         type="button"
                         class="btn btn-primary btn-lg"

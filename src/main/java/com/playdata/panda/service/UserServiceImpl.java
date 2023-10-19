@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService {
             return null;
         }
         // 회원이 있으면 성공한다.
-        return LoginSuccessDTO.create(user.getId(), user.getUser_id());
+        return LoginSuccessDTO.create(user.getId(), user.getUser_id(),user.getUser_division_id());
     }
 
     /**
