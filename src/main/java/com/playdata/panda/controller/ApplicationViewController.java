@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.playdata.panda.controller;
 
 import org.springframework.stereotype.Controller;

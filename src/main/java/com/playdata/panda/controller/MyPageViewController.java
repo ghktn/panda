@@ -48,8 +48,8 @@ public class MyPageViewController {
     }
 
     @GetMapping("/myapply-list")
-    public String selectApplication(Model model) {
-    	List<ApplicationList> ApplicationList = applicationService.selectApplication();
+    public String myapplyListViewPage(@SessionAttribute(value=SessionConst.LOGIN_MEMBER) LoginSuccessDTO user,Model model) {
+    	List<ApplicationList> ApplicationList = applicationService.selectApplication(user);
 		model.addAttribute("ApplicationList", ApplicationList);
         return "member/my-applylist";
     }

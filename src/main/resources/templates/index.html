@@ -188,180 +188,29 @@
                         <!--features_items-->
                         <h2 class="title text-center">마감 임박 수업</h2>
                         <!-- 1-1 강의 연결 -->
-                        <div class="col-sm-4">
+                        <div class="col-sm-4" th:each="main:${MainDTO}">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="images/home/jeounhangil.jpg" alt=""/>
-                                        <h2>공무원 시험은 전한길</h2>
-                                        <p>14급/15급공무원</p>
-                                        <a href="#" class="btn btn-default add-to-cart"
-                                        ><i class="fa fa-hand-o-right"></i>신청하기</a
-                                        >
-                                    </div>
+                                        <img th:src="${main.profile_photo}" alt=""/>
+                                        <h2 th:text="${main.title}"></h2>
+                                        <p th:text="${main.nickname}"></p>
+                                        <a th:href="@{/recruitment/detail/{id}(id=${main.recruitment_id})}" class="btn btn-default add-to-cart"
+                                        ><i class="fa fa-hand-o-right" ></i>신청하기</a
+                                        >	
+                                    </div>		
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">
                                         <li>
                                             <div class="class-user-count">
                                                 <i class="fa fa-user"></i
-                                                ><span class="current-user-count">4</span> / 5 명
+                                                ><span class="current-user-count" th:text="${main.current_std_count}+'/'+${main.max_std_count}"></span> 명
                                             </div>
                                         </li>
                                         <li>
                                             <div class="class-user-pay">
-                                                <a><i class="fa fa-money"></i>1인당 50,000원</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 1-2 강의 연결 -->
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="images/home/msh1.jpg" alt=""/>
-                                        <h2>인문학은 문상훈, 진리를 깨우쳐요 !</h2>
-                                        <p>빠더너스</p>
-                                        <a href="#" class="btn btn-default add-to-cart"
-                                        ><i class="fa fa-hand-o-right"></i>신청하기</a
-                                        >
-                                    </div>
-                                </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li>
-                                            <div class="class-user-count">
-                                                <i class="fa fa-user"></i
-                                                ><span class="current-user-count">2</span> / 4 명
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="class-user-pay">
-                                                <a><i class="fa fa-money"></i>1인당 30,000원</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 1-3 강의 연결 -->
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="images/home/hansuckwon.jpeg" alt=""/>
-                                        <h2>미적분이 어려운가요?</h2>
-                                        <p>한석원</p>
-                                        <a href="#" class="btn btn-default add-to-cart"
-                                        ><i class="fa fa-hand-o-right"></i>신청하기</a
-                                        >
-                                    </div>
-                                </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li>
-                                            <div class="class-user-count">
-                                                <i class="fa fa-user"></i
-                                                ><span class="current-user-count">3</span> / 5 명
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="class-user-pay">
-                                                <a><i class="fa fa-money"></i>1인당 60,000원</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 1번쨰 줄 끝 -->
-                        <!-- 2-1 강의 연결 -->
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="images/home/choijun.jpg" alt=""/>
-                                        <h2>준이랑 커피 마셔요~ (여자만)</h2>
-                                        <p>커피집 사장 최준</p>
-                                        <a href="#" class="btn btn-default add-to-cart"
-                                        ><i class="fa fa-hand-o-right"></i>신청하기</a
-                                        >
-                                    </div>
-                                </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li>
-                                            <div class="class-user-count">
-                                                <i class="fa fa-user"></i
-                                                ><span class="current-user-count">0</span> / 1 명
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="class-user-pay">
-                                                <a><i class="fa fa-money"></i>1인당 무료</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 2-2 강의 연결 -->
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="images/home/leejiyoung.jpg" alt=""/>
-                                        <h2>한국사 1타 강사와 함께 수능 준비를</h2>
-                                        <p>이지영</p>
-                                        <a href="#" class="btn btn-default add-to-cart"
-                                        ><i class="fa fa-hand-o-right"></i>신청하기</a
-                                        >
-                                    </div>
-                                </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li>
-                                            <div class="class-user-count">
-                                                <i class="fa fa-user"></i
-                                                ><span class="current-user-count">4</span> / 5 명
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="class-user-pay">
-                                                <a><i class="fa fa-money"></i>1인당 70,000원</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 2-3 강의 연결 -->
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="images/home/woojin1.jpeg" alt=""/>
-                                        <h2>배드민턴 국가대표 지망생과 함께</h2>
-                                        <p>김우진</p>
-                                        <a href="#" class="btn btn-default add-to-cart"
-                                        ><i class="fa fa-hand-o-right"></i>신청하기</a
-                                        >
-                                    </div>
-                                </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li>
-                                            <div class="class-user-count">
-                                                <i class="fa fa-user"></i
-                                                ><span class="current-user-count">1</span> / 2 명
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="class-user-pay">
-                                                <a><i class="fa fa-money"></i>1인당 60,000원</a>
+                                                <a><i class="fa fa-money" th:text="'1인당 '+${main.pay}/${main.current_std_count}"></i>원</a>
                                             </div>
                                         </li>
                                     </ul>
