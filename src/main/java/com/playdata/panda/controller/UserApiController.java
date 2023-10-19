@@ -66,6 +66,8 @@ public class UserApiController {
 
         return "redirect:" + returnUrl;
     }
+    
+   
 
     @GetMapping("/logout")
     public String logout(HttpSession session) {
