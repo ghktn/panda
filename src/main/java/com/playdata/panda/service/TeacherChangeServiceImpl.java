@@ -31,7 +31,7 @@ public class TeacherChangeServiceImpl implements TeacherChangeService{
 	public void save(TeacherChangeRequestDTO teacherChangeRequestDto, long userId, List<MultipartFile> files) {
 		// TeacherCahnge로 변경하기
 		int id = (int) userId;
-		
+
 		TeacherChange teacherChange = TeacherChange.create(
 				id,
 				teacherChangeRequestDto.getCategory_main_id(),
@@ -40,23 +40,23 @@ public class TeacherChangeServiceImpl implements TeacherChangeService{
 				);
 		// 선생님 정보 저장하기
 		tcRepository.insert(teacherChange);
-		
+
 		// 증명서 파일이 있으면 저장한다.
 		if(files != null) {
 			// teacher_id 불러오기
 			int teacherId = tcRepository.findTeacherIdById(id);
-			
+
 			// 증명서 파일 PC에 저장하기
 			FileStore fileStore = new FileStore();
 			List<Certificate> certificateList = fileStore.saveFileList(files);
-			
+
 			// 증명서 정보 저장하기
 			certificateList.stream()
 			.forEach((certificate) -> {
 				// 선생님 아이디 입력하기
 				certificate.setTeacher_id(teacherId);
 				// 증명서 저장하기
-				certificateRepository.insert(certificate);			
+				certificateRepository.insert(certificate);
 			});
 		}
 //		// 유저 정보 선생님으로 전환하기

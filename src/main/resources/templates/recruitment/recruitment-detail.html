@@ -437,16 +437,16 @@
 
           <!-- Modal body - 수업 목록 -->
           <div class="modal-body">
-            <form action="">
+            <form th:action="@{/application (class_id=${board.class_id})}" method="post" >
               <div class="messageBox">
                 <textarea
-                  name="message"
+                  name="application_contents"
                   rows="5"
                   placeholder="신청 인사말을 작성하면 수락 확률 증가!"
                 ></textarea>
               </div>
               <div class="buttonBox">
-                <button type="submit">신청</button>
+                <button type="submit" id="classApplicationButton">신청</button>
               </div>
             </form>
           </div>
