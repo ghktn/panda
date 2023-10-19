@@ -7,7 +7,7 @@ import com.playdata.panda.dto.ApplicationList;
 public interface ApplicationService {
 	
 	Application insertApplication();
-	public void application(Application application);
+	public void application(Application application,long id);
 
 	List<ApplicationList> selectApplication();
 	

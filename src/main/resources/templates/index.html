@@ -195,10 +195,10 @@
                                         <img th:src="${main.profile_photo}" alt=""/>
                                         <h2 th:text="${main.title}"></h2>
                                         <p th:text="${main.nickname}"></p>
-                                        <a href="/recruitment-detail" class="btn btn-default add-to-cart"
+                                        <a th:href="@{/recruitment/detail/{id}(id=${main.recruitment_id})}" class="btn btn-default add-to-cart"
                                         ><i class="fa fa-hand-o-right" ></i>신청하기</a
-                                        >
-                                    </div>
+                                        >	
+                                    </div>		
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">

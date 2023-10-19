@@ -20,10 +20,10 @@ public class ApplicationServiceImpl implements ApplicationService{
 	}
 
 	@Override
-	public void application(Application application) {
+	public void application(Application application, long id) {
 		application.setAccept_yn("W");
-		application.setClass_id(2);
-		application.setId(2); //신청자의 아이디
+		
+		application.setId(id); //신청자의 아이디
 		
 		applicationRepository.insertApplication(application);
 	}

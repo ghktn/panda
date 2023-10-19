@@ -10,10 +10,12 @@
 			c.*, 
 			u.id,
 			u.nickname,
-			u.profile_photo
-		from class c, users u
+			u.profile_photo,
+			rb.recruitment_id  
+		from class c, users u, recruitment_board rb
 		where
 			c.class_reg_user_id = u.id
+			and c.class_id = rb.class_id
 		    and rownum &lt;=6
 	</select >
 </mapper >

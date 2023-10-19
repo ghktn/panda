@@ -439,7 +439,7 @@
 
           <!-- Modal body - 수업 목록 -->
           <div class="modal-body">
-            <form action="/application" method="post">
+            <form th:action="@{/application (class_id=${board.class_id})}" method="post" >
               <div class="messageBox">
                 <textarea
                   name="application_contents"
