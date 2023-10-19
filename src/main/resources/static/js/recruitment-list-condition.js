@@ -1,3 +1,5 @@
+
+
 /**
  * 기능 : 모집 공고 조건에 따른 리스트를 불러올 수 있습니다.
  */
@@ -117,7 +119,7 @@ const handleConditionBtnClick = async () => {
 
 
 // 실행 메서드
-const start = () => {
+const startCondition = () => {
 	// 모든 조건에 이벤트를 등록하기
 	categoryList.forEach((cd) => {
 		cd.addEventListener('click', () => {
@@ -184,7 +186,7 @@ const start = () => {
 };
 
 // 실행 메서드 호출
-start();
+startCondition();
 
 
 /**

@@ -21,10 +21,17 @@ public class LoginSuccessDTO {
 	private String password;
 	private String profile_photo;
 
-	public LoginSuccessDTO(long id, String userId) {
+    public LoginSuccessDTO(long id, String userId) {
+        super();
+        this.id = id;
+        this.userId = userId;
+    }
+
+    public LoginSuccessDTO (long id, String userId, String user_division_id) {
 		super();
 		this.id = id;
 		this.userId = userId;
+		this.user_division_id = user_division_id;
 	}
 	
 	public LoginSuccessDTO(long id, String userId, String nickname, String user_division_id, String email,
@@ -44,11 +51,12 @@ public class LoginSuccessDTO {
 	
 
 	public static LoginSuccessDTO create(long id, String userId) {
-		return new LoginSuccessDTO(id, userId);
-	}
-	
-	
+        return new LoginSuccessDTO(id, userId);
+    }
 
+	public static LoginSuccessDTO create(long id, String userId,String user_division_id) {
+		return new LoginSuccessDTO(id, userId,user_division_id);
+	}
 
 	public static LoginSuccessDTO create(long id, String user_id, String nickname, String user_division_id,
 			String email, String gender, String self_introduction_comment, String name, String password, String profile_photo) {
@@ -59,16 +67,6 @@ public class LoginSuccessDTO {
 		super();
 		this.profile_photo = profile_photo;
 	}
-
-
-
-	
-
-
-
-
-
-
 
 	
 }

@@ -14,6 +14,8 @@ import java.util.Date;
 import java.util.UUID;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -62,6 +64,30 @@ public class UserServiceImpl implements UserService {
 				user.getPassword(), user.getProfile_photo());
 	}
 
+	/**
+	 * 기능 : 회원 정보를 수정할 수 있습니다. commnet : 현재(10.18~) -> 회원 구분 아이디를 변경할 수 있습니다.
+	 */
+	@Override
+	public void updateUserDivisionId(Long userId, String userDivisionId) {
+
+		// 유저 정보 선생님으로 전환하기
+		Map<String, Object> parameters = new HashMap<>();
+		parameters.put("id", userId);
+		parameters.put("userDivisionId", userDivisionId);
+
+		userRepository.updateUserDivisionId(parameters);
+
+	}
+
+	/**
+	 * 기능 : 회원 정보를 불러올 수 있습니다.
+	 */
+	@Override
+	public User findByIdV2(Long id) {
+
+		return userRepository.findByIdV2(id);
+	}
+
 	@Override
 	public User selectMyInfo(String userId) {
 		return userRepository.selectMyInfo(userId);
@@ -90,13 +116,6 @@ public class UserServiceImpl implements UserService {
 			loginsuccessdto = new LoginSuccessDTO(profile_photo);
 		}
 		return loginsuccessdto;
+
 	}
-
-//	private String createStoreFilename(String originalFilename) {
-//		int position = originalFilename.lastIndexOf("."); // .의 인덱스
-//		String ext = originalFilename.substring(position + 1); // 확장자 인덱스
-//		String uuid = UUID.randomUUID().toString(); // 유유아이디 - 식별하기 위해 만듦
-//		return uuid + "." + ext;
-//	}
-
 }

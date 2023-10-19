@@ -98,4 +98,37 @@
 
 	</update>
 
+    <!-- 유저 아이디 확인 -->
+    <select id="findByUserIdAndPassword" parameterType="LoginDTO" resultType="User">
+        select
+        *
+        from
+        users
+        where
+        user_id = #{userId}
+        and
+        password = #{password}
+    </select>
+    
+    <!-- 회원 구분 아이디 정보 변경할 수 있습니다. -->
+    <update id="updateUserDivisionId">
+    	update users
+    	set
+    		user_division_id = #{userDivisionId}
+    	where
+    		id = #{id}
+    </update>
+    
+    <!-- TODO : 회원 정보를 불러올 수 있습니다. 
+    			****** 우진님꺼 pull 받으면 되면 지우기
+     -->
+    <select id="findByIdV2" parameterType="Long" resultType="User">
+    	select
+    		*
+    	from
+    		users
+    	where
+    		id = #{id}
+    </select>
+    
 </mapper>
