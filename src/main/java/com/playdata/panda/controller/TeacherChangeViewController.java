@@ -10,5 +10,4 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TeacherChangeViewController {
 	
-	private final TeacherChangeService tcService;
 }

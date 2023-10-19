@@ -333,7 +333,7 @@
                         <h4 th:text="${board.title}">스프링 한 달 마스터</h4>
                     </div>
                     <!-- TODO : 인증 체크부분 있는지 확인하기 -->
-                    <div class="badge">판다인증🐼</div>
+                    <div th:if="${board.badge_id}" class="badge">판다인증🐼</div>
                     <div class="location">
                     	<span>지역 : </span> 
                     	<span th:text="${board.sd_name}">서울 독산동</span>
@@ -368,7 +368,7 @@
 		                      <span th:text="${board.nickname}">스프링장인</span>
 		                    </a>
 		                  </span>
-                          <span id="star">⭐<span th:text="${board.review_score}">4.5</span></span>
+                          <span id="star">⭐<span th:text="${board.review_score}"></span></span>
                         </div>
                     </div>
                     <!-- t-nickname -->

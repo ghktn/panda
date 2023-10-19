@@ -47,7 +47,7 @@ public class RecruitmentViewController {
         List<RecruitmentBoardPandaClassDTO> boardList = recruitmentBoardService.selectAll();
 
         model.addAttribute("boardList", boardList);
-        return "recruitment/recruitment-board";
+        return "/recruitment/recruitment-board";
     }
 
     /**
@@ -58,11 +58,10 @@ public class RecruitmentViewController {
         // 정보 불러오기
         RecruitmentBoardPandaClassDTO board = recruitmentBoardService.selectOne(board_id);
         LoginSuccessDTO user = (LoginSuccessDTO) session.getAttribute(SessionConst.LOGIN_MEMBER);
-        int concern = concernService.selectConcern(board_id,user.getId());
+        int concern = concernService.selectConcern(board_id, user.getId());
 
         model.addAttribute("board", board);
         model.addAttribute("concern", concern);
-        System.out.println(concern);
 
         return "recruitment/recruitment-detail";
     }
