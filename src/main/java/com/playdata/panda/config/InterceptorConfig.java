@@ -29,6 +29,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
                         "/images/**",
                         "/js/**",
                         "/fonts/**",
+                        "/region_emd", "/region_sgg",
                         // 모집공고
                         "/recruitment", "/recruitment/detail/{id}", "/recruitment-detail",
                         // 공지사항
