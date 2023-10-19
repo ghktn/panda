@@ -19,6 +19,7 @@ import com.playdata.panda.service.ApplicationService;
 import com.playdata.panda.service.ClassService;
 import com.playdata.panda.service.ConcernService;
 import com.playdata.panda.service.RegionService;
+import com.playdata.panda.service.UserService;
 import com.playdata.panda.util.SessionConst;
 
 import lombok.RequiredArgsConstructor;
@@ -27,10 +28,12 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class MyPageViewController {
 
-    private final ClassService classService;
-    private final ApplicationService applicationService;
-    private final ConcernService concernService;
-    private final RegionService regionService;
+	
+	private final ApplicationService applicationService;
+	private final ClassService classService;
+	private final ConcernService concernService;
+	private final RegionService regionService;
+	private final UserService userService;
 
     @GetMapping("/myclass-list")
     public String myClassListViewPage(@SessionAttribute(value=SessionConst.LOGIN_MEMBER) LoginSuccessDTO user,Model model) {
